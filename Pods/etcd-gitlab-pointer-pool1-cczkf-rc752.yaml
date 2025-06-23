@@ -1,0 +1,422 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    etcd.k3s.io/initial: >-
+      {"initial-advertise-peer-urls":"https://172.31.36.13:2380","initial-cluster":"gitlab-pointer-pool1-hvssh-5cpxg-57f3d767=https://172.31.33.229:2380,gitlab-pointer-pool1-cczkf-6czm9-cb9433b9=https://172.31.43.233:2380,gitlab-pointer-pool1-cczkf-vbgtv-8883876c=https://172.31.36.39:2380,gitlab-pointer-pool1-cczkf-rc752-2c5f6c96=https://172.31.36.13:2380","initial-cluster-state":"existing"}
+    kubernetes.io/config.hash: 08ecf1233a77a5d2bdbe9b5d7049b0b8
+    kubernetes.io/config.mirror: 08ecf1233a77a5d2bdbe9b5d7049b0b8
+    kubernetes.io/config.seen: '2025-06-12T07:30:39.814233486Z'
+    kubernetes.io/config.source: file
+  creationTimestamp: '2025-06-12T07:31:34Z'
+  labels:
+    component: etcd
+    tier: control-plane
+  managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:etcd.k3s.io/initial: {}
+            f:kubernetes.io/config.hash: {}
+            f:kubernetes.io/config.mirror: {}
+            f:kubernetes.io/config.seen: {}
+            f:kubernetes.io/config.source: {}
+          f:labels:
+            .: {}
+            f:component: {}
+            f:tier: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"db6214ad-a078-4bc4-adf6-48ab1c429981"}: {}
+        f:spec:
+          f:containers:
+            k:{"name":"etcd"}:
+              .: {}
+              f:args: {}
+              f:command: {}
+              f:env:
+                .: {}
+                k:{"name":"FILE_HASH"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"NO_PROXY"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:livenessProbe:
+                .: {}
+                f:failureThreshold: {}
+                f:httpGet:
+                  .: {}
+                  f:host: {}
+                  f:path: {}
+                  f:port: {}
+                  f:scheme: {}
+                f:initialDelaySeconds: {}
+                f:periodSeconds: {}
+                f:successThreshold: {}
+                f:timeoutSeconds: {}
+              f:name: {}
+              f:resources:
+                .: {}
+                f:requests:
+                  .: {}
+                  f:cpu: {}
+                  f:memory: {}
+              f:securityContext:
+                .: {}
+                f:privileged: {}
+              f:startupProbe:
+                .: {}
+                f:failureThreshold: {}
+                f:httpGet:
+                  .: {}
+                  f:host: {}
+                  f:path: {}
+                  f:port: {}
+                  f:scheme: {}
+                f:initialDelaySeconds: {}
+                f:periodSeconds: {}
+                f:successThreshold: {}
+                f:timeoutSeconds: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/var/lib/rancher/rke2/server/db/etcd"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                k:{"mountPath":"/var/lib/rancher/rke2/server/db/etcd/config"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+                k:{"mountPath":"/var/lib/rancher/rke2/server/tls/etcd/peer-ca.crt"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+                k:{"mountPath":"/var/lib/rancher/rke2/server/tls/etcd/peer-server-client.crt"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+                k:{"mountPath":"/var/lib/rancher/rke2/server/tls/etcd/peer-server-client.key"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+                k:{"mountPath":"/var/lib/rancher/rke2/server/tls/etcd/server-ca.crt"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+                k:{"mountPath":"/var/lib/rancher/rke2/server/tls/etcd/server-client.crt"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+                k:{"mountPath":"/var/lib/rancher/rke2/server/tls/etcd/server-client.key"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:hostNetwork: {}
+          f:nodeName: {}
+          f:priorityClassName: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext: {}
+          f:terminationGracePeriodSeconds: {}
+          f:tolerations: {}
+          f:volumes:
+            .: {}
+            k:{"name":"dir0"}:
+              .: {}
+              f:hostPath:
+                .: {}
+                f:path: {}
+                f:type: {}
+              f:name: {}
+            k:{"name":"file0"}:
+              .: {}
+              f:hostPath:
+                .: {}
+                f:path: {}
+                f:type: {}
+              f:name: {}
+            k:{"name":"file1"}:
+              .: {}
+              f:hostPath:
+                .: {}
+                f:path: {}
+                f:type: {}
+              f:name: {}
+            k:{"name":"file2"}:
+              .: {}
+              f:hostPath:
+                .: {}
+                f:path: {}
+                f:type: {}
+              f:name: {}
+            k:{"name":"file3"}:
+              .: {}
+              f:hostPath:
+                .: {}
+                f:path: {}
+                f:type: {}
+              f:name: {}
+            k:{"name":"file4"}:
+              .: {}
+              f:hostPath:
+                .: {}
+                f:path: {}
+                f:type: {}
+              f:name: {}
+            k:{"name":"file5"}:
+              .: {}
+              f:hostPath:
+                .: {}
+                f:path: {}
+                f:type: {}
+              f:name: {}
+            k:{"name":"file6"}:
+              .: {}
+              f:hostPath:
+                .: {}
+                f:path: {}
+                f:type: {}
+              f:name: {}
+      manager: kubelet
+      operation: Update
+      time: '2025-06-12T07:31:34Z'
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            .: {}
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"PodReadyToStartContainers"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"PodScheduled"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:hostIPs: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"172.31.36.13"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: '2025-06-12T15:36:20Z'
+  name: etcd-gitlab-pointer-pool1-cczkf-rc752
+  namespace: kube-system
+  ownerReferences:
+    - apiVersion: v1
+      controller: true
+      kind: Node
+      name: gitlab-pointer-pool1-cczkf-rc752
+      uid: db6214ad-a078-4bc4-adf6-48ab1c429981
+  resourceVersion: '1196003'
+  uid: 9a07dc37-e3c1-4582-b35c-65ec673a82bb
+spec:
+  containers:
+    - args:
+        - '--config-file=/var/lib/rancher/rke2/server/db/etcd/config'
+      command:
+        - etcd
+      env:
+        - name: FILE_HASH
+          value: 270f4a369c8d7f50a99a2185b278f677e5bd7335e0017ffe4c4d43c107d40bdb
+        - name: NO_PROXY
+          value: .svc,.cluster.local,10.42.0.0/16,10.43.0.0/16
+      image: registry.rancher.com/rancher/hardened-etcd:v3.5.21-k3s1-build20250411
+      imagePullPolicy: IfNotPresent
+      livenessProbe:
+        failureThreshold: 8
+        httpGet:
+          host: localhost
+          path: /health?serializable=true
+          port: 2381
+          scheme: HTTP
+        initialDelaySeconds: 10
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 15
+      name: etcd
+      resources:
+        requests:
+          cpu: 200m
+          memory: 512Mi
+      securityContext:
+        privileged: false
+      startupProbe:
+        failureThreshold: 24
+        httpGet:
+          host: localhost
+          path: /health?serializable=true
+          port: 2381
+          scheme: HTTP
+        initialDelaySeconds: 10
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 5
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+        - mountPath: /var/lib/rancher/rke2/server/db/etcd
+          name: dir0
+        - mountPath: /var/lib/rancher/rke2/server/tls/etcd/server-client.crt
+          name: file0
+          readOnly: true
+        - mountPath: /var/lib/rancher/rke2/server/tls/etcd/server-client.key
+          name: file1
+          readOnly: true
+        - mountPath: /var/lib/rancher/rke2/server/tls/etcd/server-ca.crt
+          name: file2
+          readOnly: true
+        - mountPath: /var/lib/rancher/rke2/server/tls/etcd/peer-server-client.crt
+          name: file3
+          readOnly: true
+        - mountPath: /var/lib/rancher/rke2/server/tls/etcd/peer-server-client.key
+          name: file4
+          readOnly: true
+        - mountPath: /var/lib/rancher/rke2/server/tls/etcd/peer-ca.crt
+          name: file5
+          readOnly: true
+        - mountPath: /var/lib/rancher/rke2/server/db/etcd/config
+          name: file6
+          readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  hostNetwork: true
+  nodeName: gitlab-pointer-pool1-cczkf-rc752
+  preemptionPolicy: PreemptLowerPriority
+  priority: 2000000000
+  priorityClassName: system-cluster-critical
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext: {}
+  terminationGracePeriodSeconds: 30
+  tolerations:
+    - effect: NoExecute
+      operator: Exists
+  volumes:
+    - hostPath:
+        path: /var/lib/rancher/rke2/server/db/etcd
+        type: DirectoryOrCreate
+      name: dir0
+    - hostPath:
+        path: /var/lib/rancher/rke2/server/tls/etcd/server-client.crt
+        type: File
+      name: file0
+    - hostPath:
+        path: /var/lib/rancher/rke2/server/tls/etcd/server-client.key
+        type: File
+      name: file1
+    - hostPath:
+        path: /var/lib/rancher/rke2/server/tls/etcd/server-ca.crt
+        type: File
+      name: file2
+    - hostPath:
+        path: /var/lib/rancher/rke2/server/tls/etcd/peer-server-client.crt
+        type: File
+      name: file3
+    - hostPath:
+        path: /var/lib/rancher/rke2/server/tls/etcd/peer-server-client.key
+        type: File
+      name: file4
+    - hostPath:
+        path: /var/lib/rancher/rke2/server/tls/etcd/peer-ca.crt
+        type: File
+      name: file5
+    - hostPath:
+        path: /var/lib/rancher/rke2/server/db/etcd/config
+        type: File
+      name: file6
+status:
+  conditions:
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-12T15:36:03Z'
+      status: 'True'
+      type: PodReadyToStartContainers
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-12T15:36:03Z'
+      status: 'True'
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-12T15:36:14Z'
+      status: 'True'
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-12T15:36:14Z'
+      status: 'True'
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-12T15:36:03Z'
+      status: 'True'
+      type: PodScheduled
+  containerStatuses:
+    - containerID: >-
+        containerd://2ca4d523208e66c858a97522d5442c1df79e0ff799288d2b3e389ed6f9fc371c
+      image: registry.rancher.com/rancher/hardened-etcd:v3.5.21-k3s1-build20250411
+      imageID: >-
+        registry.rancher.com/rancher/hardened-etcd@sha256:b9431efab37e08579998291a9733837e35d151850126fb13bff853782f9c8813
+      lastState: {}
+      name: etcd
+      ready: true
+      restartCount: 1
+      started: true
+      state:
+        running:
+          startedAt: '2025-06-12T15:36:03Z'
+  hostIP: 172.31.36.13
+  hostIPs:
+    - ip: 172.31.36.13
+  phase: Running
+  podIP: 172.31.36.13
+  podIPs:
+    - ip: 172.31.36.13
+  qosClass: Burstable
+  startTime: '2025-06-12T15:36:03Z'

@@ -1,0 +1,456 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    kubernetes.io/config.hash: d49bc34c6ccbaf953894061e4faea2da
+    kubernetes.io/config.mirror: d49bc34c6ccbaf953894061e4faea2da
+    kubernetes.io/config.seen: '2025-06-12T07:22:21.383550736Z'
+    kubernetes.io/config.source: file
+  creationTimestamp: '2025-06-12T07:22:21Z'
+  labels:
+    component: cloud-controller-manager
+    tier: control-plane
+  managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubernetes.io/config.hash: {}
+            f:kubernetes.io/config.mirror: {}
+            f:kubernetes.io/config.seen: {}
+            f:kubernetes.io/config.source: {}
+          f:labels:
+            .: {}
+            f:component: {}
+            f:tier: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"ab58ce09-0ae1-4d05-9f9a-e79bca35ad3d"}: {}
+        f:spec:
+          f:containers:
+            k:{"name":"cloud-controller-manager"}:
+              .: {}
+              f:args: {}
+              f:command: {}
+              f:env:
+                .: {}
+                k:{"name":"FILE_HASH"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"NO_PROXY"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:livenessProbe:
+                .: {}
+                f:failureThreshold: {}
+                f:httpGet:
+                  .: {}
+                  f:host: {}
+                  f:path: {}
+                  f:port: {}
+                  f:scheme: {}
+                f:initialDelaySeconds: {}
+                f:periodSeconds: {}
+                f:successThreshold: {}
+                f:timeoutSeconds: {}
+              f:name: {}
+              f:resources:
+                .: {}
+                f:requests:
+                  .: {}
+                  f:cpu: {}
+                  f:memory: {}
+              f:securityContext:
+                .: {}
+                f:privileged: {}
+              f:startupProbe:
+                .: {}
+                f:failureThreshold: {}
+                f:httpGet:
+                  .: {}
+                  f:host: {}
+                  f:path: {}
+                  f:port: {}
+                  f:scheme: {}
+                f:initialDelaySeconds: {}
+                f:periodSeconds: {}
+                f:successThreshold: {}
+                f:timeoutSeconds: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/etc/ca-certificates"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                k:{"mountPath":"/etc/ssl/certs"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                k:{"mountPath":"/usr/local/share/ca-certificates"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                k:{"mountPath":"/usr/share/ca-certificates"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                k:{"mountPath":"/var/lib/rancher/rke2/server/cred/cloud-controller.kubeconfig"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+                k:{"mountPath":"/var/lib/rancher/rke2/server/etc/cloud-config.yaml"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+                k:{"mountPath":"/var/lib/rancher/rke2/server/tls/client-rke2-cloud-controller.crt"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+                k:{"mountPath":"/var/lib/rancher/rke2/server/tls/client-rke2-cloud-controller.key"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+                k:{"mountPath":"/var/lib/rancher/rke2/server/tls/server-ca.crt"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:hostNetwork: {}
+          f:nodeName: {}
+          f:priorityClassName: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext: {}
+          f:terminationGracePeriodSeconds: {}
+          f:tolerations: {}
+          f:volumes:
+            .: {}
+            k:{"name":"dir0"}:
+              .: {}
+              f:hostPath:
+                .: {}
+                f:path: {}
+                f:type: {}
+              f:name: {}
+            k:{"name":"dir1"}:
+              .: {}
+              f:hostPath:
+                .: {}
+                f:path: {}
+                f:type: {}
+              f:name: {}
+            k:{"name":"dir2"}:
+              .: {}
+              f:hostPath:
+                .: {}
+                f:path: {}
+                f:type: {}
+              f:name: {}
+            k:{"name":"dir3"}:
+              .: {}
+              f:hostPath:
+                .: {}
+                f:path: {}
+                f:type: {}
+              f:name: {}
+            k:{"name":"file0"}:
+              .: {}
+              f:hostPath:
+                .: {}
+                f:path: {}
+                f:type: {}
+              f:name: {}
+            k:{"name":"file1"}:
+              .: {}
+              f:hostPath:
+                .: {}
+                f:path: {}
+                f:type: {}
+              f:name: {}
+            k:{"name":"file2"}:
+              .: {}
+              f:hostPath:
+                .: {}
+                f:path: {}
+                f:type: {}
+              f:name: {}
+            k:{"name":"file3"}:
+              .: {}
+              f:hostPath:
+                .: {}
+                f:path: {}
+                f:type: {}
+              f:name: {}
+            k:{"name":"file4"}:
+              .: {}
+              f:hostPath:
+                .: {}
+                f:path: {}
+                f:type: {}
+              f:name: {}
+      manager: kubelet
+      operation: Update
+      time: '2025-06-12T07:22:21Z'
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            .: {}
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"PodReadyToStartContainers"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"PodScheduled"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:hostIPs: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"172.31.36.39"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: '2025-06-12T15:36:39Z'
+  name: cloud-controller-manager-gitlab-pointer-pool1-cczkf-vbgtv
+  namespace: kube-system
+  ownerReferences:
+    - apiVersion: v1
+      controller: true
+      kind: Node
+      name: gitlab-pointer-pool1-cczkf-vbgtv
+      uid: ab58ce09-0ae1-4d05-9f9a-e79bca35ad3d
+  resourceVersion: '1196485'
+  uid: 426447e4-f76b-4bac-a152-df4c5cd34803
+spec:
+  containers:
+    - args:
+        - '--allocate-node-cidrs=true'
+        - >-
+          --authentication-kubeconfig=/var/lib/rancher/rke2/server/cred/cloud-controller.kubeconfig
+        - >-
+          --authorization-kubeconfig=/var/lib/rancher/rke2/server/cred/cloud-controller.kubeconfig
+        - '--bind-address=127.0.0.1'
+        - '--cloud-config=/var/lib/rancher/rke2/server/etc/cloud-config.yaml'
+        - '--cloud-provider=rke2'
+        - '--cluster-cidr=10.42.0.0/16'
+        - '--configure-cloud-routes=false'
+        - '--controllers=*,-route,-service'
+        - >-
+          --kubeconfig=/var/lib/rancher/rke2/server/cred/cloud-controller.kubeconfig
+        - '--leader-elect-resource-name=rke2-cloud-controller-manager'
+        - '--node-status-update-frequency=1m0s'
+        - '--profiling=false'
+      command:
+        - cloud-controller-manager
+      env:
+        - name: FILE_HASH
+          value: 6e8cd5d36383edd5bf6900d8343fa52b92d4cd268882aaa45012e6ec924a51a0
+        - name: NO_PROXY
+          value: .svc,.cluster.local,10.42.0.0/16,10.43.0.0/16
+      image: >-
+        registry.rancher.com/rancher/rke2-cloud-provider:v1.31.2-0.20241016053446-0955fa330f90-build20241016
+      imagePullPolicy: IfNotPresent
+      livenessProbe:
+        failureThreshold: 8
+        httpGet:
+          host: localhost
+          path: /healthz
+          port: 10258
+          scheme: HTTPS
+        initialDelaySeconds: 10
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 15
+      name: cloud-controller-manager
+      resources:
+        requests:
+          cpu: 100m
+          memory: 128Mi
+      securityContext:
+        privileged: false
+      startupProbe:
+        failureThreshold: 24
+        httpGet:
+          host: localhost
+          path: /healthz
+          port: 10258
+          scheme: HTTPS
+        initialDelaySeconds: 10
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 5
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+        - mountPath: /etc/ssl/certs
+          name: dir0
+        - mountPath: /etc/ca-certificates
+          name: dir1
+        - mountPath: /usr/local/share/ca-certificates
+          name: dir2
+        - mountPath: /usr/share/ca-certificates
+          name: dir3
+        - mountPath: /var/lib/rancher/rke2/server/cred/cloud-controller.kubeconfig
+          name: file0
+          readOnly: true
+        - mountPath: /var/lib/rancher/rke2/server/etc/cloud-config.yaml
+          name: file1
+          readOnly: true
+        - mountPath: /var/lib/rancher/rke2/server/tls/client-rke2-cloud-controller.crt
+          name: file2
+          readOnly: true
+        - mountPath: /var/lib/rancher/rke2/server/tls/client-rke2-cloud-controller.key
+          name: file3
+          readOnly: true
+        - mountPath: /var/lib/rancher/rke2/server/tls/server-ca.crt
+          name: file4
+          readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  hostNetwork: true
+  nodeName: gitlab-pointer-pool1-cczkf-vbgtv
+  preemptionPolicy: PreemptLowerPriority
+  priority: 2000000000
+  priorityClassName: system-cluster-critical
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext: {}
+  terminationGracePeriodSeconds: 30
+  tolerations:
+    - effect: NoExecute
+      operator: Exists
+  volumes:
+    - hostPath:
+        path: /etc/ssl/certs
+        type: DirectoryOrCreate
+      name: dir0
+    - hostPath:
+        path: /etc/ca-certificates
+        type: DirectoryOrCreate
+      name: dir1
+    - hostPath:
+        path: /usr/local/share/ca-certificates
+        type: DirectoryOrCreate
+      name: dir2
+    - hostPath:
+        path: /usr/share/ca-certificates
+        type: DirectoryOrCreate
+      name: dir3
+    - hostPath:
+        path: /var/lib/rancher/rke2/server/cred/cloud-controller.kubeconfig
+        type: File
+      name: file0
+    - hostPath:
+        path: /var/lib/rancher/rke2/server/etc/cloud-config.yaml
+        type: File
+      name: file1
+    - hostPath:
+        path: /var/lib/rancher/rke2/server/tls/client-rke2-cloud-controller.crt
+        type: File
+      name: file2
+    - hostPath:
+        path: /var/lib/rancher/rke2/server/tls/client-rke2-cloud-controller.key
+        type: File
+      name: file3
+    - hostPath:
+        path: /var/lib/rancher/rke2/server/tls/server-ca.crt
+        type: File
+      name: file4
+status:
+  conditions:
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-12T15:36:02Z'
+      status: 'True'
+      type: PodReadyToStartContainers
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-12T15:36:01Z'
+      status: 'True'
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-12T15:36:39Z'
+      status: 'True'
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-12T15:36:39Z'
+      status: 'True'
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-12T15:36:01Z'
+      status: 'True'
+      type: PodScheduled
+  containerStatuses:
+    - containerID: >-
+        containerd://f1206c5ab8817ab7cc96e6ec82ecb373e8df0148c842f2e8b55c1afda9df0ed4
+      image: >-
+        registry.rancher.com/rancher/rke2-cloud-provider:v1.31.2-0.20241016053446-0955fa330f90-build20241016
+      imageID: >-
+        registry.rancher.com/rancher/rke2-cloud-provider@sha256:67af052d966889717f54361e06a7129a882bb8790dc99ddd53cf49c2d2d7021f
+      lastState:
+        terminated:
+          containerID: >-
+            containerd://291718de7002d5044fe1d77ff66ca229b4f3feaabf14059f6a05d85aed7c3b2f
+          exitCode: 2
+          finishedAt: '2025-06-12T15:36:03Z'
+          reason: Error
+          startedAt: '2025-06-12T15:36:02Z'
+      name: cloud-controller-manager
+      ready: true
+      restartCount: 2
+      started: true
+      state:
+        running:
+          startedAt: '2025-06-12T15:36:20Z'
+  hostIP: 172.31.36.39
+  hostIPs:
+    - ip: 172.31.36.39
+  phase: Running
+  podIP: 172.31.36.39
+  podIPs:
+    - ip: 172.31.36.39
+  qosClass: Burstable
+  startTime: '2025-06-12T15:36:01Z'

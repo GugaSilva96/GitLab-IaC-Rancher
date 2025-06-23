@@ -1,0 +1,82 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  annotations:
+    meta.helm.sh/release-name: gitlab
+    meta.helm.sh/release-namespace: gitlab-o3s
+  creationTimestamp: '2025-06-13T15:46:15Z'
+  generation: 1
+  labels:
+    app: registry
+    app.kubernetes.io/managed-by: Helm
+    chart: registry-0.7.0
+    heritage: Helm
+    release: gitlab
+  managedFields:
+    - apiVersion: policy/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:chart: {}
+            f:heritage: {}
+            f:release: {}
+        f:spec:
+          f:maxUnavailable: {}
+          f:selector: {}
+      manager: helm
+      operation: Update
+      time: '2025-06-13T15:46:15Z'
+    - apiVersion: policy/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            .: {}
+            k:{"type":"DisruptionAllowed"}:
+              .: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:observedGeneration: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+          f:currentHealthy: {}
+          f:desiredHealthy: {}
+          f:disruptionsAllowed: {}
+          f:expectedPods: {}
+          f:observedGeneration: {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: status
+      time: '2025-06-14T00:52:24Z'
+  name: gitlab-registry-v1
+  namespace: gitlab-o3s
+  resourceVersion: '2004506'
+  uid: 24f72ec4-f2f5-45a2-8ef8-9c4665a61d5f
+spec:
+  maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: registry
+      release: gitlab
+status:
+  conditions:
+    - lastTransitionTime: '2025-06-13T15:46:43Z'
+      message: ''
+      observedGeneration: 1
+      reason: SufficientPods
+      status: 'True'
+      type: DisruptionAllowed
+  currentHealthy: 2
+  desiredHealthy: 1
+  disruptionsAllowed: 1
+  expectedPods: 2
+  observedGeneration: 1

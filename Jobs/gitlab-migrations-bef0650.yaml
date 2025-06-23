@@ -1,0 +1,489 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  annotations:
+    meta.helm.sh/release-name: gitlab
+    meta.helm.sh/release-namespace: gitlab-o3s
+  creationTimestamp: '2025-06-14T06:51:36Z'
+  generation: 1
+  labels:
+    app: migrations
+    app.kubernetes.io/managed-by: Helm
+    chart: migrations-9.0.2
+    heritage: Helm
+    release: gitlab
+  managedFields:
+    - apiVersion: batch/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:chart: {}
+            f:heritage: {}
+            f:release: {}
+        f:spec:
+          f:activeDeadlineSeconds: {}
+          f:backoffLimit: {}
+          f:completionMode: {}
+          f:completions: {}
+          f:manualSelector: {}
+          f:parallelism: {}
+          f:podReplacementPolicy: {}
+          f:suspend: {}
+          f:template:
+            f:metadata:
+              f:labels:
+                .: {}
+                f:app: {}
+                f:chart: {}
+                f:heritage: {}
+                f:release: {}
+            f:spec:
+              f:automountServiceAccountToken: {}
+              f:containers:
+                k:{"name":"migrations"}:
+                  .: {}
+                  f:args: {}
+                  f:env:
+                    .: {}
+                    k:{"name":"BYPASS_SCHEMA_VERSION"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CONFIG_DIRECTORY"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CONFIG_TEMPLATE_DIRECTORY"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"ENABLE_BOOTSNAP"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"TZ"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:name: {}
+                  f:resources:
+                    .: {}
+                    f:requests:
+                      .: {}
+                      f:cpu: {}
+                      f:memory: {}
+                  f:securityContext:
+                    .: {}
+                    f:allowPrivilegeEscalation: {}
+                    f:capabilities:
+                      .: {}
+                      f:drop: {}
+                    f:runAsNonRoot: {}
+                    f:runAsUser: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+                  f:volumeMounts:
+                    .: {}
+                    k:{"mountPath":"/etc/gitlab"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:readOnly: {}
+                    k:{"mountPath":"/etc/pki/ca-trust/extracted/pem"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:readOnly: {}
+                    k:{"mountPath":"/etc/ssl/certs/"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:readOnly: {}
+                    k:{"mountPath":"/srv/gitlab/config/gitlab_shared_runners_registration_token"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:subPath: {}
+                    k:{"mountPath":"/srv/gitlab/config/initial_root_password"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:subPath: {}
+                    k:{"mountPath":"/srv/gitlab/config/secrets.yml"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:subPath: {}
+                    k:{"mountPath":"/var/opt/gitlab/templates"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+              f:dnsPolicy: {}
+              f:initContainers:
+                .: {}
+                k:{"name":"certificates"}:
+                  .: {}
+                  f:env:
+                    .: {}
+                    k:{"name":"TZ"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:name: {}
+                  f:resources:
+                    .: {}
+                    f:requests:
+                      .: {}
+                      f:cpu: {}
+                  f:securityContext:
+                    .: {}
+                    f:allowPrivilegeEscalation: {}
+                    f:capabilities:
+                      .: {}
+                      f:drop: {}
+                    f:runAsNonRoot: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+                  f:volumeMounts:
+                    .: {}
+                    k:{"mountPath":"/etc/pki/ca-trust/extracted/pem"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                    k:{"mountPath":"/etc/ssl/certs"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                k:{"name":"configure"}:
+                  .: {}
+                  f:command: {}
+                  f:env:
+                    .: {}
+                    k:{"name":"TZ"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:name: {}
+                  f:resources:
+                    .: {}
+                    f:requests:
+                      .: {}
+                      f:cpu: {}
+                  f:securityContext:
+                    .: {}
+                    f:allowPrivilegeEscalation: {}
+                    f:capabilities:
+                      .: {}
+                      f:drop: {}
+                    f:runAsNonRoot: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+                  f:volumeMounts:
+                    .: {}
+                    k:{"mountPath":"/config"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:readOnly: {}
+                    k:{"mountPath":"/init-config"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:readOnly: {}
+                    k:{"mountPath":"/init-secrets"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+              f:restartPolicy: {}
+              f:schedulerName: {}
+              f:securityContext:
+                .: {}
+                f:fsGroup: {}
+                f:runAsUser: {}
+                f:seccompProfile:
+                  .: {}
+                  f:type: {}
+              f:terminationGracePeriodSeconds: {}
+              f:volumes:
+                .: {}
+                k:{"name":"etc-pki-ca-trust-extracted-pem"}:
+                  .: {}
+                  f:emptyDir:
+                    .: {}
+                    f:medium: {}
+                  f:name: {}
+                k:{"name":"etc-ssl-certs"}:
+                  .: {}
+                  f:emptyDir:
+                    .: {}
+                    f:medium: {}
+                  f:name: {}
+                k:{"name":"init-migrations-secrets"}:
+                  .: {}
+                  f:name: {}
+                  f:projected:
+                    .: {}
+                    f:defaultMode: {}
+                    f:sources: {}
+                k:{"name":"migrations-config"}:
+                  .: {}
+                  f:configMap:
+                    .: {}
+                    f:defaultMode: {}
+                    f:name: {}
+                  f:name: {}
+                k:{"name":"migrations-secrets"}:
+                  .: {}
+                  f:emptyDir:
+                    .: {}
+                    f:medium: {}
+                  f:name: {}
+      manager: helm
+      operation: Update
+      time: '2025-06-14T06:51:36Z'
+    - apiVersion: batch/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:completionTime: {}
+          f:conditions: {}
+          f:ready: {}
+          f:startTime: {}
+          f:succeeded: {}
+          f:terminating: {}
+          f:uncountedTerminatedPods: {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: status
+      time: '2025-06-14T06:52:30Z'
+  name: gitlab-migrations-bef0650
+  namespace: gitlab-o3s
+  resourceVersion: '2145773'
+  uid: a986cefc-56af-41eb-bf00-33cfa8bdfb00
+spec:
+  activeDeadlineSeconds: 3600
+  backoffLimit: 6
+  completionMode: NonIndexed
+  completions: 1
+  manualSelector: false
+  parallelism: 1
+  podReplacementPolicy: TerminatingOrFailed
+  selector:
+    matchLabels:
+      batch.kubernetes.io/controller-uid: a986cefc-56af-41eb-bf00-33cfa8bdfb00
+  suspend: false
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: migrations
+        batch.kubernetes.io/controller-uid: a986cefc-56af-41eb-bf00-33cfa8bdfb00
+        batch.kubernetes.io/job-name: gitlab-migrations-bef0650
+        chart: migrations-9.0.2
+        controller-uid: a986cefc-56af-41eb-bf00-33cfa8bdfb00
+        heritage: Helm
+        job-name: gitlab-migrations-bef0650
+        release: gitlab
+    spec:
+      automountServiceAccountToken: false
+      containers:
+        - args:
+            - /bin/bash
+            - '-c'
+            - |
+              set -e;
+              /scripts/wait-for-deps;
+              /scripts/db-migrate;
+                                  
+          env:
+            - name: CONFIG_TEMPLATE_DIRECTORY
+              value: /var/opt/gitlab/templates
+            - name: CONFIG_DIRECTORY
+              value: /srv/gitlab/config
+            - name: BYPASS_SCHEMA_VERSION
+              value: 'true'
+            - name: ENABLE_BOOTSNAP
+              value: '1'
+            - name: TZ
+              value: America/Sao_Paulo
+          image: registry.gitlab.com/gitlab-org/build/cng/gitlab-toolbox-ee:v18.0.2
+          imagePullPolicy: IfNotPresent
+          name: migrations
+          resources:
+            requests:
+              cpu: 250m
+              memory: 200Mi
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+            runAsNonRoot: true
+            runAsUser: 1000
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+            - mountPath: /var/opt/gitlab/templates
+              name: migrations-config
+            - mountPath: /etc/gitlab
+              name: migrations-secrets
+              readOnly: true
+            - mountPath: /srv/gitlab/config/secrets.yml
+              name: migrations-secrets
+              subPath: rails-secrets/secrets.yml
+            - mountPath: /srv/gitlab/config/initial_root_password
+              name: migrations-secrets
+              subPath: migrations/initial_root_password
+            - mountPath: /srv/gitlab/config/gitlab_shared_runners_registration_token
+              name: migrations-secrets
+              subPath: migrations/gitlab_shared_runners_registration_token
+            - mountPath: /etc/ssl/certs/
+              name: etc-ssl-certs
+              readOnly: true
+            - mountPath: /etc/pki/ca-trust/extracted/pem
+              name: etc-pki-ca-trust-extracted-pem
+              readOnly: true
+      dnsPolicy: ClusterFirst
+      initContainers:
+        - env:
+            - name: TZ
+              value: America/Sao_Paulo
+          image: registry.gitlab.com/gitlab-org/build/cng/certificates:v18.0.2
+          imagePullPolicy: IfNotPresent
+          name: certificates
+          resources:
+            requests:
+              cpu: 50m
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+            runAsNonRoot: true
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+            - mountPath: /etc/ssl/certs
+              name: etc-ssl-certs
+            - mountPath: /etc/pki/ca-trust/extracted/pem
+              name: etc-pki-ca-trust-extracted-pem
+        - command:
+            - sh
+            - /config/configure
+          env:
+            - name: TZ
+              value: America/Sao_Paulo
+          image: registry.gitlab.com/gitlab-org/build/cng/gitlab-base:v18.0.2
+          imagePullPolicy: IfNotPresent
+          name: configure
+          resources:
+            requests:
+              cpu: 50m
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+            runAsNonRoot: true
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+            - mountPath: /config
+              name: migrations-config
+              readOnly: true
+            - mountPath: /init-config
+              name: init-migrations-secrets
+              readOnly: true
+            - mountPath: /init-secrets
+              name: migrations-secrets
+      restartPolicy: OnFailure
+      schedulerName: default-scheduler
+      securityContext:
+        fsGroup: 1000
+        runAsUser: 1000
+        seccompProfile:
+          type: RuntimeDefault
+      terminationGracePeriodSeconds: 30
+      volumes:
+        - configMap:
+            defaultMode: 420
+            name: gitlab-migrations
+          name: migrations-config
+        - name: init-migrations-secrets
+          projected:
+            defaultMode: 256
+            sources:
+              - secret:
+                  items:
+                    - key: secrets.yml
+                      path: rails-secrets/secrets.yml
+                  name: gitlab-rails-secret
+              - secret:
+                  items:
+                    - key: token
+                      path: gitaly/gitaly_token
+                  name: gitlab-gitaly-secret
+              - secret:
+                  items:
+                    - key: postgresql-postgres-password
+                      path: postgres/psql-password-ci
+                  name: gitlab-postgresql-password
+              - secret:
+                  items:
+                    - key: postgresql-postgres-password
+                      path: postgres/psql-password-main
+                  name: gitlab-postgresql-password
+              - secret:
+                  items:
+                    - key: password
+                      path: migrations/initial_root_password
+                  name: gitlab-gitlab-initial-root-password
+              - secret:
+                  items:
+                    - key: runner-registration-token
+                      path: migrations/gitlab_shared_runners_registration_token
+                  name: gitlab-gitlab-runner-secret
+                  optional: true
+        - emptyDir:
+            medium: Memory
+          name: migrations-secrets
+        - emptyDir:
+            medium: Memory
+          name: etc-ssl-certs
+        - emptyDir:
+            medium: Memory
+          name: etc-pki-ca-trust-extracted-pem
+status:
+  completionTime: '2025-06-14T06:52:30Z'
+  conditions:
+    - lastProbeTime: '2025-06-14T06:52:30Z'
+      lastTransitionTime: '2025-06-14T06:52:30Z'
+      message: Reached expected number of succeeded pods
+      reason: CompletionsReached
+      status: 'True'
+      type: SuccessCriteriaMet
+    - lastProbeTime: '2025-06-14T06:52:30Z'
+      lastTransitionTime: '2025-06-14T06:52:30Z'
+      message: Reached expected number of succeeded pods
+      reason: CompletionsReached
+      status: 'True'
+      type: Complete
+  ready: 0
+  startTime: '2025-06-14T06:51:36Z'
+  succeeded: 1
+  terminating: 0
+  uncountedTerminatedPods: {}

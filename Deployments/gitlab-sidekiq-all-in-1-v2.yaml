@@ -1,0 +1,868 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: '7'
+    meta.helm.sh/release-name: gitlab
+    meta.helm.sh/release-namespace: gitlab-o3s
+  creationTimestamp: '2025-06-13T15:46:17Z'
+  generation: 7
+  labels:
+    app: sidekiq
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: gitlab
+    app.kubernetes.io/version: v18.0.2
+    chart: sidekiq-9.0.2
+    heritage: Helm
+    queue-pod-name: all-in-1
+    release: gitlab
+  managedFields:
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          f:template:
+            f:metadata:
+              f:annotations:
+                f:cattle.io/timestamp: {}
+      manager: agent
+      operation: Update
+      time: '2025-06-14T01:21:58Z'
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/version: {}
+            f:chart: {}
+            f:heritage: {}
+            f:queue-pod-name: {}
+            f:release: {}
+        f:spec:
+          f:progressDeadlineSeconds: {}
+          f:replicas: {}
+          f:revisionHistoryLimit: {}
+          f:selector: {}
+          f:strategy:
+            f:rollingUpdate:
+              .: {}
+              f:maxSurge: {}
+              f:maxUnavailable: {}
+            f:type: {}
+          f:template:
+            f:metadata:
+              f:annotations:
+                .: {}
+                f:checksum/configmap: {}
+                f:cluster-autoscaler.kubernetes.io/safe-to-evict: {}
+                f:gitlab.com/prometheus_path: {}
+                f:gitlab.com/prometheus_port: {}
+                f:gitlab.com/prometheus_scrape: {}
+                f:prometheus.io/path: {}
+                f:prometheus.io/port: {}
+                f:prometheus.io/scrape: {}
+              f:labels:
+                .: {}
+                f:app: {}
+                f:app.kubernetes.io/name: {}
+                f:app.kubernetes.io/version: {}
+                f:chart: {}
+                f:heritage: {}
+                f:queue-pod-name: {}
+                f:release: {}
+            f:spec:
+              f:affinity:
+                .: {}
+                f:podAntiAffinity:
+                  .: {}
+                  f:preferredDuringSchedulingIgnoredDuringExecution: {}
+              f:automountServiceAccountToken: {}
+              f:containers:
+                k:{"name":"sidekiq"}:
+                  .: {}
+                  f:env:
+                    .: {}
+                    k:{"name":"CONFIG_DIRECTORY"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CONFIG_TEMPLATE_DIRECTORY"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"ENABLE_BOOTSNAP"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"GITALY_FEATURE_DEFAULT_ON"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"SIDEKIQ_CONCURRENCY"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"SIDEKIQ_DAEMON_MEMORY_KILLER"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"SIDEKIQ_MEMORY_KILLER_CHECK_INTERVAL"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"SIDEKIQ_MEMORY_KILLER_GRACE_TIME"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"SIDEKIQ_MEMORY_KILLER_MAX_RSS"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"SIDEKIQ_MEMORY_KILLER_SHUTDOWN_WAIT"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"SIDEKIQ_QUEUES"}:
+                      .: {}
+                      f:name: {}
+                    k:{"name":"SIDEKIQ_TIMEOUT"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"TZ"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"prometheus_multiproc_dir"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:lifecycle:
+                    .: {}
+                    f:preStop:
+                      .: {}
+                      f:exec:
+                        .: {}
+                        f:command: {}
+                  f:livenessProbe:
+                    .: {}
+                    f:failureThreshold: {}
+                    f:httpGet:
+                      .: {}
+                      f:path: {}
+                      f:port: {}
+                      f:scheme: {}
+                    f:initialDelaySeconds: {}
+                    f:periodSeconds: {}
+                    f:successThreshold: {}
+                    f:timeoutSeconds: {}
+                  f:name: {}
+                  f:ports:
+                    .: {}
+                    k:{"containerPort":3807,"protocol":"TCP"}:
+                      .: {}
+                      f:containerPort: {}
+                      f:name: {}
+                      f:protocol: {}
+                  f:readinessProbe:
+                    .: {}
+                    f:failureThreshold: {}
+                    f:httpGet:
+                      .: {}
+                      f:path: {}
+                      f:port: {}
+                      f:scheme: {}
+                    f:periodSeconds: {}
+                    f:successThreshold: {}
+                    f:timeoutSeconds: {}
+                  f:resources:
+                    .: {}
+                    f:limits:
+                      .: {}
+                      f:cpu: {}
+                      f:memory: {}
+                    f:requests:
+                      .: {}
+                      f:cpu: {}
+                      f:memory: {}
+                  f:securityContext:
+                    .: {}
+                    f:allowPrivilegeEscalation: {}
+                    f:capabilities:
+                      .: {}
+                      f:drop: {}
+                    f:runAsNonRoot: {}
+                    f:runAsUser: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+                  f:volumeMounts:
+                    .: {}
+                    k:{"mountPath":"/etc/gitlab"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:readOnly: {}
+                    k:{"mountPath":"/etc/krb5.conf"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:subPath: {}
+                    k:{"mountPath":"/etc/pki/ca-trust/extracted/pem"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:readOnly: {}
+                    k:{"mountPath":"/etc/ssl/certs/"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:readOnly: {}
+                    k:{"mountPath":"/metrics"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                    k:{"mountPath":"/srv/gitlab/INSTALLATION_TYPE"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:subPath: {}
+                    k:{"mountPath":"/srv/gitlab/config/initializers/smtp_settings.rb"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:subPath: {}
+                    k:{"mountPath":"/srv/gitlab/config/secrets.yml"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:subPath: {}
+                    k:{"mountPath":"/var/opt/gitlab/templates"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:readOnly: {}
+              f:dnsPolicy: {}
+              f:initContainers:
+                .: {}
+                k:{"name":"certificates"}:
+                  .: {}
+                  f:env:
+                    .: {}
+                    k:{"name":"TZ"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:name: {}
+                  f:resources:
+                    .: {}
+                    f:requests:
+                      .: {}
+                      f:cpu: {}
+                  f:securityContext:
+                    .: {}
+                    f:allowPrivilegeEscalation: {}
+                    f:capabilities:
+                      .: {}
+                      f:drop: {}
+                    f:runAsNonRoot: {}
+                    f:runAsUser: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+                  f:volumeMounts:
+                    .: {}
+                    k:{"mountPath":"/etc/pki/ca-trust/extracted/pem"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                    k:{"mountPath":"/etc/ssl/certs"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                k:{"name":"configure"}:
+                  .: {}
+                  f:command: {}
+                  f:env:
+                    .: {}
+                    k:{"name":"TZ"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:name: {}
+                  f:resources:
+                    .: {}
+                    f:requests:
+                      .: {}
+                      f:cpu: {}
+                  f:securityContext:
+                    .: {}
+                    f:allowPrivilegeEscalation: {}
+                    f:capabilities:
+                      .: {}
+                      f:drop: {}
+                    f:runAsNonRoot: {}
+                    f:runAsUser: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+                  f:volumeMounts:
+                    .: {}
+                    k:{"mountPath":"/config"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:readOnly: {}
+                    k:{"mountPath":"/init-config"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:readOnly: {}
+                    k:{"mountPath":"/init-secrets"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                k:{"name":"dependencies"}:
+                  .: {}
+                  f:args: {}
+                  f:env:
+                    .: {}
+                    k:{"name":"CONFIG_DIRECTORY"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CONFIG_TEMPLATE_DIRECTORY"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"ENABLE_BOOTSNAP"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"GITALY_FEATURE_DEFAULT_ON"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"SIDEKIQ_CONCURRENCY"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"SIDEKIQ_TIMEOUT"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"TZ"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:name: {}
+                  f:resources:
+                    .: {}
+                    f:requests:
+                      .: {}
+                      f:cpu: {}
+                  f:securityContext:
+                    .: {}
+                    f:allowPrivilegeEscalation: {}
+                    f:capabilities:
+                      .: {}
+                      f:drop: {}
+                    f:runAsNonRoot: {}
+                    f:runAsUser: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+                  f:volumeMounts:
+                    .: {}
+                    k:{"mountPath":"/etc/gitlab"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:readOnly: {}
+                    k:{"mountPath":"/etc/pki/ca-trust/extracted/pem"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:readOnly: {}
+                    k:{"mountPath":"/etc/ssl/certs/"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:readOnly: {}
+                    k:{"mountPath":"/srv/gitlab/config/secrets.yml"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:readOnly: {}
+                      f:subPath: {}
+                    k:{"mountPath":"/var/opt/gitlab/templates"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:readOnly: {}
+              f:restartPolicy: {}
+              f:schedulerName: {}
+              f:securityContext:
+                .: {}
+                f:fsGroup: {}
+                f:runAsUser: {}
+                f:seccompProfile:
+                  .: {}
+                  f:type: {}
+              f:terminationGracePeriodSeconds: {}
+              f:volumes:
+                .: {}
+                k:{"name":"etc-pki-ca-trust-extracted-pem"}:
+                  .: {}
+                  f:emptyDir:
+                    .: {}
+                    f:medium: {}
+                  f:name: {}
+                k:{"name":"etc-ssl-certs"}:
+                  .: {}
+                  f:emptyDir:
+                    .: {}
+                    f:medium: {}
+                  f:name: {}
+                k:{"name":"init-sidekiq-secrets"}:
+                  .: {}
+                  f:name: {}
+                  f:projected:
+                    .: {}
+                    f:defaultMode: {}
+                    f:sources: {}
+                k:{"name":"sidekiq-config"}:
+                  .: {}
+                  f:name: {}
+                  f:projected:
+                    .: {}
+                    f:defaultMode: {}
+                    f:sources: {}
+                k:{"name":"sidekiq-metrics"}:
+                  .: {}
+                  f:emptyDir:
+                    .: {}
+                    f:medium: {}
+                  f:name: {}
+                k:{"name":"sidekiq-secrets"}:
+                  .: {}
+                  f:emptyDir:
+                    .: {}
+                    f:medium: {}
+                  f:name: {}
+      manager: helm
+      operation: Update
+      time: '2025-06-14T01:34:13Z'
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:deployment.kubernetes.io/revision: {}
+        f:status:
+          f:availableReplicas: {}
+          f:conditions:
+            .: {}
+            k:{"type":"Available"}:
+              .: {}
+              f:lastTransitionTime: {}
+              f:lastUpdateTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Progressing"}:
+              .: {}
+              f:lastTransitionTime: {}
+              f:lastUpdateTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+          f:observedGeneration: {}
+          f:readyReplicas: {}
+          f:replicas: {}
+          f:updatedReplicas: {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: status
+      time: '2025-06-14T01:38:53Z'
+  name: gitlab-sidekiq-all-in-1-v2
+  namespace: gitlab-o3s
+  resourceVersion: '2024226'
+  uid: 1d4dd1de-b82a-403c-b7f9-1a32e12c2e05
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: sidekiq
+      queue-pod-name: all-in-1
+      release: gitlab
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: '2025-06-14T01:21:54Z'
+        checksum/configmap: 7feae869ba77c247676a8b9284665f2fc4b9a9806a370780fcc52dcf9e8d0e42
+        cluster-autoscaler.kubernetes.io/safe-to-evict: 'true'
+        gitlab.com/prometheus_path: /metrics
+        gitlab.com/prometheus_port: '3807'
+        gitlab.com/prometheus_scrape: 'true'
+        prometheus.io/path: /metrics
+        prometheus.io/port: '3807'
+        prometheus.io/scrape: 'true'
+      creationTimestamp: null
+      labels:
+        app: sidekiq
+        app.kubernetes.io/name: gitlab
+        app.kubernetes.io/version: v18.0.2
+        chart: sidekiq-9.0.2
+        heritage: Helm
+        queue-pod-name: all-in-1
+        release: gitlab
+    spec:
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - podAffinityTerm:
+                labelSelector:
+                  matchLabels:
+                    app: sidekiq
+                    release: gitlab
+                topologyKey: kubernetes.io/hostname
+              weight: 1
+      automountServiceAccountToken: false
+      containers:
+        - env:
+            - name: prometheus_multiproc_dir
+              value: /metrics
+            - name: GITALY_FEATURE_DEFAULT_ON
+              value: '1'
+            - name: CONFIG_TEMPLATE_DIRECTORY
+              value: /var/opt/gitlab/templates
+            - name: CONFIG_DIRECTORY
+              value: /srv/gitlab/config
+            - name: SIDEKIQ_CONCURRENCY
+              value: '20'
+            - name: SIDEKIQ_TIMEOUT
+              value: '25'
+            - name: SIDEKIQ_QUEUES
+            - name: SIDEKIQ_DAEMON_MEMORY_KILLER
+              value: '1'
+            - name: SIDEKIQ_MEMORY_KILLER_CHECK_INTERVAL
+              value: '3'
+            - name: SIDEKIQ_MEMORY_KILLER_MAX_RSS
+              value: '2000000'
+            - name: SIDEKIQ_MEMORY_KILLER_GRACE_TIME
+              value: '900'
+            - name: SIDEKIQ_MEMORY_KILLER_SHUTDOWN_WAIT
+              value: '30'
+            - name: ENABLE_BOOTSNAP
+              value: '1'
+            - name: TZ
+              value: America/Sao_Paulo
+          image: registry.gitlab.com/gitlab-org/build/cng/gitlab-sidekiq-ee:v18.0.2
+          imagePullPolicy: IfNotPresent
+          lifecycle:
+            preStop:
+              exec:
+                command:
+                  - /bin/bash
+                  - '-c'
+                  - pkill -f 'sidekiq'
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /liveness
+              port: 3808
+              scheme: HTTP
+            initialDelaySeconds: 20
+            periodSeconds: 60
+            successThreshold: 1
+            timeoutSeconds: 30
+          name: sidekiq
+          ports:
+            - containerPort: 3807
+              name: http-metrics
+              protocol: TCP
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /readiness
+              port: 3808
+              scheme: HTTP
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 2
+          resources:
+            limits:
+              cpu: 500m
+              memory: 1536Mi
+            requests:
+              cpu: 150m
+              memory: 800Mi
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+            runAsNonRoot: true
+            runAsUser: 1000
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+            - mountPath: /metrics
+              name: sidekiq-metrics
+            - mountPath: /var/opt/gitlab/templates
+              name: sidekiq-config
+              readOnly: true
+            - mountPath: /etc/gitlab
+              name: sidekiq-secrets
+              readOnly: true
+            - mountPath: /srv/gitlab/config/secrets.yml
+              name: sidekiq-secrets
+              subPath: rails-secrets/secrets.yml
+            - mountPath: /etc/krb5.conf
+              name: sidekiq-config
+              subPath: krb5.conf
+            - mountPath: /srv/gitlab/config/initializers/smtp_settings.rb
+              name: sidekiq-config
+              subPath: smtp_settings.rb
+            - mountPath: /srv/gitlab/INSTALLATION_TYPE
+              name: sidekiq-config
+              subPath: installation_type
+            - mountPath: /etc/ssl/certs/
+              name: etc-ssl-certs
+              readOnly: true
+            - mountPath: /etc/pki/ca-trust/extracted/pem
+              name: etc-pki-ca-trust-extracted-pem
+              readOnly: true
+      dnsPolicy: ClusterFirst
+      initContainers:
+        - env:
+            - name: TZ
+              value: America/Sao_Paulo
+          image: registry.gitlab.com/gitlab-org/build/cng/certificates:v18.0.2
+          imagePullPolicy: IfNotPresent
+          name: certificates
+          resources:
+            requests:
+              cpu: 50m
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+            runAsNonRoot: true
+            runAsUser: 1000
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+            - mountPath: /etc/ssl/certs
+              name: etc-ssl-certs
+            - mountPath: /etc/pki/ca-trust/extracted/pem
+              name: etc-pki-ca-trust-extracted-pem
+        - command:
+            - sh
+            - /config/configure
+          env:
+            - name: TZ
+              value: America/Sao_Paulo
+          image: registry.gitlab.com/gitlab-org/build/cng/gitlab-base:v18.0.2
+          imagePullPolicy: IfNotPresent
+          name: configure
+          resources:
+            requests:
+              cpu: 50m
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+            runAsNonRoot: true
+            runAsUser: 1000
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+            - mountPath: /config
+              name: sidekiq-config
+              readOnly: true
+            - mountPath: /init-config
+              name: init-sidekiq-secrets
+              readOnly: true
+            - mountPath: /init-secrets
+              name: sidekiq-secrets
+        - args:
+            - /scripts/wait-for-deps
+          env:
+            - name: GITALY_FEATURE_DEFAULT_ON
+              value: '1'
+            - name: CONFIG_TEMPLATE_DIRECTORY
+              value: /var/opt/gitlab/templates
+            - name: CONFIG_DIRECTORY
+              value: /srv/gitlab/config
+            - name: SIDEKIQ_CONCURRENCY
+              value: '20'
+            - name: SIDEKIQ_TIMEOUT
+              value: '25'
+            - name: ENABLE_BOOTSNAP
+              value: '1'
+            - name: TZ
+              value: America/Sao_Paulo
+          image: registry.gitlab.com/gitlab-org/build/cng/gitlab-sidekiq-ee:v18.0.2
+          imagePullPolicy: IfNotPresent
+          name: dependencies
+          resources:
+            requests:
+              cpu: 50m
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+            runAsNonRoot: true
+            runAsUser: 1000
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+            - mountPath: /etc/ssl/certs/
+              name: etc-ssl-certs
+              readOnly: true
+            - mountPath: /etc/pki/ca-trust/extracted/pem
+              name: etc-pki-ca-trust-extracted-pem
+              readOnly: true
+            - mountPath: /var/opt/gitlab/templates
+              name: sidekiq-config
+              readOnly: true
+            - mountPath: /etc/gitlab
+              name: sidekiq-secrets
+              readOnly: true
+            - mountPath: /srv/gitlab/config/secrets.yml
+              name: sidekiq-secrets
+              readOnly: true
+              subPath: rails-secrets/secrets.yml
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext:
+        fsGroup: 1000
+        runAsUser: 1000
+        seccompProfile:
+          type: RuntimeDefault
+      terminationGracePeriodSeconds: 30
+      volumes:
+        - emptyDir:
+            medium: Memory
+          name: sidekiq-metrics
+        - name: sidekiq-config
+          projected:
+            defaultMode: 420
+            sources:
+              - configMap:
+                  name: gitlab-sidekiq
+        - name: init-sidekiq-secrets
+          projected:
+            defaultMode: 256
+            sources:
+              - secret:
+                  items:
+                    - key: secrets.yml
+                      path: rails-secrets/secrets.yml
+                  name: gitlab-rails-secret
+              - secret:
+                  items:
+                    - key: token
+                      path: gitaly/gitaly_token
+                  name: gitlab-gitaly-secret
+              - secret:
+                  items:
+                    - key: postgresql-postgres-password
+                      path: postgres/psql-password-ci
+                  name: gitlab-postgresql-password
+              - secret:
+                  items:
+                    - key: postgresql-postgres-password
+                      path: postgres/psql-password-main
+                  name: gitlab-postgresql-password
+              - secret:
+                  items:
+                    - key: registry-auth.key
+                      path: registry/gitlab-registry.key
+                  name: gitlab-registry-secret
+              - secret:
+                  items:
+                    - key: secret
+                      path: registry/notificationSecret
+                  name: gitlab-registry-notification
+              - secret:
+                  items:
+                    - key: kas_shared_secret
+                      path: kas/.gitlab_kas_secret
+                  name: gitlab-gitlab-kas-secret
+              - secret:
+                  items:
+                    - key: suggested_reviewers_secret
+                      path: suggested_reviewers/.gitlab_suggested_reviewers_secret
+                  name: gitlab-gitlab-suggested-reviewers
+              - secret:
+                  items:
+                    - key: gitlab_username
+                      path: zoekt/.gitlab_zoekt_username
+                    - key: gitlab_password
+                      path: zoekt/.gitlab_zoekt_password
+                  name: gitlab-zoekt-basicauth
+                  optional: true
+              - secret:
+                  items:
+                    - key: accesskey
+                      path: minio/accesskey
+                    - key: secretkey
+                      path: minio/secretkey
+                  name: gitlab-minio-secret
+        - emptyDir:
+            medium: Memory
+          name: sidekiq-secrets
+        - emptyDir:
+            medium: Memory
+          name: etc-ssl-certs
+        - emptyDir:
+            medium: Memory
+          name: etc-pki-ca-trust-extracted-pem
+status:
+  availableReplicas: 1
+  conditions:
+    - lastTransitionTime: '2025-06-13T15:48:48Z'
+      lastUpdateTime: '2025-06-13T15:48:48Z'
+      message: Deployment has minimum availability.
+      reason: MinimumReplicasAvailable
+      status: 'True'
+      type: Available
+    - lastTransitionTime: '2025-06-14T01:34:13Z'
+      lastUpdateTime: '2025-06-14T01:38:53Z'
+      message: >-
+        ReplicaSet "gitlab-sidekiq-all-in-1-v2-7659dddffc" has successfully
+        progressed.
+      reason: NewReplicaSetAvailable
+      status: 'True'
+      type: Progressing
+  observedGeneration: 7
+  readyReplicas: 1
+  replicas: 1
+  updatedReplicas: 1

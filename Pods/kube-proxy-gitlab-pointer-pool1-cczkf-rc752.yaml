@@ -1,0 +1,371 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    kubernetes.io/config.hash: 88e84096c21f24ab940ce9dfc784d193
+    kubernetes.io/config.mirror: 88e84096c21f24ab940ce9dfc784d193
+    kubernetes.io/config.seen: '2025-06-12T15:36:02.904957101Z'
+    kubernetes.io/config.source: file
+  creationTimestamp: '2025-06-12T15:36:19Z'
+  labels:
+    component: kube-proxy
+    tier: control-plane
+  managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubernetes.io/config.hash: {}
+            f:kubernetes.io/config.mirror: {}
+            f:kubernetes.io/config.seen: {}
+            f:kubernetes.io/config.source: {}
+          f:labels:
+            .: {}
+            f:component: {}
+            f:tier: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"db6214ad-a078-4bc4-adf6-48ab1c429981"}: {}
+        f:spec:
+          f:containers:
+            k:{"name":"kube-proxy"}:
+              .: {}
+              f:args: {}
+              f:command: {}
+              f:env:
+                .: {}
+                k:{"name":"FILE_HASH"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"NO_PROXY"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:livenessProbe:
+                .: {}
+                f:failureThreshold: {}
+                f:httpGet:
+                  .: {}
+                  f:host: {}
+                  f:path: {}
+                  f:port: {}
+                  f:scheme: {}
+                f:initialDelaySeconds: {}
+                f:periodSeconds: {}
+                f:successThreshold: {}
+                f:timeoutSeconds: {}
+              f:name: {}
+              f:resources:
+                .: {}
+                f:requests:
+                  .: {}
+                  f:cpu: {}
+                  f:memory: {}
+              f:securityContext:
+                .: {}
+                f:privileged: {}
+              f:startupProbe:
+                .: {}
+                f:failureThreshold: {}
+                f:httpGet:
+                  .: {}
+                  f:host: {}
+                  f:path: {}
+                  f:port: {}
+                  f:scheme: {}
+                f:initialDelaySeconds: {}
+                f:periodSeconds: {}
+                f:successThreshold: {}
+                f:timeoutSeconds: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/var/lib/rancher/rke2/agent/client-kube-proxy.crt"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+                k:{"mountPath":"/var/lib/rancher/rke2/agent/client-kube-proxy.key"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+                k:{"mountPath":"/var/lib/rancher/rke2/agent/kubeproxy.kubeconfig"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+                k:{"mountPath":"/var/lib/rancher/rke2/agent/server-ca.crt"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:hostNetwork: {}
+          f:nodeName: {}
+          f:priorityClassName: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext: {}
+          f:terminationGracePeriodSeconds: {}
+          f:tolerations: {}
+          f:volumes:
+            .: {}
+            k:{"name":"file0"}:
+              .: {}
+              f:hostPath:
+                .: {}
+                f:path: {}
+                f:type: {}
+              f:name: {}
+            k:{"name":"file1"}:
+              .: {}
+              f:hostPath:
+                .: {}
+                f:path: {}
+                f:type: {}
+              f:name: {}
+            k:{"name":"file2"}:
+              .: {}
+              f:hostPath:
+                .: {}
+                f:path: {}
+                f:type: {}
+              f:name: {}
+            k:{"name":"file3"}:
+              .: {}
+              f:hostPath:
+                .: {}
+                f:path: {}
+                f:type: {}
+              f:name: {}
+      manager: kubelet
+      operation: Update
+      time: '2025-06-12T15:36:19Z'
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            .: {}
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"PodReadyToStartContainers"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"PodScheduled"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:hostIPs: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"172.31.36.13"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: '2025-06-12T15:36:23Z'
+  name: kube-proxy-gitlab-pointer-pool1-cczkf-rc752
+  namespace: kube-system
+  ownerReferences:
+    - apiVersion: v1
+      controller: true
+      kind: Node
+      name: gitlab-pointer-pool1-cczkf-rc752
+      uid: db6214ad-a078-4bc4-adf6-48ab1c429981
+  resourceVersion: '1196278'
+  uid: adf93bb3-c3f9-4960-9cbc-d5ad0a99f77a
+spec:
+  containers:
+    - args:
+        - '--cluster-cidr=10.42.0.0/16'
+        - '--conntrack-max-per-core=0'
+        - '--conntrack-tcp-timeout-close-wait=0s'
+        - '--conntrack-tcp-timeout-established=0s'
+        - '--healthz-bind-address=127.0.0.1'
+        - '--hostname-override=gitlab-pointer-pool1-cczkf-rc752'
+        - '--kubeconfig=/var/lib/rancher/rke2/agent/kubeproxy.kubeconfig'
+        - '--proxy-mode=iptables'
+      command:
+        - kube-proxy
+      env:
+        - name: FILE_HASH
+          value: 046fc87d6da756be917630f969a9a14d7168d95561fe82dc7dae2ae1da9a3d7c
+        - name: NO_PROXY
+          value: .svc,.cluster.local,10.42.0.0/16,10.43.0.0/16
+      image: >-
+        registry.rancher.com/rancher/hardened-kubernetes:v1.31.9-rke2r1-build20250515
+      imagePullPolicy: IfNotPresent
+      livenessProbe:
+        failureThreshold: 8
+        httpGet:
+          host: localhost
+          path: /healthz
+          port: 10256
+          scheme: HTTP
+        initialDelaySeconds: 10
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 15
+      name: kube-proxy
+      resources:
+        requests:
+          cpu: 250m
+          memory: 128Mi
+      securityContext:
+        privileged: true
+      startupProbe:
+        failureThreshold: 24
+        httpGet:
+          host: localhost
+          path: /healthz
+          port: 10256
+          scheme: HTTP
+        initialDelaySeconds: 10
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 5
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+        - mountPath: /var/lib/rancher/rke2/agent/client-kube-proxy.crt
+          name: file0
+          readOnly: true
+        - mountPath: /var/lib/rancher/rke2/agent/client-kube-proxy.key
+          name: file1
+          readOnly: true
+        - mountPath: /var/lib/rancher/rke2/agent/kubeproxy.kubeconfig
+          name: file2
+          readOnly: true
+        - mountPath: /var/lib/rancher/rke2/agent/server-ca.crt
+          name: file3
+          readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  hostNetwork: true
+  nodeName: gitlab-pointer-pool1-cczkf-rc752
+  preemptionPolicy: PreemptLowerPriority
+  priority: 2000000000
+  priorityClassName: system-cluster-critical
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext: {}
+  terminationGracePeriodSeconds: 30
+  tolerations:
+    - effect: NoExecute
+      operator: Exists
+  volumes:
+    - hostPath:
+        path: /var/lib/rancher/rke2/agent/client-kube-proxy.crt
+        type: File
+      name: file0
+    - hostPath:
+        path: /var/lib/rancher/rke2/agent/client-kube-proxy.key
+        type: File
+      name: file1
+    - hostPath:
+        path: /var/lib/rancher/rke2/agent/kubeproxy.kubeconfig
+        type: File
+      name: file2
+    - hostPath:
+        path: /var/lib/rancher/rke2/agent/server-ca.crt
+        type: File
+      name: file3
+status:
+  conditions:
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-12T15:36:03Z'
+      status: 'True'
+      type: PodReadyToStartContainers
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-12T15:36:03Z'
+      status: 'True'
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-12T15:36:23Z'
+      status: 'True'
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-12T15:36:23Z'
+      status: 'True'
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-12T15:36:03Z'
+      status: 'True'
+      type: PodScheduled
+  containerStatuses:
+    - containerID: >-
+        containerd://01d80f00330682fd57edcc9dbb39641a8a418a77eec47aa7d9777f31de958051
+      image: >-
+        registry.rancher.com/rancher/hardened-kubernetes:v1.31.9-rke2r1-build20250515
+      imageID: >-
+        registry.rancher.com/rancher/hardened-kubernetes@sha256:248efcffbb4de0dc17c307817cd9666f15eb7cf368d61275c1b69bca3bd1ea97
+      lastState: {}
+      name: kube-proxy
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: '2025-06-12T15:36:03Z'
+      volumeMounts:
+        - mountPath: /var/lib/rancher/rke2/agent/client-kube-proxy.crt
+          name: file0
+          readOnly: true
+          recursiveReadOnly: Disabled
+        - mountPath: /var/lib/rancher/rke2/agent/client-kube-proxy.key
+          name: file1
+          readOnly: true
+          recursiveReadOnly: Disabled
+        - mountPath: /var/lib/rancher/rke2/agent/kubeproxy.kubeconfig
+          name: file2
+          readOnly: true
+          recursiveReadOnly: Disabled
+        - mountPath: /var/lib/rancher/rke2/agent/server-ca.crt
+          name: file3
+          readOnly: true
+          recursiveReadOnly: Disabled
+  hostIP: 172.31.36.13
+  hostIPs:
+    - ip: 172.31.36.13
+  phase: Running
+  podIP: 172.31.36.13
+  podIPs:
+    - ip: 172.31.36.13
+  qosClass: Burstable
+  startTime: '2025-06-12T15:36:03Z'

@@ -1,0 +1,715 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    cattle.io/timestamp: '2025-06-14T00:51:59Z'
+    checksum/config: 1c35ff6b83c4ff139d8969e7cb8f04c305299d3748ecaf882a116fdcdb840b19
+    cni.projectcalico.org/containerID: 2f86ce685e035aedad00d7828b2c43d51ce2f8b1831ca707061986cbcf68afd0
+    cni.projectcalico.org/podIP: 10.42.4.179/32
+    cni.projectcalico.org/podIPs: 10.42.4.179/32
+    gitlab.com/prometheus_path: /metrics
+    gitlab.com/prometheus_port: '9168'
+    gitlab.com/prometheus_scrape: 'true'
+    prometheus.io/path: /metrics
+    prometheus.io/port: '9168'
+    prometheus.io/scrape: 'true'
+  creationTimestamp: '2025-06-14T01:34:11Z'
+  generateName: gitlab-gitlab-exporter-76b959c565-
+  labels:
+    app: gitlab-exporter
+    app.kubernetes.io/name: gitlab
+    app.kubernetes.io/version: v18.0.2
+    chart: gitlab-exporter-9.0.2
+    heritage: Helm
+    pod-template-hash: 76b959c565
+    release: gitlab
+  managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:cattle.io/timestamp: {}
+            f:checksum/config: {}
+            f:gitlab.com/prometheus_path: {}
+            f:gitlab.com/prometheus_port: {}
+            f:gitlab.com/prometheus_scrape: {}
+            f:prometheus.io/path: {}
+            f:prometheus.io/port: {}
+            f:prometheus.io/scrape: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/version: {}
+            f:chart: {}
+            f:heritage: {}
+            f:pod-template-hash: {}
+            f:release: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"a51a01b6-9445-4037-ae4e-e16dde821a10"}: {}
+        f:spec:
+          f:affinity:
+            .: {}
+            f:podAntiAffinity:
+              .: {}
+              f:preferredDuringSchedulingIgnoredDuringExecution: {}
+          f:automountServiceAccountToken: {}
+          f:containers:
+            k:{"name":"gitlab-exporter"}:
+              .: {}
+              f:env:
+                .: {}
+                k:{"name":"CONFIG_DIRECTORY"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"CONFIG_TEMPLATE_DIRECTORY"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"MALLOC_CONF"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"RUBY_GC_HEAP_FREE_SLOTS_MAX_RATIO"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"RUBY_GC_HEAP_FREE_SLOTS_MIN_RATIO"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"RUBY_GC_HEAP_INIT_SLOTS"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"TZ"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:lifecycle:
+                .: {}
+                f:preStop:
+                  .: {}
+                  f:exec:
+                    .: {}
+                    f:command: {}
+              f:livenessProbe:
+                .: {}
+                f:exec:
+                  .: {}
+                  f:command: {}
+                f:failureThreshold: {}
+                f:periodSeconds: {}
+                f:successThreshold: {}
+                f:timeoutSeconds: {}
+              f:name: {}
+              f:ports:
+                .: {}
+                k:{"containerPort":9168,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:name: {}
+                  f:protocol: {}
+              f:readinessProbe:
+                .: {}
+                f:exec:
+                  .: {}
+                  f:command: {}
+                f:failureThreshold: {}
+                f:periodSeconds: {}
+                f:successThreshold: {}
+                f:timeoutSeconds: {}
+              f:resources:
+                .: {}
+                f:requests:
+                  .: {}
+                  f:cpu: {}
+                  f:memory: {}
+              f:securityContext:
+                .: {}
+                f:allowPrivilegeEscalation: {}
+                f:capabilities:
+                  .: {}
+                  f:drop: {}
+                f:runAsNonRoot: {}
+                f:runAsUser: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/etc/gitlab"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+                k:{"mountPath":"/etc/pki/ca-trust/extracted/pem"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+                k:{"mountPath":"/etc/ssl/certs/"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+                k:{"mountPath":"/var/opt/gitlab-exporter/templates/gitlab-exporter.yml.erb"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:subPath: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:initContainers:
+            .: {}
+            k:{"name":"certificates"}:
+              .: {}
+              f:env:
+                .: {}
+                k:{"name":"MALLOC_CONF"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"RUBY_GC_HEAP_FREE_SLOTS_MAX_RATIO"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"RUBY_GC_HEAP_FREE_SLOTS_MIN_RATIO"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"RUBY_GC_HEAP_INIT_SLOTS"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"TZ"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:resources:
+                .: {}
+                f:requests:
+                  .: {}
+                  f:cpu: {}
+              f:securityContext:
+                .: {}
+                f:allowPrivilegeEscalation: {}
+                f:capabilities:
+                  .: {}
+                  f:drop: {}
+                f:runAsNonRoot: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/etc/pki/ca-trust/extracted/pem"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                k:{"mountPath":"/etc/ssl/certs"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+            k:{"name":"configure"}:
+              .: {}
+              f:command: {}
+              f:env:
+                .: {}
+                k:{"name":"MALLOC_CONF"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"RUBY_GC_HEAP_FREE_SLOTS_MAX_RATIO"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"RUBY_GC_HEAP_FREE_SLOTS_MIN_RATIO"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"RUBY_GC_HEAP_INIT_SLOTS"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"TZ"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:resources:
+                .: {}
+                f:requests:
+                  .: {}
+                  f:cpu: {}
+              f:securityContext:
+                .: {}
+                f:allowPrivilegeEscalation: {}
+                f:capabilities:
+                  .: {}
+                  f:drop: {}
+                f:runAsNonRoot: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/config"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+                k:{"mountPath":"/init-config"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+                k:{"mountPath":"/init-secrets"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext:
+            .: {}
+            f:fsGroup: {}
+            f:runAsUser: {}
+            f:seccompProfile:
+              .: {}
+              f:type: {}
+          f:terminationGracePeriodSeconds: {}
+          f:volumes:
+            .: {}
+            k:{"name":"etc-pki-ca-trust-extracted-pem"}:
+              .: {}
+              f:emptyDir:
+                .: {}
+                f:medium: {}
+              f:name: {}
+            k:{"name":"etc-ssl-certs"}:
+              .: {}
+              f:emptyDir:
+                .: {}
+                f:medium: {}
+              f:name: {}
+            k:{"name":"gitlab-exporter-config"}:
+              .: {}
+              f:configMap:
+                .: {}
+                f:defaultMode: {}
+                f:name: {}
+              f:name: {}
+            k:{"name":"gitlab-exporter-secrets"}:
+              .: {}
+              f:emptyDir:
+                .: {}
+                f:medium: {}
+              f:name: {}
+            k:{"name":"init-gitlab-exporter-secrets"}:
+              .: {}
+              f:name: {}
+              f:projected:
+                .: {}
+                f:defaultMode: {}
+                f:sources: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: '2025-06-14T01:34:11Z'
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:cni.projectcalico.org/containerID: {}
+            f:cni.projectcalico.org/podIP: {}
+            f:cni.projectcalico.org/podIPs: {}
+      manager: calico
+      operation: Update
+      subresource: status
+      time: '2025-06-14T01:34:12Z'
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"PodReadyToStartContainers"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:hostIPs: {}
+          f:initContainerStatuses: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"10.42.4.179"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: '2025-06-14T01:34:16Z'
+  name: gitlab-gitlab-exporter-76b959c565-hv2md
+  namespace: gitlab-o3s
+  ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: gitlab-gitlab-exporter-76b959c565
+      uid: a51a01b6-9445-4037-ae4e-e16dde821a10
+  resourceVersion: '2022164'
+  uid: 85773119-bbf0-4404-bfdc-c840f8501734
+spec:
+  affinity:
+    podAntiAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+        - podAffinityTerm:
+            labelSelector:
+              matchLabels:
+                app: gitlab-exporter
+                release: gitlab
+            topologyKey: kubernetes.io/hostname
+          weight: 1
+  automountServiceAccountToken: false
+  containers:
+    - env:
+        - name: TZ
+          value: America/Sao_Paulo
+        - name: CONFIG_TEMPLATE_DIRECTORY
+          value: /var/opt/gitlab-exporter/templates
+        - name: CONFIG_DIRECTORY
+          value: /etc/gitlab-exporter
+        - name: MALLOC_CONF
+          value: dirty_decay_ms:0,muzzy_decay_ms:0
+        - name: RUBY_GC_HEAP_FREE_SLOTS_MAX_RATIO
+          value: '0.111'
+        - name: RUBY_GC_HEAP_FREE_SLOTS_MIN_RATIO
+          value: '0.055'
+        - name: RUBY_GC_HEAP_INIT_SLOTS
+          value: '80000'
+      image: registry.gitlab.com/gitlab-org/build/cng/gitlab-exporter:15.3.0
+      imagePullPolicy: IfNotPresent
+      lifecycle:
+        preStop:
+          exec:
+            command:
+              - /bin/bash
+              - '-c'
+              - pkill -f 'gitlab-exporter'
+      livenessProbe:
+        exec:
+          command:
+            - pgrep
+            - '-f'
+            - gitlab-exporter
+        failureThreshold: 3
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 1
+      name: gitlab-exporter
+      ports:
+        - containerPort: 9168
+          name: http-metrics
+          protocol: TCP
+      readinessProbe:
+        exec:
+          command:
+            - pgrep
+            - '-f'
+            - gitlab-exporter
+        failureThreshold: 3
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 1
+      resources:
+        requests:
+          cpu: 75m
+          memory: 100M
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop:
+            - ALL
+        runAsNonRoot: true
+        runAsUser: 1000
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+        - mountPath: /var/opt/gitlab-exporter/templates/gitlab-exporter.yml.erb
+          name: gitlab-exporter-config
+          subPath: gitlab-exporter.yml.erb
+        - mountPath: /etc/gitlab
+          name: gitlab-exporter-secrets
+          readOnly: true
+        - mountPath: /etc/ssl/certs/
+          name: etc-ssl-certs
+          readOnly: true
+        - mountPath: /etc/pki/ca-trust/extracted/pem
+          name: etc-pki-ca-trust-extracted-pem
+          readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  initContainers:
+    - env:
+        - name: TZ
+          value: America/Sao_Paulo
+        - name: MALLOC_CONF
+          value: dirty_decay_ms:0,muzzy_decay_ms:0
+        - name: RUBY_GC_HEAP_FREE_SLOTS_MAX_RATIO
+          value: '0.111'
+        - name: RUBY_GC_HEAP_FREE_SLOTS_MIN_RATIO
+          value: '0.055'
+        - name: RUBY_GC_HEAP_INIT_SLOTS
+          value: '80000'
+      image: registry.gitlab.com/gitlab-org/build/cng/certificates:v18.0.2
+      imagePullPolicy: IfNotPresent
+      name: certificates
+      resources:
+        requests:
+          cpu: 50m
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop:
+            - ALL
+        runAsNonRoot: true
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+        - mountPath: /etc/ssl/certs
+          name: etc-ssl-certs
+        - mountPath: /etc/pki/ca-trust/extracted/pem
+          name: etc-pki-ca-trust-extracted-pem
+    - command:
+        - sh
+        - /config/configure
+      env:
+        - name: TZ
+          value: America/Sao_Paulo
+        - name: MALLOC_CONF
+          value: dirty_decay_ms:0,muzzy_decay_ms:0
+        - name: RUBY_GC_HEAP_FREE_SLOTS_MAX_RATIO
+          value: '0.111'
+        - name: RUBY_GC_HEAP_FREE_SLOTS_MIN_RATIO
+          value: '0.055'
+        - name: RUBY_GC_HEAP_INIT_SLOTS
+          value: '80000'
+      image: registry.gitlab.com/gitlab-org/build/cng/gitlab-base:v18.0.2
+      imagePullPolicy: IfNotPresent
+      name: configure
+      resources:
+        requests:
+          cpu: 50m
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop:
+            - ALL
+        runAsNonRoot: true
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+        - mountPath: /config
+          name: gitlab-exporter-config
+          readOnly: true
+        - mountPath: /init-config
+          name: init-gitlab-exporter-secrets
+          readOnly: true
+        - mountPath: /init-secrets
+          name: gitlab-exporter-secrets
+  nodeName: gitlab-pointer-pool1-cczkf-vbgtv
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext:
+    fsGroup: 1000
+    runAsUser: 1000
+    seccompProfile:
+      type: RuntimeDefault
+  serviceAccount: default
+  serviceAccountName: default
+  terminationGracePeriodSeconds: 30
+  tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+  volumes:
+    - configMap:
+        defaultMode: 420
+        name: gitlab-gitlab-exporter
+      name: gitlab-exporter-config
+    - name: init-gitlab-exporter-secrets
+      projected:
+        defaultMode: 256
+        sources:
+          - secret:
+              items:
+                - key: postgresql-postgres-password
+                  path: postgres/psql-password-ci
+              name: gitlab-postgresql-password
+          - secret:
+              items:
+                - key: postgresql-postgres-password
+                  path: postgres/psql-password-main
+              name: gitlab-postgresql-password
+    - emptyDir:
+        medium: Memory
+      name: gitlab-exporter-secrets
+    - emptyDir:
+        medium: Memory
+      name: etc-ssl-certs
+    - emptyDir:
+        medium: Memory
+      name: etc-pki-ca-trust-extracted-pem
+status:
+  conditions:
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-14T01:34:12Z'
+      status: 'True'
+      type: PodReadyToStartContainers
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-14T01:34:15Z'
+      status: 'True'
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-14T01:34:16Z'
+      status: 'True'
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-14T01:34:16Z'
+      status: 'True'
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-14T01:34:11Z'
+      status: 'True'
+      type: PodScheduled
+  containerStatuses:
+    - containerID: >-
+        containerd://8a409bf227dc57cb8a7df5d36782904314c68f96b6348b9a5bcb33b3bea6639a
+      image: registry.gitlab.com/gitlab-org/build/cng/gitlab-exporter:15.3.0
+      imageID: >-
+        registry.gitlab.com/gitlab-org/build/cng/gitlab-exporter@sha256:8892102883597b36f0b2047a9e2672c9f9ee6583fa91aade0bae4fb7b7e975e1
+      lastState: {}
+      name: gitlab-exporter
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: '2025-06-14T01:34:15Z'
+      volumeMounts:
+        - mountPath: /var/opt/gitlab-exporter/templates/gitlab-exporter.yml.erb
+          name: gitlab-exporter-config
+        - mountPath: /etc/gitlab
+          name: gitlab-exporter-secrets
+          readOnly: true
+          recursiveReadOnly: Disabled
+        - mountPath: /etc/ssl/certs/
+          name: etc-ssl-certs
+          readOnly: true
+          recursiveReadOnly: Disabled
+        - mountPath: /etc/pki/ca-trust/extracted/pem
+          name: etc-pki-ca-trust-extracted-pem
+          readOnly: true
+          recursiveReadOnly: Disabled
+  hostIP: 172.31.36.39
+  hostIPs:
+    - ip: 172.31.36.39
+  initContainerStatuses:
+    - containerID: >-
+        containerd://4be24dced0f9156c5ff88856277f0f86f04bef7a7ab1389eaabc1e0c8eb4eaad
+      image: registry.gitlab.com/gitlab-org/build/cng/certificates:v18.0.2
+      imageID: >-
+        registry.gitlab.com/gitlab-org/build/cng/certificates@sha256:34ad8bab50a96e4a73167ebf57a343947e9ff3219dfd4361baa6f202bac13dcb
+      lastState: {}
+      name: certificates
+      ready: true
+      restartCount: 0
+      started: false
+      state:
+        terminated:
+          containerID: >-
+            containerd://4be24dced0f9156c5ff88856277f0f86f04bef7a7ab1389eaabc1e0c8eb4eaad
+          exitCode: 0
+          finishedAt: '2025-06-14T01:34:13Z'
+          reason: Completed
+          startedAt: '2025-06-14T01:34:12Z'
+      volumeMounts:
+        - mountPath: /etc/ssl/certs
+          name: etc-ssl-certs
+        - mountPath: /etc/pki/ca-trust/extracted/pem
+          name: etc-pki-ca-trust-extracted-pem
+    - containerID: >-
+        containerd://d5e32caae9d9b80641e7b1cf30917cdbd8d7532d47042a311f4352b991c70510
+      image: registry.gitlab.com/gitlab-org/build/cng/gitlab-base:v18.0.2
+      imageID: >-
+        registry.gitlab.com/gitlab-org/build/cng/gitlab-base@sha256:a309b4b65fe9c6882589c60fd8a5d6680e96f741592d61d340fd1b51a0701388
+      lastState: {}
+      name: configure
+      ready: true
+      restartCount: 0
+      started: false
+      state:
+        terminated:
+          containerID: >-
+            containerd://d5e32caae9d9b80641e7b1cf30917cdbd8d7532d47042a311f4352b991c70510
+          exitCode: 0
+          finishedAt: '2025-06-14T01:34:14Z'
+          reason: Completed
+          startedAt: '2025-06-14T01:34:14Z'
+      volumeMounts:
+        - mountPath: /config
+          name: gitlab-exporter-config
+          readOnly: true
+          recursiveReadOnly: Disabled
+        - mountPath: /init-config
+          name: init-gitlab-exporter-secrets
+          readOnly: true
+          recursiveReadOnly: Disabled
+        - mountPath: /init-secrets
+          name: gitlab-exporter-secrets
+  phase: Running
+  podIP: 10.42.4.179
+  podIPs:
+    - ip: 10.42.4.179
+  qosClass: Burstable
+  startTime: '2025-06-14T01:34:11Z'

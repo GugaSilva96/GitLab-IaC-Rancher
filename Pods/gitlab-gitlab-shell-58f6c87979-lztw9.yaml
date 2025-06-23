@@ -1,0 +1,679 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    cattle.io/timestamp: '2025-06-14T00:51:59Z'
+    checksum/config: 710a87d84c835818a599d4fd85d4f03f3842d7571e1d037e8d3603532e3706de
+    checksum/config-sshd: 92d9fc3d2d1c85180ee2c1ac0136bfa24955a8a21c2184ecba000ff22e354f96
+    cluster-autoscaler.kubernetes.io/safe-to-evict: 'true'
+    cni.projectcalico.org/containerID: 4c17a98d860a399bc10f0f09c6028009a6dd604463c40fa837b334e9a0199907
+    cni.projectcalico.org/podIP: 10.42.152.185/32
+    cni.projectcalico.org/podIPs: 10.42.152.185/32
+  creationTimestamp: '2025-06-14T00:52:03Z'
+  generateName: gitlab-gitlab-shell-58f6c87979-
+  labels:
+    app: gitlab-shell
+    app.kubernetes.io/name: gitlab
+    app.kubernetes.io/version: v18.0.2
+    chart: gitlab-shell-9.0.2
+    heritage: Helm
+    pod-template-hash: 58f6c87979
+    release: gitlab
+  managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:cni.projectcalico.org/containerID: {}
+            f:cni.projectcalico.org/podIP: {}
+            f:cni.projectcalico.org/podIPs: {}
+      manager: calico
+      operation: Update
+      subresource: status
+      time: '2025-06-14T00:52:03Z'
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:cattle.io/timestamp: {}
+            f:checksum/config: {}
+            f:checksum/config-sshd: {}
+            f:cluster-autoscaler.kubernetes.io/safe-to-evict: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/version: {}
+            f:chart: {}
+            f:heritage: {}
+            f:pod-template-hash: {}
+            f:release: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"86a4fac0-b996-4baf-8575-84917e04fcfc"}: {}
+        f:spec:
+          f:affinity:
+            .: {}
+            f:podAntiAffinity:
+              .: {}
+              f:preferredDuringSchedulingIgnoredDuringExecution: {}
+          f:automountServiceAccountToken: {}
+          f:containers:
+            k:{"name":"gitlab-shell"}:
+              .: {}
+              f:env:
+                .: {}
+                k:{"name":"CONFIG_DIRECTORY"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"CONFIG_TEMPLATE_DIRECTORY"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"GITALY_FEATURE_DEFAULT_ON"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"KEYS_DIRECTORY"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"SSH_DAEMON"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"TZ"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:livenessProbe:
+                .: {}
+                f:exec:
+                  .: {}
+                  f:command: {}
+                f:failureThreshold: {}
+                f:initialDelaySeconds: {}
+                f:periodSeconds: {}
+                f:successThreshold: {}
+                f:timeoutSeconds: {}
+              f:name: {}
+              f:ports:
+                .: {}
+                k:{"containerPort":2222,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:name: {}
+                  f:protocol: {}
+              f:readinessProbe:
+                .: {}
+                f:failureThreshold: {}
+                f:initialDelaySeconds: {}
+                f:periodSeconds: {}
+                f:successThreshold: {}
+                f:tcpSocket:
+                  .: {}
+                  f:port: {}
+                f:timeoutSeconds: {}
+              f:resources:
+                .: {}
+                f:limits:
+                  .: {}
+                  f:cpu: {}
+                  f:memory: {}
+                f:requests:
+                  .: {}
+                  f:cpu: {}
+                  f:memory: {}
+              f:securityContext:
+                .: {}
+                f:allowPrivilegeEscalation: {}
+                f:capabilities:
+                  .: {}
+                  f:drop: {}
+                f:runAsNonRoot: {}
+                f:runAsUser: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/etc/gitlab-secrets"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+                k:{"mountPath":"/etc/gitlab-shell"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                k:{"mountPath":"/etc/krb5.conf"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+                  f:subPath: {}
+                k:{"mountPath":"/etc/pki/ca-trust/extracted/pem"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+                k:{"mountPath":"/etc/ssh/sshd_config"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+                  f:subPath: {}
+                k:{"mountPath":"/etc/ssl/certs/"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:initContainers:
+            .: {}
+            k:{"name":"certificates"}:
+              .: {}
+              f:env:
+                .: {}
+                k:{"name":"TZ"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:resources:
+                .: {}
+                f:requests:
+                  .: {}
+                  f:cpu: {}
+              f:securityContext:
+                .: {}
+                f:allowPrivilegeEscalation: {}
+                f:capabilities:
+                  .: {}
+                  f:drop: {}
+                f:runAsNonRoot: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/etc/pki/ca-trust/extracted/pem"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                k:{"mountPath":"/etc/ssl/certs"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+            k:{"name":"configure"}:
+              .: {}
+              f:command: {}
+              f:env:
+                .: {}
+                k:{"name":"TZ"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:resources:
+                .: {}
+                f:requests:
+                  .: {}
+                  f:cpu: {}
+              f:securityContext:
+                .: {}
+                f:allowPrivilegeEscalation: {}
+                f:capabilities:
+                  .: {}
+                  f:drop: {}
+                f:runAsNonRoot: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/config"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+                k:{"mountPath":"/init-config"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+                k:{"mountPath":"/init-secrets"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext:
+            .: {}
+            f:fsGroup: {}
+            f:runAsUser: {}
+            f:seccompProfile:
+              .: {}
+              f:type: {}
+          f:terminationGracePeriodSeconds: {}
+          f:volumes:
+            .: {}
+            k:{"name":"etc-pki-ca-trust-extracted-pem"}:
+              .: {}
+              f:emptyDir:
+                .: {}
+                f:medium: {}
+              f:name: {}
+            k:{"name":"etc-ssl-certs"}:
+              .: {}
+              f:emptyDir:
+                .: {}
+                f:medium: {}
+              f:name: {}
+            k:{"name":"shell-config"}:
+              .: {}
+              f:configMap:
+                .: {}
+                f:defaultMode: {}
+                f:name: {}
+              f:name: {}
+            k:{"name":"shell-init-secrets"}:
+              .: {}
+              f:name: {}
+              f:projected:
+                .: {}
+                f:defaultMode: {}
+                f:sources: {}
+            k:{"name":"shell-secrets"}:
+              .: {}
+              f:emptyDir:
+                .: {}
+                f:medium: {}
+              f:name: {}
+            k:{"name":"sshd-config"}:
+              .: {}
+              f:configMap:
+                .: {}
+                f:defaultMode: {}
+                f:name: {}
+              f:name: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: '2025-06-14T00:52:03Z'
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"PodReadyToStartContainers"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:hostIPs: {}
+          f:initContainerStatuses: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"10.42.152.185"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: '2025-06-14T00:52:18Z'
+  name: gitlab-gitlab-shell-58f6c87979-lztw9
+  namespace: gitlab-o3s
+  ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: gitlab-gitlab-shell-58f6c87979
+      uid: 86a4fac0-b996-4baf-8575-84917e04fcfc
+  resourceVersion: '2004327'
+  uid: 44430feb-c3be-4ad6-a61a-a8618b422789
+spec:
+  affinity:
+    podAntiAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+        - podAffinityTerm:
+            labelSelector:
+              matchLabels:
+                app: gitlab-shell
+                release: gitlab
+            topologyKey: kubernetes.io/hostname
+          weight: 1
+  automountServiceAccountToken: false
+  containers:
+    - env:
+        - name: GITALY_FEATURE_DEFAULT_ON
+          value: '1'
+        - name: CONFIG_TEMPLATE_DIRECTORY
+          value: /etc/gitlab-shell
+        - name: CONFIG_DIRECTORY
+          value: /srv/gitlab-shell
+        - name: KEYS_DIRECTORY
+          value: /etc/gitlab-secrets/ssh
+        - name: SSH_DAEMON
+          value: openssh
+        - name: TZ
+          value: America/Sao_Paulo
+      image: registry.gitlab.com/gitlab-org/build/cng/gitlab-shell:v14.42.0
+      imagePullPolicy: IfNotPresent
+      livenessProbe:
+        exec:
+          command:
+            - /scripts/healthcheck
+        failureThreshold: 3
+        initialDelaySeconds: 10
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 3
+      name: gitlab-shell
+      ports:
+        - containerPort: 2222
+          name: ssh
+          protocol: TCP
+      readinessProbe:
+        failureThreshold: 2
+        initialDelaySeconds: 10
+        periodSeconds: 5
+        successThreshold: 1
+        tcpSocket:
+          port: 2222
+        timeoutSeconds: 3
+      resources:
+        limits:
+          cpu: 300m
+          memory: 500Mi
+        requests:
+          cpu: 100m
+          memory: 200Mi
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop:
+            - ALL
+        runAsNonRoot: true
+        runAsUser: 1000
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+        - mountPath: /etc/gitlab-shell
+          name: shell-config
+        - mountPath: /etc/gitlab-secrets
+          name: shell-secrets
+          readOnly: true
+        - mountPath: /etc/krb5.conf
+          name: shell-config
+          readOnly: true
+          subPath: krb5.conf
+        - mountPath: /etc/ssh/sshd_config
+          name: sshd-config
+          readOnly: true
+          subPath: sshd_config
+        - mountPath: /etc/ssl/certs/
+          name: etc-ssl-certs
+          readOnly: true
+        - mountPath: /etc/pki/ca-trust/extracted/pem
+          name: etc-pki-ca-trust-extracted-pem
+          readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  initContainers:
+    - env:
+        - name: TZ
+          value: America/Sao_Paulo
+      image: registry.gitlab.com/gitlab-org/build/cng/certificates:v18.0.2
+      imagePullPolicy: IfNotPresent
+      name: certificates
+      resources:
+        requests:
+          cpu: 50m
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop:
+            - ALL
+        runAsNonRoot: true
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+        - mountPath: /etc/ssl/certs
+          name: etc-ssl-certs
+        - mountPath: /etc/pki/ca-trust/extracted/pem
+          name: etc-pki-ca-trust-extracted-pem
+    - command:
+        - sh
+        - /config/configure
+      env:
+        - name: TZ
+          value: America/Sao_Paulo
+      image: registry.gitlab.com/gitlab-org/build/cng/gitlab-base:v18.0.2
+      imagePullPolicy: IfNotPresent
+      name: configure
+      resources:
+        requests:
+          cpu: 50m
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop:
+            - ALL
+        runAsNonRoot: true
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+        - mountPath: /config
+          name: shell-config
+          readOnly: true
+        - mountPath: /init-config
+          name: shell-init-secrets
+          readOnly: true
+        - mountPath: /init-secrets
+          name: shell-secrets
+  nodeName: gitlab-pointer-pool1-cczkf-rc752
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext:
+    fsGroup: 1000
+    runAsUser: 1000
+    seccompProfile:
+      type: RuntimeDefault
+  serviceAccount: default
+  serviceAccountName: default
+  terminationGracePeriodSeconds: 30
+  tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+  volumes:
+    - configMap:
+        defaultMode: 420
+        name: gitlab-gitlab-shell
+      name: shell-config
+    - configMap:
+        defaultMode: 420
+        name: gitlab-gitlab-shell-sshd
+      name: sshd-config
+    - name: shell-init-secrets
+      projected:
+        defaultMode: 288
+        sources:
+          - secret:
+              name: gitlab-gitlab-shell-host-keys
+          - secret:
+              items:
+                - key: secret
+                  path: shell/.gitlab_shell_secret
+              name: gitlab-gitlab-shell-secret
+    - emptyDir:
+        medium: Memory
+      name: shell-secrets
+    - emptyDir:
+        medium: Memory
+      name: etc-ssl-certs
+    - emptyDir:
+        medium: Memory
+      name: etc-pki-ca-trust-extracted-pem
+status:
+  conditions:
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-14T00:52:04Z'
+      status: 'True'
+      type: PodReadyToStartContainers
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-14T00:52:07Z'
+      status: 'True'
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-14T00:52:18Z'
+      status: 'True'
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-14T00:52:18Z'
+      status: 'True'
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-14T00:52:03Z'
+      status: 'True'
+      type: PodScheduled
+  containerStatuses:
+    - containerID: >-
+        containerd://b84e89daac6669d7b82312e9d7e8f1312e7128f789a93c8c977ee8186bbc180c
+      image: registry.gitlab.com/gitlab-org/build/cng/gitlab-shell:v14.42.0
+      imageID: >-
+        registry.gitlab.com/gitlab-org/build/cng/gitlab-shell@sha256:74df4d6b217bc94b126cfd8113d882cefcb222240ce1b9c3e80f696b17a468c7
+      lastState: {}
+      name: gitlab-shell
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: '2025-06-14T00:52:07Z'
+      volumeMounts:
+        - mountPath: /etc/gitlab-shell
+          name: shell-config
+        - mountPath: /etc/gitlab-secrets
+          name: shell-secrets
+          readOnly: true
+          recursiveReadOnly: Disabled
+        - mountPath: /etc/krb5.conf
+          name: shell-config
+          readOnly: true
+          recursiveReadOnly: Disabled
+        - mountPath: /etc/ssh/sshd_config
+          name: sshd-config
+          readOnly: true
+          recursiveReadOnly: Disabled
+        - mountPath: /etc/ssl/certs/
+          name: etc-ssl-certs
+          readOnly: true
+          recursiveReadOnly: Disabled
+        - mountPath: /etc/pki/ca-trust/extracted/pem
+          name: etc-pki-ca-trust-extracted-pem
+          readOnly: true
+          recursiveReadOnly: Disabled
+  hostIP: 172.31.36.13
+  hostIPs:
+    - ip: 172.31.36.13
+  initContainerStatuses:
+    - containerID: >-
+        containerd://954e3e712b73216743bbba3cbcd0105879887ca7d4c245c048a2aee6b19528dd
+      image: registry.gitlab.com/gitlab-org/build/cng/certificates:v18.0.2
+      imageID: >-
+        registry.gitlab.com/gitlab-org/build/cng/certificates@sha256:34ad8bab50a96e4a73167ebf57a343947e9ff3219dfd4361baa6f202bac13dcb
+      lastState: {}
+      name: certificates
+      ready: true
+      restartCount: 0
+      started: false
+      state:
+        terminated:
+          containerID: >-
+            containerd://954e3e712b73216743bbba3cbcd0105879887ca7d4c245c048a2aee6b19528dd
+          exitCode: 0
+          finishedAt: '2025-06-14T00:52:05Z'
+          reason: Completed
+          startedAt: '2025-06-14T00:52:04Z'
+      volumeMounts:
+        - mountPath: /etc/ssl/certs
+          name: etc-ssl-certs
+        - mountPath: /etc/pki/ca-trust/extracted/pem
+          name: etc-pki-ca-trust-extracted-pem
+    - containerID: >-
+        containerd://90afe4c7dde9ec2b4733d27fd9b230c49a69bb370a7f682559a442bfa2fe1fe2
+      image: registry.gitlab.com/gitlab-org/build/cng/gitlab-base:v18.0.2
+      imageID: >-
+        registry.gitlab.com/gitlab-org/build/cng/gitlab-base@sha256:a309b4b65fe9c6882589c60fd8a5d6680e96f741592d61d340fd1b51a0701388
+      lastState: {}
+      name: configure
+      ready: true
+      restartCount: 0
+      started: false
+      state:
+        terminated:
+          containerID: >-
+            containerd://90afe4c7dde9ec2b4733d27fd9b230c49a69bb370a7f682559a442bfa2fe1fe2
+          exitCode: 0
+          finishedAt: '2025-06-14T00:52:06Z'
+          reason: Completed
+          startedAt: '2025-06-14T00:52:06Z'
+      volumeMounts:
+        - mountPath: /config
+          name: shell-config
+          readOnly: true
+          recursiveReadOnly: Disabled
+        - mountPath: /init-config
+          name: shell-init-secrets
+          readOnly: true
+          recursiveReadOnly: Disabled
+        - mountPath: /init-secrets
+          name: shell-secrets
+  phase: Running
+  podIP: 10.42.152.185
+  podIPs:
+    - ip: 10.42.152.185
+  qosClass: Burstable
+  startTime: '2025-06-14T00:52:03Z'

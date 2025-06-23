@@ -1,0 +1,501 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    cattle.io/timestamp: '2025-06-14T00:51:59Z'
+    cni.projectcalico.org/containerID: 7426cee84c1bbc4517c9a54da8089b12130dc1f84c77051bf6b8cccfe96e82a4
+    cni.projectcalico.org/podIP: 10.42.30.67/32
+    cni.projectcalico.org/podIPs: 10.42.30.67/32
+  creationTimestamp: '2025-06-14T00:52:04Z'
+  generateName: gitlab-prometheus-server-5fc849fd67-
+  labels:
+    app.kubernetes.io/component: server
+    app.kubernetes.io/instance: gitlab
+    app.kubernetes.io/name: prometheus
+    app.kubernetes.io/part-of: prometheus
+    app.kubernetes.io/version: v3.3.1
+    helm.sh/chart: prometheus-27.12.1
+    pod-template-hash: 5fc849fd67
+  managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:cattle.io/timestamp: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/part-of: {}
+            f:app.kubernetes.io/version: {}
+            f:helm.sh/chart: {}
+            f:pod-template-hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"abfadb08-d1a2-48d2-b137-e13ab7040cff"}: {}
+        f:spec:
+          f:containers:
+            k:{"name":"prometheus-server"}:
+              .: {}
+              f:args: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:livenessProbe:
+                .: {}
+                f:failureThreshold: {}
+                f:httpGet:
+                  .: {}
+                  f:path: {}
+                  f:port: {}
+                  f:scheme: {}
+                f:initialDelaySeconds: {}
+                f:periodSeconds: {}
+                f:successThreshold: {}
+                f:timeoutSeconds: {}
+              f:name: {}
+              f:ports:
+                .: {}
+                k:{"containerPort":9090,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:protocol: {}
+              f:readinessProbe:
+                .: {}
+                f:failureThreshold: {}
+                f:httpGet:
+                  .: {}
+                  f:path: {}
+                  f:port: {}
+                  f:scheme: {}
+                f:initialDelaySeconds: {}
+                f:periodSeconds: {}
+                f:successThreshold: {}
+                f:timeoutSeconds: {}
+              f:resources:
+                .: {}
+                f:limits:
+                  .: {}
+                  f:cpu: {}
+                  f:memory: {}
+                f:requests:
+                  .: {}
+                  f:cpu: {}
+                  f:memory: {}
+              f:securityContext:
+                .: {}
+                f:allowPrivilegeEscalation: {}
+                f:capabilities:
+                  .: {}
+                  f:drop: {}
+                f:runAsNonRoot: {}
+                f:runAsUser: {}
+                f:seccompProfile:
+                  .: {}
+                  f:type: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/data"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                k:{"mountPath":"/etc/config"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+            k:{"name":"prometheus-server-configmap-reload"}:
+              .: {}
+              f:args: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:livenessProbe:
+                .: {}
+                f:failureThreshold: {}
+                f:httpGet:
+                  .: {}
+                  f:path: {}
+                  f:port: {}
+                  f:scheme: {}
+                f:initialDelaySeconds: {}
+                f:periodSeconds: {}
+                f:successThreshold: {}
+                f:timeoutSeconds: {}
+              f:name: {}
+              f:ports:
+                .: {}
+                k:{"containerPort":8080,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:name: {}
+                  f:protocol: {}
+              f:readinessProbe:
+                .: {}
+                f:failureThreshold: {}
+                f:httpGet:
+                  .: {}
+                  f:path: {}
+                  f:port: {}
+                  f:scheme: {}
+                f:periodSeconds: {}
+                f:successThreshold: {}
+                f:timeoutSeconds: {}
+              f:resources: {}
+              f:securityContext:
+                .: {}
+                f:allowPrivilegeEscalation: {}
+                f:capabilities:
+                  .: {}
+                  f:drop: {}
+                f:runAsNonRoot: {}
+                f:runAsUser: {}
+                f:seccompProfile:
+                  .: {}
+                  f:type: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/etc/config"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext:
+            .: {}
+            f:fsGroup: {}
+            f:runAsGroup: {}
+            f:runAsNonRoot: {}
+            f:runAsUser: {}
+          f:serviceAccount: {}
+          f:serviceAccountName: {}
+          f:terminationGracePeriodSeconds: {}
+          f:volumes:
+            .: {}
+            k:{"name":"config-volume"}:
+              .: {}
+              f:configMap:
+                .: {}
+                f:defaultMode: {}
+                f:name: {}
+              f:name: {}
+            k:{"name":"storage-volume"}:
+              .: {}
+              f:name: {}
+              f:persistentVolumeClaim:
+                .: {}
+                f:claimName: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: '2025-06-14T00:52:04Z'
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:cni.projectcalico.org/containerID: {}
+            f:cni.projectcalico.org/podIP: {}
+            f:cni.projectcalico.org/podIPs: {}
+      manager: calico
+      operation: Update
+      subresource: status
+      time: '2025-06-14T00:52:11Z'
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"PodReadyToStartContainers"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:hostIPs: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"10.42.30.67"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: '2025-06-14T00:52:46Z'
+  name: gitlab-prometheus-server-5fc849fd67-jdt4b
+  namespace: gitlab-o3s
+  ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: gitlab-prometheus-server-5fc849fd67
+      uid: abfadb08-d1a2-48d2-b137-e13ab7040cff
+  resourceVersion: '2004833'
+  uid: b5d8c9ae-8472-4bee-8c81-5553b2bde6c1
+spec:
+  containers:
+    - args:
+        - '--watched-dir=/etc/config'
+        - '--listen-address=0.0.0.0:8080'
+        - '--reload-url=http://127.0.0.1:9090/-/reload'
+      image: quay.io/prometheus-operator/prometheus-config-reloader:v0.82.0
+      imagePullPolicy: IfNotPresent
+      livenessProbe:
+        failureThreshold: 3
+        httpGet:
+          path: /healthz
+          port: metrics
+          scheme: HTTP
+        initialDelaySeconds: 2
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 1
+      name: prometheus-server-configmap-reload
+      ports:
+        - containerPort: 8080
+          name: metrics
+          protocol: TCP
+      readinessProbe:
+        failureThreshold: 3
+        httpGet:
+          path: /healthz
+          port: metrics
+          scheme: HTTP
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 1
+      resources: {}
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop:
+            - ALL
+        runAsNonRoot: true
+        runAsUser: 1000
+        seccompProfile:
+          type: RuntimeDefault
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+        - mountPath: /etc/config
+          name: config-volume
+          readOnly: true
+        - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+          name: kube-api-access-hz2wh
+          readOnly: true
+    - args:
+        - '--storage.tsdb.retention.time=30d'
+        - '--config.file=/etc/config/prometheus.yml'
+        - '--storage.tsdb.path=/data'
+        - '--web.console.libraries=/etc/prometheus/console_libraries'
+        - '--web.console.templates=/etc/prometheus/consoles'
+        - '--web.enable-lifecycle'
+      image: quay.io/prometheus/prometheus:v3.3.1
+      imagePullPolicy: IfNotPresent
+      livenessProbe:
+        failureThreshold: 3
+        httpGet:
+          path: /-/healthy
+          port: 9090
+          scheme: HTTP
+        initialDelaySeconds: 30
+        periodSeconds: 15
+        successThreshold: 1
+        timeoutSeconds: 10
+      name: prometheus-server
+      ports:
+        - containerPort: 9090
+          protocol: TCP
+      readinessProbe:
+        failureThreshold: 3
+        httpGet:
+          path: /-/ready
+          port: 9090
+          scheme: HTTP
+        initialDelaySeconds: 30
+        periodSeconds: 5
+        successThreshold: 1
+        timeoutSeconds: 4
+      resources:
+        limits:
+          cpu: 500m
+          memory: 1Gi
+        requests:
+          cpu: 200m
+          memory: 512Mi
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop:
+            - ALL
+        runAsNonRoot: true
+        runAsUser: 1000
+        seccompProfile:
+          type: RuntimeDefault
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+        - mountPath: /etc/config
+          name: config-volume
+        - mountPath: /data
+          name: storage-volume
+        - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+          name: kube-api-access-hz2wh
+          readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: gitlab-pointer-pool1-cczkf-6czm9
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext:
+    fsGroup: 65534
+    runAsGroup: 65534
+    runAsNonRoot: true
+    runAsUser: 65534
+  serviceAccount: gitlab-prometheus-server
+  serviceAccountName: gitlab-prometheus-server
+  terminationGracePeriodSeconds: 300
+  tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+  volumes:
+    - configMap:
+        defaultMode: 420
+        name: gitlab-prometheus-server
+      name: config-volume
+    - name: storage-volume
+      persistentVolumeClaim:
+        claimName: gitlab-prometheus-server
+    - name: kube-api-access-hz2wh
+      projected:
+        defaultMode: 420
+        sources:
+          - serviceAccountToken:
+              expirationSeconds: 3607
+              path: token
+          - configMap:
+              items:
+                - key: ca.crt
+                  path: ca.crt
+              name: kube-root-ca.crt
+          - downwardAPI:
+              items:
+                - fieldRef:
+                    apiVersion: v1
+                    fieldPath: metadata.namespace
+                  path: namespace
+status:
+  conditions:
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-14T00:52:12Z'
+      status: 'True'
+      type: PodReadyToStartContainers
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-14T00:52:04Z'
+      status: 'True'
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-14T00:52:46Z'
+      status: 'True'
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-14T00:52:46Z'
+      status: 'True'
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-14T00:52:04Z'
+      status: 'True'
+      type: PodScheduled
+  containerStatuses:
+    - containerID: >-
+        containerd://b5b8ab7f087caa1a0e1b4bfa7917db5c0a366341ec9a31cbcd3897668c01e68f
+      image: quay.io/prometheus/prometheus:v3.3.1
+      imageID: >-
+        quay.io/prometheus/prometheus@sha256:e2b8aa62b64855956e3ec1e18b4f9387fb6203174a4471936f4662f437f04405
+      lastState: {}
+      name: prometheus-server
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: '2025-06-14T00:52:12Z'
+      volumeMounts:
+        - mountPath: /etc/config
+          name: config-volume
+        - mountPath: /data
+          name: storage-volume
+        - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+          name: kube-api-access-hz2wh
+          readOnly: true
+          recursiveReadOnly: Disabled
+    - containerID: >-
+        containerd://85627d82eb94713db9f616b8813cb4ea660cba27bfa4532edaa32c6a81a045d6
+      image: quay.io/prometheus-operator/prometheus-config-reloader:v0.82.0
+      imageID: >-
+        quay.io/prometheus-operator/prometheus-config-reloader@sha256:346da644c84a36cc2b8f129b088fa35ecdbe5231644f598b03247c9213a995be
+      lastState: {}
+      name: prometheus-server-configmap-reload
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: '2025-06-14T00:52:11Z'
+      volumeMounts:
+        - mountPath: /etc/config
+          name: config-volume
+          readOnly: true
+          recursiveReadOnly: Disabled
+        - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+          name: kube-api-access-hz2wh
+          readOnly: true
+          recursiveReadOnly: Disabled
+  hostIP: 172.31.43.233
+  hostIPs:
+    - ip: 172.31.43.233
+  phase: Running
+  podIP: 10.42.30.67
+  podIPs:
+    - ip: 10.42.30.67
+  qosClass: Burstable
+  startTime: '2025-06-14T00:52:04Z'

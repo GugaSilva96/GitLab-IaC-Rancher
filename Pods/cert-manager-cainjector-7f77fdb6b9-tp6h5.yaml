@@ -1,0 +1,272 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    cattle.io/timestamp: '2025-06-14T03:38:00Z'
+    cni.projectcalico.org/containerID: db177d47843f1a6ee558ef0fbe135af748a7bb93b5ea07c36bf8ecadaa1377a7
+    cni.projectcalico.org/podIP: 10.42.152.132/32
+    cni.projectcalico.org/podIPs: 10.42.152.132/32
+    kubectl.kubernetes.io/restartedAt: '2025-06-13T21:40:04-03:00'
+  creationTimestamp: '2025-06-14T03:38:04Z'
+  generateName: cert-manager-cainjector-7f77fdb6b9-
+  labels:
+    app: cainjector
+    app.kubernetes.io/component: cainjector
+    app.kubernetes.io/instance: cert-manager
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: cainjector
+    app.kubernetes.io/version: v1.13.3
+    helm.sh/chart: cert-manager-v1.13.3
+    pod-template-hash: 7f77fdb6b9
+  managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:cni.projectcalico.org/containerID: {}
+            f:cni.projectcalico.org/podIP: {}
+            f:cni.projectcalico.org/podIPs: {}
+      manager: calico
+      operation: Update
+      subresource: status
+      time: '2025-06-14T03:38:04Z'
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:cattle.io/timestamp: {}
+            f:kubectl.kubernetes.io/restartedAt: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/version: {}
+            f:helm.sh/chart: {}
+            f:pod-template-hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"f4b0b1c5-23b6-400d-9169-679a1b62954c"}: {}
+        f:spec:
+          f:containers:
+            k:{"name":"cert-manager-cainjector"}:
+              .: {}
+              f:args: {}
+              f:env:
+                .: {}
+                k:{"name":"POD_NAMESPACE"}:
+                  .: {}
+                  f:name: {}
+                  f:valueFrom:
+                    .: {}
+                    f:fieldRef: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:resources: {}
+              f:securityContext:
+                .: {}
+                f:allowPrivilegeEscalation: {}
+                f:capabilities:
+                  .: {}
+                  f:drop: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:nodeSelector: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext:
+            .: {}
+            f:runAsNonRoot: {}
+            f:seccompProfile:
+              .: {}
+              f:type: {}
+          f:serviceAccount: {}
+          f:serviceAccountName: {}
+          f:terminationGracePeriodSeconds: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: '2025-06-14T03:38:04Z'
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"PodReadyToStartContainers"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:hostIPs: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"10.42.152.132"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: '2025-06-14T03:38:06Z'
+  name: cert-manager-cainjector-7f77fdb6b9-tp6h5
+  namespace: cert-manager
+  ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: cert-manager-cainjector-7f77fdb6b9
+      uid: f4b0b1c5-23b6-400d-9169-679a1b62954c
+  resourceVersion: '2070801'
+  uid: 69b597f1-8129-4f9a-939c-1f72e3573dba
+spec:
+  containers:
+    - args:
+        - '--v=2'
+        - '--leader-election-namespace=cert-manager'
+      env:
+        - name: POD_NAMESPACE
+          valueFrom:
+            fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.namespace
+      image: quay.io/jetstack/cert-manager-cainjector:v1.13.3
+      imagePullPolicy: IfNotPresent
+      name: cert-manager-cainjector
+      resources: {}
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop:
+            - ALL
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+        - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+          name: kube-api-access-5ptzf
+          readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: false
+  nodeName: gitlab-pointer-pool1-cczkf-rc752
+  nodeSelector:
+    kubernetes.io/os: linux
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext:
+    runAsNonRoot: true
+    seccompProfile:
+      type: RuntimeDefault
+  serviceAccount: cert-manager-cainjector
+  serviceAccountName: cert-manager-cainjector
+  terminationGracePeriodSeconds: 30
+  tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+  volumes:
+    - name: kube-api-access-5ptzf
+      projected:
+        defaultMode: 420
+        sources:
+          - serviceAccountToken:
+              expirationSeconds: 3607
+              path: token
+          - configMap:
+              items:
+                - key: ca.crt
+                  path: ca.crt
+              name: kube-root-ca.crt
+          - downwardAPI:
+              items:
+                - fieldRef:
+                    apiVersion: v1
+                    fieldPath: metadata.namespace
+                  path: namespace
+status:
+  conditions:
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-14T03:38:06Z'
+      status: 'True'
+      type: PodReadyToStartContainers
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-14T03:38:04Z'
+      status: 'True'
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-14T03:38:06Z'
+      status: 'True'
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-14T03:38:06Z'
+      status: 'True'
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-14T03:38:04Z'
+      status: 'True'
+      type: PodScheduled
+  containerStatuses:
+    - containerID: >-
+        containerd://52ab8458136ca88266916ca210c0fd78aa396e5a9dc86ae6047cdcca86c98e80
+      image: quay.io/jetstack/cert-manager-cainjector:v1.13.3
+      imageID: >-
+        quay.io/jetstack/cert-manager-cainjector@sha256:ac5154525f99bd0872671613741aac1b7dcb9c0df988571a7618155ddb6fabd2
+      lastState: {}
+      name: cert-manager-cainjector
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: '2025-06-14T03:38:05Z'
+      volumeMounts:
+        - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+          name: kube-api-access-5ptzf
+          readOnly: true
+          recursiveReadOnly: Disabled
+  hostIP: 172.31.36.13
+  hostIPs:
+    - ip: 172.31.36.13
+  phase: Running
+  podIP: 10.42.152.132
+  podIPs:
+    - ip: 10.42.152.132
+  qosClass: BestEffort
+  startTime: '2025-06-14T03:38:04Z'

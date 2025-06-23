@@ -1,0 +1,651 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    checksum/configmap: 86bcc953bb473748a3d3dc60b7c11f34e60c93519234d4c37f42e22ada559d47
+    checksum/health: aff24913d801436ea469d8d374b2ddb3ec4c43ee7ab24663d5f8ff1a1b6991a9
+    checksum/scripts: 43cdf68c28f3abe25ce017a82f74dbf2437d1900fd69df51a55a3edf6193d141
+    checksum/secret: 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a
+    cni.projectcalico.org/containerID: e097cdf9d1f1a56af13282476e6b7847e2c3bdf131d054345aa3855bafc208fa
+    cni.projectcalico.org/podIP: 10.42.152.138/32
+    cni.projectcalico.org/podIPs: 10.42.152.138/32
+    prometheus.io/port: '9121'
+    prometheus.io/scrape: 'true'
+  creationTimestamp: '2025-06-13T23:44:48Z'
+  generateName: gitlab-redis-master-
+  labels:
+    app.kubernetes.io/component: master
+    app.kubernetes.io/instance: gitlab
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: redis
+    app.kubernetes.io/version: 7.2.4
+    apps.kubernetes.io/pod-index: '0'
+    controller-revision-hash: gitlab-redis-master-7c7cf97cd5
+    helm.sh/chart: redis-18.19.4
+    statefulset.kubernetes.io/pod-name: gitlab-redis-master-0
+  managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:checksum/configmap: {}
+            f:checksum/health: {}
+            f:checksum/scripts: {}
+            f:checksum/secret: {}
+            f:prometheus.io/port: {}
+            f:prometheus.io/scrape: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/version: {}
+            f:apps.kubernetes.io/pod-index: {}
+            f:controller-revision-hash: {}
+            f:helm.sh/chart: {}
+            f:statefulset.kubernetes.io/pod-name: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"c653b35b-54f3-4fe7-bc31-c2759c8d77c0"}: {}
+        f:spec:
+          f:affinity:
+            .: {}
+            f:podAntiAffinity:
+              .: {}
+              f:preferredDuringSchedulingIgnoredDuringExecution: {}
+          f:automountServiceAccountToken: {}
+          f:containers:
+            k:{"name":"metrics"}:
+              .: {}
+              f:command: {}
+              f:env:
+                .: {}
+                k:{"name":"REDIS_ALIAS"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"REDIS_EXPORTER_WEB_LISTEN_ADDRESS"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:livenessProbe:
+                .: {}
+                f:failureThreshold: {}
+                f:initialDelaySeconds: {}
+                f:periodSeconds: {}
+                f:successThreshold: {}
+                f:tcpSocket:
+                  .: {}
+                  f:port: {}
+                f:timeoutSeconds: {}
+              f:name: {}
+              f:ports:
+                .: {}
+                k:{"containerPort":9121,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:name: {}
+                  f:protocol: {}
+              f:readinessProbe:
+                .: {}
+                f:failureThreshold: {}
+                f:httpGet:
+                  .: {}
+                  f:path: {}
+                  f:port: {}
+                  f:scheme: {}
+                f:initialDelaySeconds: {}
+                f:periodSeconds: {}
+                f:successThreshold: {}
+                f:timeoutSeconds: {}
+              f:resources: {}
+              f:securityContext:
+                .: {}
+                f:allowPrivilegeEscalation: {}
+                f:capabilities:
+                  .: {}
+                  f:drop: {}
+                f:readOnlyRootFilesystem: {}
+                f:runAsGroup: {}
+                f:runAsNonRoot: {}
+                f:runAsUser: {}
+                f:seccompProfile:
+                  .: {}
+                  f:type: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/secrets/"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                k:{"mountPath":"/tmp"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:subPath: {}
+            k:{"name":"redis"}:
+              .: {}
+              f:args: {}
+              f:command: {}
+              f:env:
+                .: {}
+                k:{"name":"ALLOW_EMPTY_PASSWORD"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"BITNAMI_DEBUG"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"REDIS_PORT"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"REDIS_REPLICATION_MODE"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"REDIS_TLS_ENABLED"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:livenessProbe:
+                .: {}
+                f:exec:
+                  .: {}
+                  f:command: {}
+                f:failureThreshold: {}
+                f:initialDelaySeconds: {}
+                f:periodSeconds: {}
+                f:successThreshold: {}
+                f:timeoutSeconds: {}
+              f:name: {}
+              f:ports:
+                .: {}
+                k:{"containerPort":6379,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:name: {}
+                  f:protocol: {}
+              f:readinessProbe:
+                .: {}
+                f:exec:
+                  .: {}
+                  f:command: {}
+                f:failureThreshold: {}
+                f:initialDelaySeconds: {}
+                f:periodSeconds: {}
+                f:successThreshold: {}
+                f:timeoutSeconds: {}
+              f:resources:
+                .: {}
+                f:limits:
+                  .: {}
+                  f:cpu: {}
+                  f:memory: {}
+                f:requests:
+                  .: {}
+                  f:cpu: {}
+                  f:memory: {}
+              f:securityContext:
+                .: {}
+                f:allowPrivilegeEscalation: {}
+                f:capabilities:
+                  .: {}
+                  f:drop: {}
+                f:readOnlyRootFilesystem: {}
+                f:runAsGroup: {}
+                f:runAsNonRoot: {}
+                f:runAsUser: {}
+                f:seccompProfile:
+                  .: {}
+                  f:type: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/data"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                k:{"mountPath":"/health"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                k:{"mountPath":"/opt/bitnami/redis/etc/"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:subPath: {}
+                k:{"mountPath":"/opt/bitnami/redis/mounted-etc"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                k:{"mountPath":"/opt/bitnami/redis/secrets/"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                k:{"mountPath":"/opt/bitnami/scripts/start-scripts"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                k:{"mountPath":"/tmp"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:subPath: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:hostname: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext:
+            .: {}
+            f:fsGroup: {}
+            f:fsGroupChangePolicy: {}
+          f:serviceAccount: {}
+          f:serviceAccountName: {}
+          f:subdomain: {}
+          f:terminationGracePeriodSeconds: {}
+          f:volumes:
+            .: {}
+            k:{"name":"config"}:
+              .: {}
+              f:configMap:
+                .: {}
+                f:defaultMode: {}
+                f:name: {}
+              f:name: {}
+            k:{"name":"empty-dir"}:
+              .: {}
+              f:emptyDir: {}
+              f:name: {}
+            k:{"name":"health"}:
+              .: {}
+              f:configMap:
+                .: {}
+                f:defaultMode: {}
+                f:name: {}
+              f:name: {}
+            k:{"name":"redis-data"}:
+              .: {}
+              f:name: {}
+              f:persistentVolumeClaim:
+                .: {}
+                f:claimName: {}
+            k:{"name":"redis-password"}:
+              .: {}
+              f:name: {}
+              f:secret:
+                .: {}
+                f:defaultMode: {}
+                f:items: {}
+                f:secretName: {}
+            k:{"name":"start-scripts"}:
+              .: {}
+              f:configMap:
+                .: {}
+                f:defaultMode: {}
+                f:name: {}
+              f:name: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: '2025-06-13T23:44:48Z'
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:cni.projectcalico.org/containerID: {}
+            f:cni.projectcalico.org/podIP: {}
+            f:cni.projectcalico.org/podIPs: {}
+      manager: calico
+      operation: Update
+      subresource: status
+      time: '2025-06-13T23:44:57Z'
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"PodReadyToStartContainers"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:hostIPs: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"10.42.152.138"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: '2025-06-13T23:45:23Z'
+  name: gitlab-redis-master-0
+  namespace: gitlab-o3s
+  ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: StatefulSet
+      name: gitlab-redis-master
+      uid: c653b35b-54f3-4fe7-bc31-c2759c8d77c0
+  resourceVersion: '1976986'
+  uid: 6f68e04b-64f4-4599-aa82-8f6938770396
+spec:
+  affinity:
+    podAntiAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+        - podAffinityTerm:
+            labelSelector:
+              matchLabels:
+                app.kubernetes.io/component: master
+                app.kubernetes.io/instance: gitlab
+                app.kubernetes.io/name: redis
+            topologyKey: kubernetes.io/hostname
+          weight: 1
+  automountServiceAccountToken: false
+  containers:
+    - args:
+        - '-c'
+        - /opt/bitnami/scripts/start-scripts/start-master.sh
+      command:
+        - /bin/bash
+      env:
+        - name: BITNAMI_DEBUG
+          value: 'false'
+        - name: REDIS_REPLICATION_MODE
+          value: master
+        - name: ALLOW_EMPTY_PASSWORD
+          value: 'yes'
+        - name: REDIS_TLS_ENABLED
+          value: 'no'
+        - name: REDIS_PORT
+          value: '6379'
+      image: docker.io/bitnami/redis:7.2.4-debian-12-r9
+      imagePullPolicy: IfNotPresent
+      livenessProbe:
+        exec:
+          command:
+            - sh
+            - '-c'
+            - /health/ping_liveness_local.sh 5
+        failureThreshold: 5
+        initialDelaySeconds: 20
+        periodSeconds: 5
+        successThreshold: 1
+        timeoutSeconds: 6
+      name: redis
+      ports:
+        - containerPort: 6379
+          name: redis
+          protocol: TCP
+      readinessProbe:
+        exec:
+          command:
+            - sh
+            - '-c'
+            - /health/ping_readiness_local.sh 1
+        failureThreshold: 5
+        initialDelaySeconds: 20
+        periodSeconds: 5
+        successThreshold: 1
+        timeoutSeconds: 2
+      resources:
+        limits:
+          cpu: 300m
+          memory: 500Mi
+        requests:
+          cpu: 100m
+          memory: 200Mi
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop:
+            - ALL
+        readOnlyRootFilesystem: false
+        runAsGroup: 0
+        runAsNonRoot: true
+        runAsUser: 1001
+        seccompProfile:
+          type: RuntimeDefault
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+        - mountPath: /opt/bitnami/scripts/start-scripts
+          name: start-scripts
+        - mountPath: /health
+          name: health
+        - mountPath: /opt/bitnami/redis/secrets/
+          name: redis-password
+        - mountPath: /data
+          name: redis-data
+        - mountPath: /opt/bitnami/redis/mounted-etc
+          name: config
+        - mountPath: /opt/bitnami/redis/etc/
+          name: empty-dir
+          subPath: app-conf-dir
+        - mountPath: /tmp
+          name: empty-dir
+          subPath: tmp-dir
+    - command:
+        - /bin/bash
+        - '-c'
+        - |
+          if [[ -f '/secrets/redis-password' ]]; then
+          export REDIS_PASSWORD=$(cat /secrets/redis-password)
+          fi
+          redis_exporter
+      env:
+        - name: REDIS_ALIAS
+          value: gitlab-redis
+        - name: REDIS_EXPORTER_WEB_LISTEN_ADDRESS
+          value: ':9121'
+      image: docker.io/bitnami/redis-exporter:1.58.0-debian-12-r4
+      imagePullPolicy: IfNotPresent
+      livenessProbe:
+        failureThreshold: 5
+        initialDelaySeconds: 10
+        periodSeconds: 10
+        successThreshold: 1
+        tcpSocket:
+          port: metrics
+        timeoutSeconds: 5
+      name: metrics
+      ports:
+        - containerPort: 9121
+          name: metrics
+          protocol: TCP
+      readinessProbe:
+        failureThreshold: 3
+        httpGet:
+          path: /
+          port: metrics
+          scheme: HTTP
+        initialDelaySeconds: 5
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 1
+      resources: {}
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop:
+            - ALL
+        readOnlyRootFilesystem: false
+        runAsGroup: 0
+        runAsNonRoot: true
+        runAsUser: 1001
+        seccompProfile:
+          type: RuntimeDefault
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+        - mountPath: /tmp
+          name: empty-dir
+          subPath: app-tmp-dir
+        - mountPath: /secrets/
+          name: redis-password
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  hostname: gitlab-redis-master-0
+  nodeName: gitlab-pointer-pool1-cczkf-rc752
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext:
+    fsGroup: 1001
+    fsGroupChangePolicy: Always
+  serviceAccount: gitlab-redis-master
+  serviceAccountName: gitlab-redis-master
+  subdomain: gitlab-redis-headless
+  terminationGracePeriodSeconds: 30
+  tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+  volumes:
+    - name: redis-data
+      persistentVolumeClaim:
+        claimName: redis-data-gitlab-redis-master-0
+    - configMap:
+        defaultMode: 493
+        name: gitlab-redis-scripts
+      name: start-scripts
+    - configMap:
+        defaultMode: 493
+        name: gitlab-redis-health
+      name: health
+    - name: redis-password
+      secret:
+        defaultMode: 420
+        items:
+          - key: secret
+            path: redis-password
+        secretName: gitlab-redis-secret
+    - configMap:
+        defaultMode: 420
+        name: gitlab-redis-configuration
+      name: config
+    - emptyDir: {}
+      name: empty-dir
+status:
+  conditions:
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-13T23:44:58Z'
+      status: 'True'
+      type: PodReadyToStartContainers
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-13T23:44:48Z'
+      status: 'True'
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-13T23:45:23Z'
+      status: 'True'
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-13T23:45:23Z'
+      status: 'True'
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-13T23:44:48Z'
+      status: 'True'
+      type: PodScheduled
+  containerStatuses:
+    - containerID: >-
+        containerd://6ff3c7b684229a5c4862d508750c4e8caa5f2533457dc9e04d185756e8cd2868
+      image: docker.io/bitnami/redis-exporter:1.58.0-debian-12-r4
+      imageID: >-
+        docker.io/bitnami/redis-exporter@sha256:1c1ab23f5dd780f8203f1b4f764a12c2853ae191ea983e1f26228b47576758fe
+      lastState: {}
+      name: metrics
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: '2025-06-13T23:44:58Z'
+      volumeMounts:
+        - mountPath: /tmp
+          name: empty-dir
+        - mountPath: /secrets/
+          name: redis-password
+    - containerID: >-
+        containerd://c1f359e32dff5d71e569f63792212860831996e6552673f166e443e8ff53f91b
+      image: docker.io/bitnami/redis:7.2.4-debian-12-r9
+      imageID: >-
+        docker.io/bitnami/redis@sha256:c1843bcdb2f413d2aff67adbaf482082673cd40ec602fa9fefad74ec685cb813
+      lastState: {}
+      name: redis
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: '2025-06-13T23:44:58Z'
+      volumeMounts:
+        - mountPath: /opt/bitnami/scripts/start-scripts
+          name: start-scripts
+        - mountPath: /health
+          name: health
+        - mountPath: /opt/bitnami/redis/secrets/
+          name: redis-password
+        - mountPath: /data
+          name: redis-data
+        - mountPath: /opt/bitnami/redis/mounted-etc
+          name: config
+        - mountPath: /opt/bitnami/redis/etc/
+          name: empty-dir
+        - mountPath: /tmp
+          name: empty-dir
+  hostIP: 172.31.36.13
+  hostIPs:
+    - ip: 172.31.36.13
+  phase: Running
+  podIP: 10.42.152.138
+  podIPs:
+    - ip: 10.42.152.138
+  qosClass: Burstable
+  startTime: '2025-06-13T23:44:48Z'

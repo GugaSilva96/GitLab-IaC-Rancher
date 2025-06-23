@@ -1,0 +1,1174 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: '7'
+    field.cattle.io/publicEndpoints: >-
+      [{"addresses":["18.212.110.79","52.23.152.235","54.81.128.3"],"port":443,"protocol":"HTTPS","serviceName":"gitlab-o3s:gitlab-webservice-default","ingressName":"gitlab-o3s:gitlab-webservice-default","hostname":"gitlab.rancher.pointertech.digital","path":"/","allNodes":false}]
+    meta.helm.sh/release-name: gitlab
+    meta.helm.sh/release-namespace: gitlab-o3s
+  creationTimestamp: '2025-06-13T15:46:17Z'
+  generation: 11
+  labels:
+    app: webservice
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: gitlab
+    app.kubernetes.io/version: v18.0.2
+    chart: webservice-9.0.2
+    gitlab.com/webservice-name: default
+    heritage: Helm
+    release: gitlab
+  managedFields:
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          f:replicas: {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: scale
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/version: {}
+            f:chart: {}
+            f:gitlab.com/webservice-name: {}
+            f:heritage: {}
+            f:release: {}
+        f:spec:
+          f:progressDeadlineSeconds: {}
+          f:revisionHistoryLimit: {}
+          f:selector: {}
+          f:strategy:
+            f:rollingUpdate:
+              .: {}
+              f:maxSurge: {}
+              f:maxUnavailable: {}
+            f:type: {}
+          f:template:
+            f:metadata:
+              f:annotations:
+                .: {}
+                f:checksum/config: {}
+                f:cluster-autoscaler.kubernetes.io/safe-to-evict: {}
+                f:gitlab.com/prometheus_path: {}
+                f:gitlab.com/prometheus_port: {}
+                f:gitlab.com/prometheus_scrape: {}
+                f:prometheus.io/path: {}
+                f:prometheus.io/port: {}
+                f:prometheus.io/scrape: {}
+              f:labels:
+                .: {}
+                f:app: {}
+                f:app.kubernetes.io/name: {}
+                f:app.kubernetes.io/version: {}
+                f:chart: {}
+                f:gitlab.com/webservice-name: {}
+                f:heritage: {}
+                f:release: {}
+            f:spec:
+              f:affinity:
+                .: {}
+                f:podAntiAffinity:
+                  .: {}
+                  f:preferredDuringSchedulingIgnoredDuringExecution: {}
+              f:automountServiceAccountToken: {}
+              f:containers:
+                k:{"name":"gitlab-workhorse"}:
+                  .: {}
+                  f:env:
+                    .: {}
+                    k:{"name":"CONFIG_DIRECTORY"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CONFIG_TEMPLATE_DIRECTORY"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"GITLAB_WORKHORSE_AUTH_BACKEND"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"GITLAB_WORKHORSE_EXTRA_ARGS"}:
+                      .: {}
+                      f:name: {}
+                    k:{"name":"GITLAB_WORKHORSE_LISTEN_PORT"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"GITLAB_WORKHORSE_LOG_FORMAT"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"SHUTDOWN_BLACKOUT_SECONDS"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"TMPDIR"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"TZ"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:lifecycle:
+                    .: {}
+                    f:preStop:
+                      .: {}
+                      f:exec:
+                        .: {}
+                        f:command: {}
+                  f:livenessProbe:
+                    .: {}
+                    f:exec:
+                      .: {}
+                      f:command: {}
+                    f:failureThreshold: {}
+                    f:initialDelaySeconds: {}
+                    f:periodSeconds: {}
+                    f:successThreshold: {}
+                    f:timeoutSeconds: {}
+                  f:name: {}
+                  f:ports:
+                    .: {}
+                    k:{"containerPort":8181,"protocol":"TCP"}:
+                      .: {}
+                      f:containerPort: {}
+                      f:name: {}
+                      f:protocol: {}
+                  f:readinessProbe:
+                    .: {}
+                    f:exec:
+                      .: {}
+                      f:command: {}
+                    f:failureThreshold: {}
+                    f:periodSeconds: {}
+                    f:successThreshold: {}
+                    f:timeoutSeconds: {}
+                  f:resources:
+                    .: {}
+                    f:requests:
+                      .: {}
+                      f:cpu: {}
+                      f:memory: {}
+                  f:securityContext:
+                    .: {}
+                    f:allowPrivilegeEscalation: {}
+                    f:capabilities:
+                      .: {}
+                      f:drop: {}
+                    f:runAsNonRoot: {}
+                    f:runAsUser: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+                  f:volumeMounts:
+                    .: {}
+                    k:{"mountPath":"/etc/gitlab"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:readOnly: {}
+                    k:{"mountPath":"/etc/pki/ca-trust/extracted/pem"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:readOnly: {}
+                    k:{"mountPath":"/etc/ssl/certs/"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:readOnly: {}
+                    k:{"mountPath":"/srv/gitlab/public/uploads/tmp"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                    k:{"mountPath":"/tmp"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                    k:{"mountPath":"/var/opt/gitlab/templates"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                k:{"name":"webservice"}:
+                  .: {}
+                  f:env:
+                    .: {}
+                    k:{"name":"CONFIG_DIRECTORY"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CONFIG_TEMPLATE_DIRECTORY"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"DISABLE_PUMA_WORKER_KILLER"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"ENABLE_BOOTSNAP"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"GITALY_FEATURE_DEFAULT_ON"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"GITLAB_WEBSERVER"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"INTERNAL_PORT"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"PUMA_THREADS_MAX"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"PUMA_THREADS_MIN"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"PUMA_WORKER_MAX_MEMORY"}:
+                      .: {}
+                      f:name: {}
+                    k:{"name":"SHUTDOWN_BLACKOUT_SECONDS"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"TMPDIR"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"TZ"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"WORKER_PROCESSES"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"WORKER_TIMEOUT"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"WORKHORSE_ARCHIVE_CACHE_DISABLED"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"prometheus_multiproc_dir"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:lifecycle:
+                    .: {}
+                    f:preStop:
+                      .: {}
+                      f:exec:
+                        .: {}
+                        f:command: {}
+                  f:livenessProbe:
+                    .: {}
+                    f:failureThreshold: {}
+                    f:httpGet:
+                      .: {}
+                      f:path: {}
+                      f:port: {}
+                      f:scheme: {}
+                    f:initialDelaySeconds: {}
+                    f:periodSeconds: {}
+                    f:successThreshold: {}
+                    f:timeoutSeconds: {}
+                  f:name: {}
+                  f:ports:
+                    .: {}
+                    k:{"containerPort":8080,"protocol":"TCP"}:
+                      .: {}
+                      f:containerPort: {}
+                      f:name: {}
+                      f:protocol: {}
+                    k:{"containerPort":8083,"protocol":"TCP"}:
+                      .: {}
+                      f:containerPort: {}
+                      f:name: {}
+                      f:protocol: {}
+                  f:readinessProbe:
+                    .: {}
+                    f:failureThreshold: {}
+                    f:httpGet:
+                      .: {}
+                      f:path: {}
+                      f:port: {}
+                      f:scheme: {}
+                    f:periodSeconds: {}
+                    f:successThreshold: {}
+                    f:timeoutSeconds: {}
+                  f:resources:
+                    .: {}
+                    f:limits:
+                      .: {}
+                      f:cpu: {}
+                      f:memory: {}
+                    f:requests:
+                      .: {}
+                      f:cpu: {}
+                      f:memory: {}
+                  f:securityContext:
+                    .: {}
+                    f:allowPrivilegeEscalation: {}
+                    f:capabilities:
+                      .: {}
+                      f:drop: {}
+                    f:runAsNonRoot: {}
+                    f:runAsUser: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+                  f:volumeMounts:
+                    .: {}
+                    k:{"mountPath":"/etc/gitlab"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:readOnly: {}
+                    k:{"mountPath":"/etc/krb5.conf"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:subPath: {}
+                    k:{"mountPath":"/etc/pki/ca-trust/extracted/pem"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:readOnly: {}
+                    k:{"mountPath":"/etc/ssl/certs/"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:readOnly: {}
+                    k:{"mountPath":"/metrics"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                    k:{"mountPath":"/srv/gitlab/INSTALLATION_TYPE"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:subPath: {}
+                    k:{"mountPath":"/srv/gitlab/config/initializers/smtp_settings.rb"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:subPath: {}
+                    k:{"mountPath":"/srv/gitlab/config/secrets.yml"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:subPath: {}
+                    k:{"mountPath":"/srv/gitlab/public/uploads/tmp"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                    k:{"mountPath":"/tmp"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                    k:{"mountPath":"/var/opt/gitlab/templates"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+              f:dnsPolicy: {}
+              f:initContainers:
+                .: {}
+                k:{"name":"certificates"}:
+                  .: {}
+                  f:env:
+                    .: {}
+                    k:{"name":"TZ"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:name: {}
+                  f:resources:
+                    .: {}
+                    f:requests:
+                      .: {}
+                      f:cpu: {}
+                  f:securityContext:
+                    .: {}
+                    f:allowPrivilegeEscalation: {}
+                    f:capabilities:
+                      .: {}
+                      f:drop: {}
+                    f:runAsNonRoot: {}
+                    f:runAsUser: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+                  f:volumeMounts:
+                    .: {}
+                    k:{"mountPath":"/etc/pki/ca-trust/extracted/pem"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                    k:{"mountPath":"/etc/ssl/certs"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                k:{"name":"configure"}:
+                  .: {}
+                  f:args: {}
+                  f:command: {}
+                  f:env:
+                    .: {}
+                    k:{"name":"TZ"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:name: {}
+                  f:resources:
+                    .: {}
+                    f:requests:
+                      .: {}
+                      f:cpu: {}
+                  f:securityContext:
+                    .: {}
+                    f:allowPrivilegeEscalation: {}
+                    f:capabilities:
+                      .: {}
+                      f:drop: {}
+                    f:runAsNonRoot: {}
+                    f:runAsUser: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+                  f:volumeMounts:
+                    .: {}
+                    k:{"mountPath":"/config-webservice"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:readOnly: {}
+                    k:{"mountPath":"/config-workhorse"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:readOnly: {}
+                    k:{"mountPath":"/init-config"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:readOnly: {}
+                    k:{"mountPath":"/init-secrets"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                    k:{"mountPath":"/init-secrets-workhorse"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                    k:{"mountPath":"/tmp"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                k:{"name":"dependencies"}:
+                  .: {}
+                  f:args: {}
+                  f:env:
+                    .: {}
+                    k:{"name":"CONFIG_DIRECTORY"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CONFIG_TEMPLATE_DIRECTORY"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"ENABLE_BOOTSNAP"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"GITALY_FEATURE_DEFAULT_ON"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"TZ"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"WORKHORSE_ARCHIVE_CACHE_DISABLED"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:name: {}
+                  f:resources:
+                    .: {}
+                    f:requests:
+                      .: {}
+                      f:cpu: {}
+                  f:securityContext:
+                    .: {}
+                    f:allowPrivilegeEscalation: {}
+                    f:capabilities:
+                      .: {}
+                      f:drop: {}
+                    f:runAsNonRoot: {}
+                    f:runAsUser: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+                  f:volumeMounts:
+                    .: {}
+                    k:{"mountPath":"/etc/gitlab"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:readOnly: {}
+                    k:{"mountPath":"/etc/pki/ca-trust/extracted/pem"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:readOnly: {}
+                    k:{"mountPath":"/etc/ssl/certs/"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:readOnly: {}
+                    k:{"mountPath":"/srv/gitlab/config/secrets.yml"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:readOnly: {}
+                      f:subPath: {}
+                    k:{"mountPath":"/var/opt/gitlab/templates"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+              f:restartPolicy: {}
+              f:schedulerName: {}
+              f:securityContext:
+                .: {}
+                f:fsGroup: {}
+                f:runAsUser: {}
+                f:seccompProfile:
+                  .: {}
+                  f:type: {}
+              f:terminationGracePeriodSeconds: {}
+              f:volumes:
+                .: {}
+                k:{"name":"etc-pki-ca-trust-extracted-pem"}:
+                  .: {}
+                  f:emptyDir:
+                    .: {}
+                    f:medium: {}
+                  f:name: {}
+                k:{"name":"etc-ssl-certs"}:
+                  .: {}
+                  f:emptyDir:
+                    .: {}
+                    f:medium: {}
+                  f:name: {}
+                k:{"name":"init-webservice-secrets"}:
+                  .: {}
+                  f:name: {}
+                  f:projected:
+                    .: {}
+                    f:defaultMode: {}
+                    f:sources: {}
+                k:{"name":"shared-tmp"}:
+                  .: {}
+                  f:emptyDir: {}
+                  f:name: {}
+                k:{"name":"shared-upload-directory"}:
+                  .: {}
+                  f:emptyDir: {}
+                  f:name: {}
+                k:{"name":"webservice-config"}:
+                  .: {}
+                  f:configMap:
+                    .: {}
+                    f:defaultMode: {}
+                    f:name: {}
+                  f:name: {}
+                k:{"name":"webservice-metrics"}:
+                  .: {}
+                  f:emptyDir:
+                    .: {}
+                    f:medium: {}
+                  f:name: {}
+                k:{"name":"webservice-secrets"}:
+                  .: {}
+                  f:emptyDir:
+                    .: {}
+                    f:medium: {}
+                  f:name: {}
+                k:{"name":"workhorse-config"}:
+                  .: {}
+                  f:configMap:
+                    .: {}
+                    f:defaultMode: {}
+                    f:name: {}
+                  f:name: {}
+                k:{"name":"workhorse-secrets"}:
+                  .: {}
+                  f:emptyDir:
+                    .: {}
+                    f:medium: {}
+                  f:name: {}
+      manager: helm
+      operation: Update
+      time: '2025-06-14T01:34:14Z'
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:field.cattle.io/publicEndpoints: {}
+        f:spec:
+          f:template:
+            f:metadata:
+              f:annotations:
+                f:cattle.io/timestamp: {}
+      manager: agent
+      operation: Update
+      time: '2025-06-14T06:51:55Z'
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:deployment.kubernetes.io/revision: {}
+        f:status:
+          f:availableReplicas: {}
+          f:conditions:
+            .: {}
+            k:{"type":"Available"}:
+              .: {}
+              f:lastTransitionTime: {}
+              f:lastUpdateTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Progressing"}:
+              .: {}
+              f:lastTransitionTime: {}
+              f:lastUpdateTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+          f:observedGeneration: {}
+          f:readyReplicas: {}
+          f:replicas: {}
+          f:updatedReplicas: {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: status
+      time: '2025-06-14T06:51:55Z'
+  name: gitlab-webservice-default
+  namespace: gitlab-o3s
+  resourceVersion: '2145534'
+  uid: 7cbd076b-5136-4766-89e2-1ca89f5be41a
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 2
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: webservice
+      gitlab.com/webservice-name: default
+      release: gitlab
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: '2025-06-14T01:21:54Z'
+        checksum/config: 493156ea9279b6356eba2ae656f5f868d356ec8e8d8a6c963097d2080fd56d58
+        cluster-autoscaler.kubernetes.io/safe-to-evict: 'true'
+        gitlab.com/prometheus_path: /metrics
+        gitlab.com/prometheus_port: '8083'
+        gitlab.com/prometheus_scrape: 'true'
+        prometheus.io/path: /metrics
+        prometheus.io/port: '8083'
+        prometheus.io/scrape: 'true'
+      creationTimestamp: null
+      labels:
+        app: webservice
+        app.kubernetes.io/name: gitlab
+        app.kubernetes.io/version: v18.0.2
+        chart: webservice-9.0.2
+        gitlab.com/webservice-name: default
+        heritage: Helm
+        release: gitlab
+    spec:
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - podAffinityTerm:
+                labelSelector:
+                  matchLabels:
+                    app: webservice
+                    gitlab.com/webservice-name: default
+                    release: gitlab
+                topologyKey: kubernetes.io/hostname
+              weight: 1
+      automountServiceAccountToken: false
+      containers:
+        - env:
+            - name: TZ
+              value: America/Sao_Paulo
+            - name: GITLAB_WEBSERVER
+              value: puma
+            - name: TMPDIR
+              value: /tmp/gitlab
+            - name: GITALY_FEATURE_DEFAULT_ON
+              value: '1'
+            - name: CONFIG_TEMPLATE_DIRECTORY
+              value: /var/opt/gitlab/templates
+            - name: CONFIG_DIRECTORY
+              value: /srv/gitlab/config
+            - name: prometheus_multiproc_dir
+              value: /metrics
+            - name: ENABLE_BOOTSNAP
+              value: '1'
+            - name: WORKER_PROCESSES
+              value: '2'
+            - name: WORKER_TIMEOUT
+              value: '60'
+            - name: INTERNAL_PORT
+              value: '8080'
+            - name: PUMA_THREADS_MIN
+              value: '4'
+            - name: PUMA_THREADS_MAX
+              value: '4'
+            - name: PUMA_WORKER_MAX_MEMORY
+            - name: DISABLE_PUMA_WORKER_KILLER
+              value: 'true'
+            - name: SHUTDOWN_BLACKOUT_SECONDS
+              value: '10'
+            - name: WORKHORSE_ARCHIVE_CACHE_DISABLED
+              value: 'true'
+          image: >-
+            registry.gitlab.com/gitlab-org/build/cng/gitlab-webservice-ee:v18.0.2
+          imagePullPolicy: IfNotPresent
+          lifecycle:
+            preStop:
+              exec:
+                command:
+                  - /bin/bash
+                  - '-c'
+                  - pkill -SIGINT -o ruby
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /-/liveness
+              port: 8080
+              scheme: HTTP
+            initialDelaySeconds: 20
+            periodSeconds: 60
+            successThreshold: 1
+            timeoutSeconds: 30
+          name: webservice
+          ports:
+            - containerPort: 8080
+              name: http-webservice
+              protocol: TCP
+            - containerPort: 8083
+              name: http-metrics-ws
+              protocol: TCP
+          readinessProbe:
+            failureThreshold: 2
+            httpGet:
+              path: /-/readiness
+              port: 8080
+              scheme: HTTP
+            periodSeconds: 5
+            successThreshold: 1
+            timeoutSeconds: 2
+          resources:
+            limits:
+              cpu: '1'
+              memory: 3Gi
+            requests:
+              cpu: 300m
+              memory: 1536Mi
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+            runAsNonRoot: true
+            runAsUser: 1000
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+            - mountPath: /metrics
+              name: webservice-metrics
+            - mountPath: /var/opt/gitlab/templates
+              name: webservice-config
+            - mountPath: /etc/gitlab
+              name: webservice-secrets
+              readOnly: true
+            - mountPath: /srv/gitlab/config/secrets.yml
+              name: webservice-secrets
+              subPath: rails-secrets/secrets.yml
+            - mountPath: /etc/krb5.conf
+              name: webservice-config
+              subPath: krb5.conf
+            - mountPath: /srv/gitlab/config/initializers/smtp_settings.rb
+              name: webservice-config
+              subPath: smtp_settings.rb
+            - mountPath: /srv/gitlab/INSTALLATION_TYPE
+              name: webservice-config
+              subPath: installation_type
+            - mountPath: /srv/gitlab/public/uploads/tmp
+              name: shared-upload-directory
+            - mountPath: /tmp
+              name: shared-tmp
+            - mountPath: /etc/ssl/certs/
+              name: etc-ssl-certs
+              readOnly: true
+            - mountPath: /etc/pki/ca-trust/extracted/pem
+              name: etc-pki-ca-trust-extracted-pem
+              readOnly: true
+        - env:
+            - name: TZ
+              value: America/Sao_Paulo
+            - name: TMPDIR
+              value: /tmp/gitlab
+            - name: GITLAB_WORKHORSE_AUTH_BACKEND
+              value: http://localhost:8080
+            - name: GITLAB_WORKHORSE_EXTRA_ARGS
+            - name: GITLAB_WORKHORSE_LISTEN_PORT
+              value: '8181'
+            - name: GITLAB_WORKHORSE_LOG_FORMAT
+              value: json
+            - name: CONFIG_TEMPLATE_DIRECTORY
+              value: /var/opt/gitlab/templates
+            - name: CONFIG_DIRECTORY
+              value: /srv/gitlab/config
+            - name: SHUTDOWN_BLACKOUT_SECONDS
+              value: '10'
+          image: registry.gitlab.com/gitlab-org/build/cng/gitlab-workhorse-ee:v18.0.2
+          imagePullPolicy: IfNotPresent
+          lifecycle:
+            preStop:
+              exec:
+                command:
+                  - /bin/bash
+                  - '-c'
+                  - sleep $SHUTDOWN_BLACKOUT_SECONDS
+          livenessProbe:
+            exec:
+              command:
+                - /scripts/healthcheck
+            failureThreshold: 3
+            initialDelaySeconds: 20
+            periodSeconds: 60
+            successThreshold: 1
+            timeoutSeconds: 30
+          name: gitlab-workhorse
+          ports:
+            - containerPort: 8181
+              name: http-workhorse
+              protocol: TCP
+          readinessProbe:
+            exec:
+              command:
+                - /scripts/healthcheck
+            failureThreshold: 3
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 2
+          resources:
+            requests:
+              cpu: 100m
+              memory: 100M
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+            runAsNonRoot: true
+            runAsUser: 1000
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+            - mountPath: /var/opt/gitlab/templates
+              name: workhorse-config
+            - mountPath: /etc/gitlab
+              name: workhorse-secrets
+              readOnly: true
+            - mountPath: /srv/gitlab/public/uploads/tmp
+              name: shared-upload-directory
+            - mountPath: /tmp
+              name: shared-tmp
+            - mountPath: /etc/ssl/certs/
+              name: etc-ssl-certs
+              readOnly: true
+            - mountPath: /etc/pki/ca-trust/extracted/pem
+              name: etc-pki-ca-trust-extracted-pem
+              readOnly: true
+      dnsPolicy: ClusterFirst
+      initContainers:
+        - env:
+            - name: TZ
+              value: America/Sao_Paulo
+          image: registry.gitlab.com/gitlab-org/build/cng/certificates:v18.0.2
+          imagePullPolicy: IfNotPresent
+          name: certificates
+          resources:
+            requests:
+              cpu: 50m
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+            runAsNonRoot: true
+            runAsUser: 1000
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+            - mountPath: /etc/ssl/certs
+              name: etc-ssl-certs
+            - mountPath: /etc/pki/ca-trust/extracted/pem
+              name: etc-pki-ca-trust-extracted-pem
+        - args:
+            - '-c'
+            - >-
+              sh -x /config-webservice/configure ; sh -x
+              /config-workhorse/configure ; mkdir -p -m 3770 /tmp/gitlab
+          command:
+            - sh
+          env:
+            - name: TZ
+              value: America/Sao_Paulo
+          image: registry.gitlab.com/gitlab-org/build/cng/gitlab-base:v18.0.2
+          imagePullPolicy: IfNotPresent
+          name: configure
+          resources:
+            requests:
+              cpu: 50m
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+            runAsNonRoot: true
+            runAsUser: 1000
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+            - mountPath: /config-webservice
+              name: webservice-config
+              readOnly: true
+            - mountPath: /config-workhorse
+              name: workhorse-config
+              readOnly: true
+            - mountPath: /init-config
+              name: init-webservice-secrets
+              readOnly: true
+            - mountPath: /init-secrets
+              name: webservice-secrets
+            - mountPath: /init-secrets-workhorse
+              name: workhorse-secrets
+            - mountPath: /tmp
+              name: shared-tmp
+        - args:
+            - /scripts/wait-for-deps
+          env:
+            - name: TZ
+              value: America/Sao_Paulo
+            - name: GITALY_FEATURE_DEFAULT_ON
+              value: '1'
+            - name: CONFIG_TEMPLATE_DIRECTORY
+              value: /var/opt/gitlab/templates
+            - name: CONFIG_DIRECTORY
+              value: /srv/gitlab/config
+            - name: WORKHORSE_ARCHIVE_CACHE_DISABLED
+              value: '1'
+            - name: ENABLE_BOOTSNAP
+              value: '1'
+          image: >-
+            registry.gitlab.com/gitlab-org/build/cng/gitlab-webservice-ee:v18.0.2
+          imagePullPolicy: IfNotPresent
+          name: dependencies
+          resources:
+            requests:
+              cpu: 50m
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+            runAsNonRoot: true
+            runAsUser: 1000
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+            - mountPath: /etc/ssl/certs/
+              name: etc-ssl-certs
+              readOnly: true
+            - mountPath: /etc/pki/ca-trust/extracted/pem
+              name: etc-pki-ca-trust-extracted-pem
+              readOnly: true
+            - mountPath: /var/opt/gitlab/templates
+              name: webservice-config
+            - mountPath: /etc/gitlab
+              name: webservice-secrets
+              readOnly: true
+            - mountPath: /srv/gitlab/config/secrets.yml
+              name: webservice-secrets
+              readOnly: true
+              subPath: rails-secrets/secrets.yml
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext:
+        fsGroup: 1000
+        runAsUser: 1000
+        seccompProfile:
+          type: RuntimeDefault
+      terminationGracePeriodSeconds: 30
+      volumes:
+        - emptyDir: {}
+          name: shared-tmp
+        - emptyDir:
+            medium: Memory
+          name: webservice-metrics
+        - configMap:
+            defaultMode: 420
+            name: gitlab-webservice
+          name: webservice-config
+        - configMap:
+            defaultMode: 420
+            name: gitlab-workhorse-default
+          name: workhorse-config
+        - name: init-webservice-secrets
+          projected:
+            defaultMode: 256
+            sources:
+              - secret:
+                  items:
+                    - key: secrets.yml
+                      path: rails-secrets/secrets.yml
+                  name: gitlab-rails-secret
+              - secret:
+                  items:
+                    - key: secret
+                      path: shell/.gitlab_shell_secret
+                  name: gitlab-gitlab-shell-secret
+              - secret:
+                  items:
+                    - key: token
+                      path: gitaly/gitaly_token
+                  name: gitlab-gitaly-secret
+              - secret:
+                  items:
+                    - key: postgresql-postgres-password
+                      path: postgres/psql-password-ci
+                  name: gitlab-postgresql-password
+              - secret:
+                  items:
+                    - key: postgresql-postgres-password
+                      path: postgres/psql-password-main
+                  name: gitlab-postgresql-password
+              - secret:
+                  items:
+                    - key: registry-auth.key
+                      path: registry/gitlab-registry.key
+                  name: gitlab-registry-secret
+              - secret:
+                  items:
+                    - key: secret
+                      path: registry/notificationSecret
+                  name: gitlab-registry-notification
+              - secret:
+                  items:
+                    - key: shared_secret
+                      path: gitlab-workhorse/secret
+                  name: gitlab-gitlab-workhorse-secret
+              - secret:
+                  items:
+                    - key: kas_shared_secret
+                      path: kas/.gitlab_kas_secret
+                  name: gitlab-gitlab-kas-secret
+              - secret:
+                  items:
+                    - key: suggested_reviewers_secret
+                      path: suggested_reviewers/.gitlab_suggested_reviewers_secret
+                  name: gitlab-gitlab-suggested-reviewers
+              - secret:
+                  items:
+                    - key: gitlab_username
+                      path: zoekt/.gitlab_zoekt_username
+                    - key: gitlab_password
+                      path: zoekt/.gitlab_zoekt_password
+                  name: gitlab-zoekt-basicauth
+                  optional: true
+              - secret:
+                  items:
+                    - key: accesskey
+                      path: minio/accesskey
+                    - key: secretkey
+                      path: minio/secretkey
+                  name: gitlab-minio-secret
+        - emptyDir:
+            medium: Memory
+          name: webservice-secrets
+        - emptyDir:
+            medium: Memory
+          name: workhorse-secrets
+        - emptyDir: {}
+          name: shared-upload-directory
+        - emptyDir:
+            medium: Memory
+          name: etc-ssl-certs
+        - emptyDir:
+            medium: Memory
+          name: etc-pki-ca-trust-extracted-pem
+status:
+  availableReplicas: 2
+  conditions:
+    - lastTransitionTime: '2025-06-13T23:45:20Z'
+      lastUpdateTime: '2025-06-13T23:45:20Z'
+      message: Deployment has minimum availability.
+      reason: MinimumReplicasAvailable
+      status: 'True'
+      type: Available
+    - lastTransitionTime: '2025-06-14T01:34:14Z'
+      lastUpdateTime: '2025-06-14T01:35:54Z'
+      message: >-
+        ReplicaSet "gitlab-webservice-default-7f85df9956" has successfully
+        progressed.
+      reason: NewReplicaSetAvailable
+      status: 'True'
+      type: Progressing
+  observedGeneration: 11
+  readyReplicas: 2
+  replicas: 2
+  updatedReplicas: 2

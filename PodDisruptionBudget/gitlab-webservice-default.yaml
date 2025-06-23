@@ -1,0 +1,85 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  annotations:
+    meta.helm.sh/release-name: gitlab
+    meta.helm.sh/release-namespace: gitlab-o3s
+  creationTimestamp: '2025-06-13T15:46:15Z'
+  generation: 1
+  labels:
+    app: webservice
+    app.kubernetes.io/managed-by: Helm
+    chart: webservice-9.0.2
+    gitlab.com/webservice-name: default
+    heritage: Helm
+    release: gitlab
+  managedFields:
+    - apiVersion: policy/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:chart: {}
+            f:gitlab.com/webservice-name: {}
+            f:heritage: {}
+            f:release: {}
+        f:spec:
+          f:maxUnavailable: {}
+          f:selector: {}
+      manager: helm
+      operation: Update
+      time: '2025-06-13T15:46:15Z'
+    - apiVersion: policy/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            .: {}
+            k:{"type":"DisruptionAllowed"}:
+              .: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:observedGeneration: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+          f:currentHealthy: {}
+          f:desiredHealthy: {}
+          f:disruptionsAllowed: {}
+          f:expectedPods: {}
+          f:observedGeneration: {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: status
+      time: '2025-06-14T01:35:53Z'
+  name: gitlab-webservice-default
+  namespace: gitlab-o3s
+  resourceVersion: '2023076'
+  uid: 7b67bf8f-28f0-4976-a33e-8407eca053b3
+spec:
+  maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: webservice
+      gitlab.com/webservice-name: default
+      release: gitlab
+status:
+  conditions:
+    - lastTransitionTime: '2025-06-13T23:45:20Z'
+      message: ''
+      observedGeneration: 1
+      reason: SufficientPods
+      status: 'True'
+      type: DisruptionAllowed
+  currentHealthy: 2
+  desiredHealthy: 1
+  disruptionsAllowed: 1
+  expectedPods: 2
+  observedGeneration: 1

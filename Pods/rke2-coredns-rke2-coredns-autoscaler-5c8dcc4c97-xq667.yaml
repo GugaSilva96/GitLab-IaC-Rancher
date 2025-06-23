@@ -1,0 +1,292 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    cattle.io/timestamp: '2025-06-12T03:39:48Z'
+    checksum/configmap: ab6e5167da89813194a8fa3b9994e9f26e04ab36dbbd340c6267b1460b17e4c8
+    cni.projectcalico.org/containerID: 600f31bb35f252ea3cf1f2cfafab5bfb4118bb814457ea856eb99b37983eb0ab
+    cni.projectcalico.org/podIP: 10.42.152.164/32
+    cni.projectcalico.org/podIPs: 10.42.152.164/32
+    scheduler.alpha.kubernetes.io/tolerations: '[{"key":"CriticalAddonsOnly", "operator":"Exists"}]'
+  creationTimestamp: '2025-06-12T07:31:42Z'
+  generateName: rke2-coredns-rke2-coredns-autoscaler-5c8dcc4c97-
+  labels:
+    app.kubernetes.io/instance: rke2-coredns
+    app.kubernetes.io/name: rke2-coredns-autoscaler
+    k8s-app: kube-dns-autoscaler
+    pod-template-hash: 5c8dcc4c97
+  managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:cattle.io/timestamp: {}
+            f:checksum/configmap: {}
+            f:scheduler.alpha.kubernetes.io/tolerations: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/name: {}
+            f:k8s-app: {}
+            f:pod-template-hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"be5f7a94-24ec-448c-9d22-ad2929eb89df"}: {}
+        f:spec:
+          f:containers:
+            k:{"name":"autoscaler"}:
+              .: {}
+              f:command: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:livenessProbe:
+                .: {}
+                f:failureThreshold: {}
+                f:httpGet:
+                  .: {}
+                  f:path: {}
+                  f:port: {}
+                  f:scheme: {}
+                f:initialDelaySeconds: {}
+                f:periodSeconds: {}
+                f:successThreshold: {}
+                f:timeoutSeconds: {}
+              f:name: {}
+              f:resources:
+                .: {}
+                f:limits:
+                  .: {}
+                  f:cpu: {}
+                  f:memory: {}
+                f:requests:
+                  .: {}
+                  f:cpu: {}
+                  f:memory: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:nodeSelector: {}
+          f:priorityClassName: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext: {}
+          f:serviceAccount: {}
+          f:serviceAccountName: {}
+          f:terminationGracePeriodSeconds: {}
+          f:tolerations: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: '2025-06-12T07:31:42Z'
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:cni.projectcalico.org/containerID: {}
+            f:cni.projectcalico.org/podIP: {}
+            f:cni.projectcalico.org/podIPs: {}
+      manager: calico
+      operation: Update
+      subresource: status
+      time: '2025-06-12T15:36:52Z'
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"PodReadyToStartContainers"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:hostIPs: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"10.42.152.164"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: '2025-06-12T15:36:54Z'
+  name: rke2-coredns-rke2-coredns-autoscaler-5c8dcc4c97-xq667
+  namespace: kube-system
+  ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: rke2-coredns-rke2-coredns-autoscaler-5c8dcc4c97
+      uid: be5f7a94-24ec-448c-9d22-ad2929eb89df
+  resourceVersion: '1196817'
+  uid: 4bf53a44-25a6-4ac4-922a-434c5351c692
+spec:
+  containers:
+    - command:
+        - /cluster-proportional-autoscaler
+        - '--namespace=kube-system'
+        - '--configmap=rke2-coredns-rke2-coredns-autoscaler'
+        - '--target=Deployment/rke2-coredns-rke2-coredns'
+        - '--logtostderr=true'
+        - '--v=2'
+      image: >-
+        registry.rancher.com/rancher/hardened-cluster-autoscaler:v1.10.2-build20250507
+      imagePullPolicy: IfNotPresent
+      livenessProbe:
+        failureThreshold: 3
+        httpGet:
+          path: /healthz
+          port: 8080
+          scheme: HTTP
+        initialDelaySeconds: 10
+        periodSeconds: 30
+        successThreshold: 1
+        timeoutSeconds: 10
+      name: autoscaler
+      resources:
+        limits:
+          cpu: 100m
+          memory: 64Mi
+        requests:
+          cpu: 25m
+          memory: 16Mi
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+        - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+          name: kube-api-access-zhpv6
+          readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: gitlab-pointer-pool1-cczkf-rc752
+  nodeSelector:
+    kubernetes.io/os: linux
+  preemptionPolicy: PreemptLowerPriority
+  priority: 2000000000
+  priorityClassName: system-cluster-critical
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: rke2-coredns-rke2-coredns-autoscaler
+  serviceAccountName: rke2-coredns-rke2-coredns-autoscaler
+  terminationGracePeriodSeconds: 30
+  tolerations:
+    - effect: NoSchedule
+      key: node-role.kubernetes.io/control-plane
+      operator: Exists
+    - effect: NoExecute
+      key: node-role.kubernetes.io/etcd
+      operator: Exists
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+  volumes:
+    - name: kube-api-access-zhpv6
+      projected:
+        defaultMode: 420
+        sources:
+          - serviceAccountToken:
+              expirationSeconds: 3607
+              path: token
+          - configMap:
+              items:
+                - key: ca.crt
+                  path: ca.crt
+              name: kube-root-ca.crt
+          - downwardAPI:
+              items:
+                - fieldRef:
+                    apiVersion: v1
+                    fieldPath: metadata.namespace
+                  path: namespace
+status:
+  conditions:
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-12T15:36:54Z'
+      status: 'True'
+      type: PodReadyToStartContainers
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-12T07:31:58Z'
+      status: 'True'
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-12T15:36:54Z'
+      status: 'True'
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-12T15:36:54Z'
+      status: 'True'
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-12T07:31:58Z'
+      status: 'True'
+      type: PodScheduled
+  containerStatuses:
+    - containerID: >-
+        containerd://fb2fead4a639d5ab459d77cf4320a5b5a21d260bb9ccb41e50465a1310c608ce
+      image: >-
+        registry.rancher.com/rancher/hardened-cluster-autoscaler:v1.10.2-build20250507
+      imageID: >-
+        registry.rancher.com/rancher/hardened-cluster-autoscaler@sha256:f358b4700caf4fa2112d0dcb1c4b77ee6b31d6fd0c9125357b651b9f74d6318e
+      lastState:
+        terminated:
+          containerID: >-
+            containerd://221b49be478aef601650889f18111a25cf48dd21ee142f8ea1b9c53c556d5f43
+          exitCode: 255
+          finishedAt: '2025-06-12T15:35:59Z'
+          reason: Unknown
+          startedAt: '2025-06-12T07:32:06Z'
+      name: autoscaler
+      ready: true
+      restartCount: 1
+      started: true
+      state:
+        running:
+          startedAt: '2025-06-12T15:36:53Z'
+      volumeMounts:
+        - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+          name: kube-api-access-zhpv6
+          readOnly: true
+          recursiveReadOnly: Disabled
+  hostIP: 172.31.36.13
+  hostIPs:
+    - ip: 172.31.36.13
+  phase: Running
+  podIP: 10.42.152.164
+  podIPs:
+    - ip: 10.42.152.164
+  qosClass: Burstable
+  startTime: '2025-06-12T07:31:58Z'

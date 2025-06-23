@@ -1,0 +1,324 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    cattle.io/timestamp: '2025-06-12T03:39:48Z'
+    cni.projectcalico.org/containerID: 876adf0286cd5d5f2c929c962abb93644b24ebea422dad887bb8228865f8c2cc
+    cni.projectcalico.org/podIP: 10.42.152.160/32
+    cni.projectcalico.org/podIPs: 10.42.152.160/32
+  creationTimestamp: '2025-06-12T07:31:42Z'
+  generateName: rke2-snapshot-controller-678bd6447d-
+  labels:
+    app.kubernetes.io/instance: rke2-snapshot-controller
+    app.kubernetes.io/name: rke2-snapshot-controller
+    pod-template-hash: 678bd6447d
+  managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:cattle.io/timestamp: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/name: {}
+            f:pod-template-hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"e675de0e-d10d-4d18-815d-f25163a9b16a"}: {}
+        f:spec:
+          f:containers:
+            k:{"name":"rke2-snapshot-controller"}:
+              .: {}
+              f:args: {}
+              f:env:
+                .: {}
+                k:{"name":"NAMESPACE"}:
+                  .: {}
+                  f:name: {}
+                  f:valueFrom:
+                    .: {}
+                    f:fieldRef: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:livenessProbe:
+                .: {}
+                f:failureThreshold: {}
+                f:httpGet:
+                  .: {}
+                  f:path: {}
+                  f:port: {}
+                  f:scheme: {}
+                f:periodSeconds: {}
+                f:successThreshold: {}
+                f:timeoutSeconds: {}
+              f:name: {}
+              f:ports:
+                .: {}
+                k:{"containerPort":8080,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:name: {}
+                  f:protocol: {}
+              f:readinessProbe:
+                .: {}
+                f:failureThreshold: {}
+                f:httpGet:
+                  .: {}
+                  f:path: {}
+                  f:port: {}
+                  f:scheme: {}
+                f:periodSeconds: {}
+                f:successThreshold: {}
+                f:timeoutSeconds: {}
+              f:resources: {}
+              f:securityContext:
+                .: {}
+                f:capabilities:
+                  .: {}
+                  f:drop: {}
+                f:readOnlyRootFilesystem: {}
+                f:runAsNonRoot: {}
+                f:runAsUser: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:nodeSelector: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext: {}
+          f:serviceAccount: {}
+          f:serviceAccountName: {}
+          f:terminationGracePeriodSeconds: {}
+          f:tolerations: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: '2025-06-12T07:31:42Z'
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:cni.projectcalico.org/containerID: {}
+            f:cni.projectcalico.org/podIP: {}
+            f:cni.projectcalico.org/podIPs: {}
+      manager: calico
+      operation: Update
+      subresource: status
+      time: '2025-06-12T15:36:52Z'
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"PodReadyToStartContainers"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:hostIPs: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"10.42.152.160"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: '2025-06-12T15:36:53Z'
+  name: rke2-snapshot-controller-678bd6447d-c7vxn
+  namespace: kube-system
+  ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: rke2-snapshot-controller-678bd6447d
+      uid: e675de0e-d10d-4d18-815d-f25163a9b16a
+  resourceVersion: '1196808'
+  uid: fd6a7b62-a825-469e-8008-fe8e1b9ef12d
+spec:
+  containers:
+    - args:
+        - '--http-endpoint=:8080'
+        - '--leader-election=true'
+        - '--leader-election-namespace=$(NAMESPACE)'
+      env:
+        - name: NAMESPACE
+          valueFrom:
+            fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.namespace
+      image: >-
+        registry.rancher.com/rancher/mirrored-sig-storage-snapshot-controller:v8.2.0
+      imagePullPolicy: IfNotPresent
+      livenessProbe:
+        failureThreshold: 3
+        httpGet:
+          path: /healthz/leader-election
+          port: http
+          scheme: HTTP
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 1
+      name: rke2-snapshot-controller
+      ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP
+      readinessProbe:
+        failureThreshold: 3
+        httpGet:
+          path: /healthz/leader-election
+          port: http
+          scheme: HTTP
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 1
+      resources: {}
+      securityContext:
+        capabilities:
+          drop:
+            - ALL
+        readOnlyRootFilesystem: true
+        runAsNonRoot: true
+        runAsUser: 1000
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+        - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+          name: kube-api-access-bq962
+          readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: gitlab-pointer-pool1-cczkf-rc752
+  nodeSelector:
+    kubernetes.io/os: linux
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: rke2-snapshot-controller
+  serviceAccountName: rke2-snapshot-controller
+  terminationGracePeriodSeconds: 30
+  tolerations:
+    - effect: NoSchedule
+      key: node-role.kubernetes.io/control-plane
+      operator: Exists
+    - effect: NoExecute
+      key: node-role.kubernetes.io/etcd
+      operator: Exists
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+  volumes:
+    - name: kube-api-access-bq962
+      projected:
+        defaultMode: 420
+        sources:
+          - serviceAccountToken:
+              expirationSeconds: 3607
+              path: token
+          - configMap:
+              items:
+                - key: ca.crt
+                  path: ca.crt
+              name: kube-root-ca.crt
+          - downwardAPI:
+              items:
+                - fieldRef:
+                    apiVersion: v1
+                    fieldPath: metadata.namespace
+                  path: namespace
+status:
+  conditions:
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-12T15:36:53Z'
+      status: 'True'
+      type: PodReadyToStartContainers
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-12T07:31:58Z'
+      status: 'True'
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-12T15:36:53Z'
+      status: 'True'
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-12T15:36:53Z'
+      status: 'True'
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-12T07:31:58Z'
+      status: 'True'
+      type: PodScheduled
+  containerStatuses:
+    - containerID: >-
+        containerd://4313e80fefa814ca462b7e3e98ede729387491225ff149eb0c58568b7b303863
+      image: >-
+        registry.rancher.com/rancher/mirrored-sig-storage-snapshot-controller:v8.2.0
+      imageID: >-
+        registry.rancher.com/rancher/mirrored-sig-storage-snapshot-controller@sha256:1cda6e2aeae92ad55aa33459b3903850010afce8e12c43842d5a98a0d620c159
+      lastState:
+        terminated:
+          containerID: >-
+            containerd://baf9f9dca1e3bc204f6ec8d241acb5180d0707a94e2e551197a01ca006039cb3
+          exitCode: 255
+          finishedAt: '2025-06-12T15:35:59Z'
+          reason: Unknown
+          startedAt: '2025-06-12T07:32:06Z'
+      name: rke2-snapshot-controller
+      ready: true
+      restartCount: 1
+      started: true
+      state:
+        running:
+          startedAt: '2025-06-12T15:36:52Z'
+      volumeMounts:
+        - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+          name: kube-api-access-bq962
+          readOnly: true
+          recursiveReadOnly: Disabled
+  hostIP: 172.31.36.13
+  hostIPs:
+    - ip: 172.31.36.13
+  phase: Running
+  podIP: 10.42.152.160
+  podIPs:
+    - ip: 10.42.152.160
+  qosClass: BestEffort
+  startTime: '2025-06-12T07:31:58Z'

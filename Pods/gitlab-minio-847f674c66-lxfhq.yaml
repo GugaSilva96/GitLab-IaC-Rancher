@@ -1,0 +1,450 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    cni.projectcalico.org/containerID: a6196e6a887425d84a6e48d3e456990106ff5f4ce6be35bf84cdf0fafa2b3460
+    cni.projectcalico.org/podIP: 10.42.30.112/32
+    cni.projectcalico.org/podIPs: 10.42.30.112/32
+  creationTimestamp: '2025-06-14T01:04:15Z'
+  generateName: gitlab-minio-847f674c66-
+  labels:
+    app: minio
+    app.kubernetes.io/name: gitlab
+    app.kubernetes.io/version: RELEASE.2017-12-28T01-21-00Z
+    chart: minio-0.4.3
+    component: app
+    heritage: Helm
+    pod-template-hash: 847f674c66
+    release: gitlab
+  managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/version: {}
+            f:chart: {}
+            f:component: {}
+            f:heritage: {}
+            f:pod-template-hash: {}
+            f:release: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"a034c922-437a-4d6d-906e-c6b51b9ffe79"}: {}
+        f:spec:
+          f:automountServiceAccountToken: {}
+          f:containers:
+            k:{"name":"minio"}:
+              .: {}
+              f:args: {}
+              f:env:
+                .: {}
+                k:{"name":"TZ"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:livenessProbe:
+                .: {}
+                f:failureThreshold: {}
+                f:periodSeconds: {}
+                f:successThreshold: {}
+                f:tcpSocket:
+                  .: {}
+                  f:port: {}
+                f:timeoutSeconds: {}
+              f:name: {}
+              f:ports:
+                .: {}
+                k:{"containerPort":9000,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:name: {}
+                  f:protocol: {}
+              f:resources:
+                .: {}
+                f:limits:
+                  .: {}
+                  f:cpu: {}
+                  f:memory: {}
+                f:requests:
+                  .: {}
+                  f:cpu: {}
+                  f:memory: {}
+              f:securityContext:
+                .: {}
+                f:allowPrivilegeEscalation: {}
+                f:capabilities:
+                  .: {}
+                  f:drop: {}
+                f:runAsNonRoot: {}
+                f:runAsUser: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/export"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                k:{"mountPath":"/podinfo"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                k:{"mountPath":"/tmp/.minio"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:initContainers:
+            .: {}
+            k:{"name":"configure"}:
+              .: {}
+              f:command: {}
+              f:env:
+                .: {}
+                k:{"name":"TZ"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:resources:
+                .: {}
+                f:requests:
+                  .: {}
+                  f:cpu: {}
+              f:securityContext:
+                .: {}
+                f:allowPrivilegeEscalation: {}
+                f:capabilities:
+                  .: {}
+                  f:drop: {}
+                f:runAsNonRoot: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/config"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                k:{"mountPath":"/minio"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext:
+            .: {}
+            f:fsGroup: {}
+            f:runAsUser: {}
+            f:seccompProfile:
+              .: {}
+              f:type: {}
+          f:terminationGracePeriodSeconds: {}
+          f:volumes:
+            .: {}
+            k:{"name":"export"}:
+              .: {}
+              f:name: {}
+              f:persistentVolumeClaim:
+                .: {}
+                f:claimName: {}
+            k:{"name":"minio-configuration"}:
+              .: {}
+              f:name: {}
+              f:projected:
+                .: {}
+                f:defaultMode: {}
+                f:sources: {}
+            k:{"name":"minio-server-config"}:
+              .: {}
+              f:emptyDir:
+                .: {}
+                f:medium: {}
+              f:name: {}
+            k:{"name":"podinfo"}:
+              .: {}
+              f:downwardAPI:
+                .: {}
+                f:defaultMode: {}
+                f:items: {}
+              f:name: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: '2025-06-14T01:04:15Z'
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:cni.projectcalico.org/containerID: {}
+            f:cni.projectcalico.org/podIP: {}
+            f:cni.projectcalico.org/podIPs: {}
+      manager: calico
+      operation: Update
+      subresource: status
+      time: '2025-06-14T01:04:36Z'
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"PodReadyToStartContainers"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:hostIPs: {}
+          f:initContainerStatuses: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"10.42.30.112"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: '2025-06-14T01:04:38Z'
+  name: gitlab-minio-847f674c66-lxfhq
+  namespace: gitlab-o3s
+  ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: gitlab-minio-847f674c66
+      uid: a034c922-437a-4d6d-906e-c6b51b9ffe79
+  resourceVersion: '2009981'
+  uid: 9b426945-87fb-4baa-8471-088dfcf60088
+spec:
+  automountServiceAccountToken: false
+  containers:
+    - args:
+        - '-C'
+        - /tmp/.minio
+        - '--quiet'
+        - server
+        - /export
+      env:
+        - name: TZ
+          value: America/Sao_Paulo
+      image: minio/minio:RELEASE.2017-12-28T01-21-00Z
+      imagePullPolicy: IfNotPresent
+      livenessProbe:
+        failureThreshold: 3
+        periodSeconds: 10
+        successThreshold: 1
+        tcpSocket:
+          port: 9000
+        timeoutSeconds: 1
+      name: minio
+      ports:
+        - containerPort: 9000
+          name: service
+          protocol: TCP
+      resources:
+        limits:
+          cpu: 300m
+          memory: 512Mi
+        requests:
+          cpu: 100m
+          memory: 256Mi
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop:
+            - ALL
+        runAsNonRoot: true
+        runAsUser: 1000
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+        - mountPath: /export
+          name: export
+        - mountPath: /tmp/.minio
+          name: minio-server-config
+        - mountPath: /podinfo
+          name: podinfo
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  initContainers:
+    - command:
+        - sh
+        - /config/configure
+      env:
+        - name: TZ
+          value: America/Sao_Paulo
+      image: registry.gitlab.com/gitlab-org/build/cng/gitlab-base:v18.0.2
+      imagePullPolicy: IfNotPresent
+      name: configure
+      resources:
+        requests:
+          cpu: 50m
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop:
+            - ALL
+        runAsNonRoot: true
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+        - mountPath: /config
+          name: minio-configuration
+        - mountPath: /minio
+          name: minio-server-config
+  nodeName: gitlab-pointer-pool1-cczkf-6czm9
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext:
+    fsGroup: 1000
+    runAsUser: 1000
+    seccompProfile:
+      type: RuntimeDefault
+  serviceAccount: default
+  serviceAccountName: default
+  terminationGracePeriodSeconds: 30
+  tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+  volumes:
+    - downwardAPI:
+        defaultMode: 420
+        items:
+          - fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.labels
+            path: labels
+      name: podinfo
+    - name: export
+      persistentVolumeClaim:
+        claimName: gitlab-minio
+    - name: minio-configuration
+      projected:
+        defaultMode: 420
+        sources:
+          - configMap:
+              name: gitlab-minio-config-cm
+          - secret:
+              name: gitlab-minio-secret
+    - emptyDir:
+        medium: Memory
+      name: minio-server-config
+status:
+  conditions:
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-14T01:04:37Z'
+      status: 'True'
+      type: PodReadyToStartContainers
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-14T01:04:37Z'
+      status: 'True'
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-14T01:04:38Z'
+      status: 'True'
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-14T01:04:38Z'
+      status: 'True'
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-14T01:04:15Z'
+      status: 'True'
+      type: PodScheduled
+  containerStatuses:
+    - containerID: >-
+        containerd://122da031f0f7dd9e64d70ee7ae16363b39d9cceb4cecda35ec83cbc00d8d0719
+      image: docker.io/minio/minio:RELEASE.2017-12-28T01-21-00Z
+      imageID: >-
+        docker.io/minio/minio@sha256:3611f1644cf5447e2f3639b4212ade26155f6a0632bef155c4d6510811c1fe1d
+      lastState: {}
+      name: minio
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: '2025-06-14T01:04:37Z'
+      volumeMounts:
+        - mountPath: /export
+          name: export
+        - mountPath: /tmp/.minio
+          name: minio-server-config
+        - mountPath: /podinfo
+          name: podinfo
+  hostIP: 172.31.43.233
+  hostIPs:
+    - ip: 172.31.43.233
+  initContainerStatuses:
+    - containerID: >-
+        containerd://d3d3c6337bf3e493e84a1a93c211d61befa2bb85f55aaece2355b62ebaa00075
+      image: registry.gitlab.com/gitlab-org/build/cng/gitlab-base:v18.0.2
+      imageID: >-
+        registry.gitlab.com/gitlab-org/build/cng/gitlab-base@sha256:a309b4b65fe9c6882589c60fd8a5d6680e96f741592d61d340fd1b51a0701388
+      lastState: {}
+      name: configure
+      ready: true
+      restartCount: 0
+      started: false
+      state:
+        terminated:
+          containerID: >-
+            containerd://d3d3c6337bf3e493e84a1a93c211d61befa2bb85f55aaece2355b62ebaa00075
+          exitCode: 0
+          finishedAt: '2025-06-14T01:04:36Z'
+          reason: Completed
+          startedAt: '2025-06-14T01:04:36Z'
+      volumeMounts:
+        - mountPath: /config
+          name: minio-configuration
+        - mountPath: /minio
+          name: minio-server-config
+  phase: Running
+  podIP: 10.42.30.112
+  podIPs:
+    - ip: 10.42.30.112
+  qosClass: Burstable
+  startTime: '2025-06-14T01:04:15Z'

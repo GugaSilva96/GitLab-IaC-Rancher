@@ -1,0 +1,187 @@
+apiVersion: cluster.x-k8s.io/v1beta1
+kind: Machine
+metadata:
+  annotations:
+    pre-terminate.delete.hook.machine.cluster.x-k8s.io/rke-bootstrap-cleanup: rke-bootstrap-controller
+  creationTimestamp: '2025-06-12T07:20:51Z'
+  finalizers:
+    - machine.cluster.x-k8s.io
+  generation: 3
+  labels:
+    cattle.io/os: linux
+    cluster.x-k8s.io/cluster-name: gitlab-pointer
+    cluster.x-k8s.io/control-plane: 'true'
+    cluster.x-k8s.io/deployment-name: gitlab-pointer-pool1
+    cluster.x-k8s.io/set-name: gitlab-pointer-pool1-cczkf
+    machine-template-hash: 3669074105-cczkf
+    rke.cattle.io/cluster-name: gitlab-pointer
+    rke.cattle.io/control-plane-role: 'true'
+    rke.cattle.io/etcd-role: 'true'
+    rke.cattle.io/machine-id: 9d8065ece06686337860e31ac8774020acb728672b3ea9fd65bff1ca161bce9
+    rke.cattle.io/rke-machine-pool-name: pool1
+    rke.cattle.io/worker-role: 'true'
+  managedFields:
+    - apiVersion: cluster.x-k8s.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:finalizers:
+            v:"machine.cluster.x-k8s.io": {}
+          f:labels:
+            f:cattle.io/os: {}
+            f:cluster.x-k8s.io/cluster-name: {}
+            f:cluster.x-k8s.io/control-plane: {}
+            f:cluster.x-k8s.io/deployment-name: {}
+            f:cluster.x-k8s.io/set-name: {}
+            f:machine-template-hash: {}
+            f:rke.cattle.io/cluster-name: {}
+            f:rke.cattle.io/control-plane-role: {}
+            f:rke.cattle.io/etcd-role: {}
+            f:rke.cattle.io/rke-machine-pool-name: {}
+            f:rke.cattle.io/worker-role: {}
+          f:ownerReferences:
+            k:{"uid":"4a958cb4-f4ff-4610-bd47-f43316e09a60"}: {}
+        f:spec:
+          f:bootstrap:
+            f:configRef: {}
+          f:clusterName: {}
+          f:infrastructureRef: {}
+      manager: capi-machineset
+      operation: Apply
+      time: '2025-06-12T07:20:51Z'
+    - apiVersion: cluster.x-k8s.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:pre-terminate.delete.hook.machine.cluster.x-k8s.io/rke-bootstrap-cleanup: {}
+          f:labels:
+            f:rke.cattle.io/machine-id: {}
+      manager: rancher
+      operation: Update
+      time: '2025-06-12T07:21:32Z'
+    - apiVersion: cluster.x-k8s.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          f:bootstrap:
+            f:dataSecretName: {}
+          f:providerID: {}
+      manager: manager
+      operation: Update
+      time: '2025-06-12T07:22:42Z'
+    - apiVersion: cluster.x-k8s.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:addresses: {}
+          f:bootstrapReady: {}
+          f:infrastructureReady: {}
+          f:lastUpdated: {}
+          f:nodeInfo:
+            .: {}
+            f:architecture: {}
+            f:bootID: {}
+            f:containerRuntimeVersion: {}
+            f:kernelVersion: {}
+            f:kubeProxyVersion: {}
+            f:kubeletVersion: {}
+            f:machineID: {}
+            f:operatingSystem: {}
+            f:osImage: {}
+            f:systemUUID: {}
+          f:nodeRef: {}
+          f:observedGeneration: {}
+          f:phase: {}
+      manager: manager
+      operation: Update
+      subresource: status
+      time: '2025-06-12T15:37:04Z'
+    - apiVersion: cluster.x-k8s.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions: {}
+      manager: rancher
+      operation: Update
+      subresource: status
+      time: '2025-06-14T07:57:31Z'
+  name: gitlab-pointer-pool1-cczkf-vbgtv
+  namespace: fleet-default
+  ownerReferences:
+    - apiVersion: cluster.x-k8s.io/v1beta1
+      blockOwnerDeletion: true
+      controller: true
+      kind: MachineSet
+      name: gitlab-pointer-pool1-cczkf
+      uid: 4a958cb4-f4ff-4610-bd47-f43316e09a60
+  resourceVersion: '28979452'
+  uid: 01b4fb44-5b3b-4a4a-9015-f863ef26e1b2
+spec:
+  bootstrap:
+    configRef:
+      apiVersion: rke.cattle.io/v1
+      kind: RKEBootstrap
+      name: gitlab-pointer-pool1-cczkf-vbgtv
+      namespace: fleet-default
+      uid: d2fa51c7-9f00-4bbe-a758-9c04a0d098c8
+    dataSecretName: gitlab-pointer-pool1-cczkf-vbgtv-machine-bootstrap
+  clusterName: gitlab-pointer
+  infrastructureRef:
+    apiVersion: rke-machine.cattle.io/v1
+    kind: Amazonec2Machine
+    name: gitlab-pointer-pool1-cczkf-vbgtv
+    namespace: fleet-default
+    uid: 94cd4ce1-745d-41c1-ad32-1f969ef3fed1
+  nodeDeletionTimeout: 10s
+  providerID: rke2://gitlab-pointer-pool1-cczkf-vbgtv
+status:
+  addresses:
+    - address: 172.31.36.39
+      type: InternalIP
+    - address: 18.212.110.79
+      type: ExternalIP
+    - address: gitlab-pointer-pool1-cczkf-vbgtv
+      type: Hostname
+  bootstrapReady: true
+  conditions:
+    - lastTransitionTime: '2025-06-12T07:21:02Z'
+      status: 'True'
+      type: Ready
+    - lastTransitionTime: '2025-06-12T07:20:52Z'
+      status: 'True'
+      type: BootstrapReady
+    - lastTransitionTime: '2025-06-12T07:21:15Z'
+      status: 'True'
+      type: InfrastructureReady
+    - lastTransitionTime: '2025-06-12T07:22:42Z'
+      status: 'True'
+      type: NodeHealthy
+    - lastTransitionTime: '2025-06-12T07:21:15Z'
+      status: 'True'
+      type: PlanApplied
+    - lastTransitionTime: '2025-06-14T07:57:31Z'
+      status: 'True'
+      type: Reconciled
+  infrastructureReady: true
+  lastUpdated: '2025-06-12T07:22:42Z'
+  nodeInfo:
+    architecture: amd64
+    bootID: 63d72ce8-955f-42c0-a8f0-dc3c1fd46d4a
+    containerRuntimeVersion: containerd://2.0.5-k3s1
+    kernelVersion: 6.5.0-1023-aws
+    kubeProxyVersion: v1.31.9+rke2r1
+    kubeletVersion: v1.31.9+rke2r1
+    machineID: ec276c91e49adf94a89498646d1ec920
+    operatingSystem: linux
+    osImage: Ubuntu 22.04.4 LTS
+    systemUUID: ec276c91-e49a-df94-a894-98646d1ec920
+  nodeRef:
+    apiVersion: v1
+    kind: Node
+    name: gitlab-pointer-pool1-cczkf-vbgtv
+    uid: ab58ce09-0ae1-4d05-9f9a-e79bca35ad3d
+  observedGeneration: 3
+  phase: Running

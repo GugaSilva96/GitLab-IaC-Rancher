@@ -1,0 +1,647 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    cattle.io/timestamp: '2025-06-14T00:51:59Z'
+    checksum/configmap: 50bb8c64584c8ba5c03bfd3734682267280ee3b60a320019927a44880aab64f3
+    cluster-autoscaler.kubernetes.io/safe-to-evict: 'true'
+    cni.projectcalico.org/containerID: ccce912545c9e0a022a2a02823abfa9a6e41f940f41476d35d91c6199c451aa6
+    cni.projectcalico.org/podIP: 10.42.30.77/32
+    cni.projectcalico.org/podIPs: 10.42.30.77/32
+  creationTimestamp: '2025-06-14T00:52:14Z'
+  generateName: gitlab-registry-7d5997d77c-
+  labels:
+    app: registry
+    app.kubernetes.io/name: gitlab
+    app.kubernetes.io/version: v18.0.2
+    chart: registry-0.7.0
+    heritage: Helm
+    pod-template-hash: 7d5997d77c
+    release: gitlab
+  managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:cni.projectcalico.org/containerID: {}
+            f:cni.projectcalico.org/podIP: {}
+            f:cni.projectcalico.org/podIPs: {}
+      manager: calico
+      operation: Update
+      subresource: status
+      time: '2025-06-14T00:52:14Z'
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:cattle.io/timestamp: {}
+            f:checksum/configmap: {}
+            f:cluster-autoscaler.kubernetes.io/safe-to-evict: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/version: {}
+            f:chart: {}
+            f:heritage: {}
+            f:pod-template-hash: {}
+            f:release: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"a8f386d6-4061-4351-b14f-94c5c6a8077d"}: {}
+        f:spec:
+          f:affinity:
+            .: {}
+            f:podAntiAffinity:
+              .: {}
+              f:preferredDuringSchedulingIgnoredDuringExecution: {}
+          f:automountServiceAccountToken: {}
+          f:containers:
+            k:{"name":"registry"}:
+              .: {}
+              f:env:
+                .: {}
+                k:{"name":"TZ"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:lifecycle:
+                .: {}
+                f:preStop:
+                  .: {}
+                  f:exec:
+                    .: {}
+                    f:command: {}
+              f:livenessProbe:
+                .: {}
+                f:failureThreshold: {}
+                f:httpGet:
+                  .: {}
+                  f:path: {}
+                  f:port: {}
+                  f:scheme: {}
+                f:initialDelaySeconds: {}
+                f:periodSeconds: {}
+                f:successThreshold: {}
+                f:timeoutSeconds: {}
+              f:name: {}
+              f:ports:
+                .: {}
+                k:{"containerPort":5000,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:name: {}
+                  f:protocol: {}
+                k:{"containerPort":5001,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:name: {}
+                  f:protocol: {}
+              f:readinessProbe:
+                .: {}
+                f:failureThreshold: {}
+                f:httpGet:
+                  .: {}
+                  f:path: {}
+                  f:port: {}
+                  f:scheme: {}
+                f:initialDelaySeconds: {}
+                f:periodSeconds: {}
+                f:successThreshold: {}
+                f:timeoutSeconds: {}
+              f:resources:
+                .: {}
+                f:requests:
+                  .: {}
+                  f:cpu: {}
+                  f:memory: {}
+              f:securityContext:
+                .: {}
+                f:allowPrivilegeEscalation: {}
+                f:capabilities:
+                  .: {}
+                  f:drop: {}
+                f:runAsNonRoot: {}
+                f:runAsUser: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/etc/docker/registry/"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+                k:{"mountPath":"/etc/pki/ca-trust/extracted/pem"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+                k:{"mountPath":"/etc/ssl/certs/"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:initContainers:
+            .: {}
+            k:{"name":"certificates"}:
+              .: {}
+              f:env:
+                .: {}
+                k:{"name":"TZ"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:resources:
+                .: {}
+                f:requests:
+                  .: {}
+                  f:cpu: {}
+              f:securityContext:
+                .: {}
+                f:allowPrivilegeEscalation: {}
+                f:capabilities:
+                  .: {}
+                  f:drop: {}
+                f:runAsNonRoot: {}
+                f:runAsUser: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/etc/pki/ca-trust/extracted/pem"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                k:{"mountPath":"/etc/ssl/certs"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+            k:{"name":"configure"}:
+              .: {}
+              f:args: {}
+              f:env:
+                .: {}
+                k:{"name":"CONFIG_DIRECTORY"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"CONFIG_TEMPLATE_DIRECTORY"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"TZ"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:resources:
+                .: {}
+                f:requests:
+                  .: {}
+                  f:cpu: {}
+              f:securityContext:
+                .: {}
+                f:allowPrivilegeEscalation: {}
+                f:capabilities:
+                  .: {}
+                  f:drop: {}
+                f:runAsNonRoot: {}
+                f:runAsUser: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/config"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                k:{"mountPath":"/registry"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                k:{"mountPath":"/templates"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext:
+            .: {}
+            f:fsGroup: {}
+            f:runAsUser: {}
+            f:seccompProfile:
+              .: {}
+              f:type: {}
+          f:terminationGracePeriodSeconds: {}
+          f:volumes:
+            .: {}
+            k:{"name":"etc-pki-ca-trust-extracted-pem"}:
+              .: {}
+              f:emptyDir:
+                .: {}
+                f:medium: {}
+              f:name: {}
+            k:{"name":"etc-ssl-certs"}:
+              .: {}
+              f:emptyDir:
+                .: {}
+                f:medium: {}
+              f:name: {}
+            k:{"name":"registry-secrets"}:
+              .: {}
+              f:name: {}
+              f:projected:
+                .: {}
+                f:defaultMode: {}
+                f:sources: {}
+            k:{"name":"registry-server-config"}:
+              .: {}
+              f:emptyDir:
+                .: {}
+                f:medium: {}
+              f:name: {}
+            k:{"name":"registry-server-config-templates"}:
+              .: {}
+              f:configMap:
+                .: {}
+                f:defaultMode: {}
+                f:items: {}
+                f:name: {}
+              f:name: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: '2025-06-14T00:52:14Z'
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"PodReadyToStartContainers"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:hostIPs: {}
+          f:initContainerStatuses: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"10.42.30.77"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: '2025-06-14T00:52:24Z'
+  name: gitlab-registry-7d5997d77c-jsgrj
+  namespace: gitlab-o3s
+  ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: gitlab-registry-7d5997d77c
+      uid: a8f386d6-4061-4351-b14f-94c5c6a8077d
+  resourceVersion: '2004495'
+  uid: 65cf1e52-ca86-46f8-a94b-0e421e72a1c5
+spec:
+  affinity:
+    podAntiAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+        - podAffinityTerm:
+            labelSelector:
+              matchLabels:
+                app: registry
+                release: gitlab
+            topologyKey: kubernetes.io/hostname
+          weight: 1
+  automountServiceAccountToken: false
+  containers:
+    - env:
+        - name: TZ
+          value: America/Sao_Paulo
+      image: >-
+        registry.gitlab.com/gitlab-org/build/cng/gitlab-container-registry:v4.21.0-gitlab
+      imagePullPolicy: IfNotPresent
+      lifecycle:
+        preStop:
+          exec:
+            command:
+              - /bin/bash
+              - '-c'
+              - sleep 5
+      livenessProbe:
+        failureThreshold: 3
+        httpGet:
+          path: /debug/health
+          port: debug
+          scheme: HTTP
+        initialDelaySeconds: 5
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 1
+      name: registry
+      ports:
+        - containerPort: 5000
+          name: http
+          protocol: TCP
+        - containerPort: 5001
+          name: debug
+          protocol: TCP
+      readinessProbe:
+        failureThreshold: 3
+        httpGet:
+          path: /debug/health
+          port: debug
+          scheme: HTTP
+        initialDelaySeconds: 5
+        periodSeconds: 5
+        successThreshold: 1
+        timeoutSeconds: 1
+      resources:
+        requests:
+          cpu: 50m
+          memory: 32Mi
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop:
+            - ALL
+        runAsNonRoot: true
+        runAsUser: 1000
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+        - mountPath: /etc/docker/registry/
+          name: registry-server-config
+          readOnly: true
+        - mountPath: /etc/ssl/certs/
+          name: etc-ssl-certs
+          readOnly: true
+        - mountPath: /etc/pki/ca-trust/extracted/pem
+          name: etc-pki-ca-trust-extracted-pem
+          readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  initContainers:
+    - env:
+        - name: TZ
+          value: America/Sao_Paulo
+      image: registry.gitlab.com/gitlab-org/build/cng/certificates:v18.0.2
+      imagePullPolicy: IfNotPresent
+      name: certificates
+      resources:
+        requests:
+          cpu: 50m
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop:
+            - ALL
+        runAsNonRoot: true
+        runAsUser: 1000
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+        - mountPath: /etc/ssl/certs
+          name: etc-ssl-certs
+        - mountPath: /etc/pki/ca-trust/extracted/pem
+          name: etc-pki-ca-trust-extracted-pem
+    - args:
+        - sh
+        - /config/configure
+      env:
+        - name: CONFIG_TEMPLATE_DIRECTORY
+          value: /templates
+        - name: CONFIG_DIRECTORY
+          value: /registry
+        - name: TZ
+          value: America/Sao_Paulo
+      image: registry.gitlab.com/gitlab-org/build/cng/gitlab-base:v18.0.2
+      imagePullPolicy: IfNotPresent
+      name: configure
+      resources:
+        requests:
+          cpu: 50m
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop:
+            - ALL
+        runAsNonRoot: true
+        runAsUser: 1000
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+        - mountPath: /config
+          name: registry-secrets
+        - mountPath: /templates
+          name: registry-server-config-templates
+          readOnly: true
+        - mountPath: /registry
+          name: registry-server-config
+  nodeName: gitlab-pointer-pool1-cczkf-6czm9
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext:
+    fsGroup: 1000
+    runAsUser: 1000
+    seccompProfile:
+      type: RuntimeDefault
+  serviceAccount: default
+  serviceAccountName: default
+  terminationGracePeriodSeconds: 30
+  tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+  volumes:
+    - configMap:
+        defaultMode: 420
+        items:
+          - key: config.yml.tpl
+            path: config.yml.tpl
+        name: gitlab-registry
+      name: registry-server-config-templates
+    - emptyDir:
+        medium: Memory
+      name: registry-server-config
+    - name: registry-secrets
+      projected:
+        defaultMode: 420
+        sources:
+          - configMap:
+              name: gitlab-registry
+          - secret:
+              items:
+                - key: registry-auth.crt
+                  path: certificate.crt
+              name: gitlab-registry-secret
+          - secret:
+              items:
+                - key: secret
+                  path: httpSecret
+              name: gitlab-registry-httpsecret
+          - secret:
+              name: gitlab-minio-secret
+    - emptyDir:
+        medium: Memory
+      name: etc-ssl-certs
+    - emptyDir:
+        medium: Memory
+      name: etc-pki-ca-trust-extracted-pem
+status:
+  conditions:
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-14T00:52:15Z'
+      status: 'True'
+      type: PodReadyToStartContainers
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-14T00:52:17Z'
+      status: 'True'
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-14T00:52:24Z'
+      status: 'True'
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-14T00:52:24Z'
+      status: 'True'
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-14T00:52:14Z'
+      status: 'True'
+      type: PodScheduled
+  containerStatuses:
+    - containerID: >-
+        containerd://cb0e0774ed605fbe5f1138b8e51c8ca7b6c55fd4595f24a5fc6fef65b6c4dde7
+      image: >-
+        registry.gitlab.com/gitlab-org/build/cng/gitlab-container-registry:v4.21.0-gitlab
+      imageID: >-
+        registry.gitlab.com/gitlab-org/build/cng/gitlab-container-registry@sha256:d046c85418ddda4b17b6b32f6c27ea8f7bdc61d9f4b2cd0f9760cdb3fd4115eb
+      lastState: {}
+      name: registry
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: '2025-06-14T00:52:17Z'
+      volumeMounts:
+        - mountPath: /etc/docker/registry/
+          name: registry-server-config
+          readOnly: true
+          recursiveReadOnly: Disabled
+        - mountPath: /etc/ssl/certs/
+          name: etc-ssl-certs
+          readOnly: true
+          recursiveReadOnly: Disabled
+        - mountPath: /etc/pki/ca-trust/extracted/pem
+          name: etc-pki-ca-trust-extracted-pem
+          readOnly: true
+          recursiveReadOnly: Disabled
+  hostIP: 172.31.43.233
+  hostIPs:
+    - ip: 172.31.43.233
+  initContainerStatuses:
+    - containerID: >-
+        containerd://fa9614a647e989fabbcecca1df9d1b0b951293752d87b031f8c33729ab2b6ef5
+      image: registry.gitlab.com/gitlab-org/build/cng/certificates:v18.0.2
+      imageID: >-
+        registry.gitlab.com/gitlab-org/build/cng/certificates@sha256:34ad8bab50a96e4a73167ebf57a343947e9ff3219dfd4361baa6f202bac13dcb
+      lastState: {}
+      name: certificates
+      ready: true
+      restartCount: 0
+      started: false
+      state:
+        terminated:
+          containerID: >-
+            containerd://fa9614a647e989fabbcecca1df9d1b0b951293752d87b031f8c33729ab2b6ef5
+          exitCode: 0
+          finishedAt: '2025-06-14T00:52:15Z'
+          reason: Completed
+          startedAt: '2025-06-14T00:52:14Z'
+      volumeMounts:
+        - mountPath: /etc/ssl/certs
+          name: etc-ssl-certs
+        - mountPath: /etc/pki/ca-trust/extracted/pem
+          name: etc-pki-ca-trust-extracted-pem
+    - containerID: >-
+        containerd://c5ab479719c4b5a0c50386997e3bafce4d375913415375ceec4f5e241570a484
+      image: registry.gitlab.com/gitlab-org/build/cng/gitlab-base:v18.0.2
+      imageID: >-
+        registry.gitlab.com/gitlab-org/build/cng/gitlab-base@sha256:a309b4b65fe9c6882589c60fd8a5d6680e96f741592d61d340fd1b51a0701388
+      lastState: {}
+      name: configure
+      ready: true
+      restartCount: 0
+      started: false
+      state:
+        terminated:
+          containerID: >-
+            containerd://c5ab479719c4b5a0c50386997e3bafce4d375913415375ceec4f5e241570a484
+          exitCode: 0
+          finishedAt: '2025-06-14T00:52:16Z'
+          reason: Completed
+          startedAt: '2025-06-14T00:52:16Z'
+      volumeMounts:
+        - mountPath: /config
+          name: registry-secrets
+        - mountPath: /templates
+          name: registry-server-config-templates
+          readOnly: true
+          recursiveReadOnly: Disabled
+        - mountPath: /registry
+          name: registry-server-config
+  phase: Running
+  podIP: 10.42.30.77
+  podIPs:
+    - ip: 10.42.30.77
+  qosClass: Burstable
+  startTime: '2025-06-14T00:52:14Z'

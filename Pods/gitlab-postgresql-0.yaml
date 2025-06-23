@@ -1,0 +1,625 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    cni.projectcalico.org/containerID: 5471f6b3b74504cae14f8952a208763e672a438babfb0dd8fce82ba5c303ddcd
+    cni.projectcalico.org/podIP: 10.42.4.184/32
+    cni.projectcalico.org/podIPs: 10.42.4.184/32
+    postgresql.gitlab/init-revision: '1'
+  creationTimestamp: '2025-06-14T01:21:15Z'
+  generateName: gitlab-postgresql-
+  labels:
+    app.kubernetes.io/component: primary
+    app.kubernetes.io/instance: gitlab
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: postgresql
+    app.kubernetes.io/version: 16.1.0
+    apps.kubernetes.io/pod-index: '0'
+    controller-revision-hash: gitlab-postgresql-687766ff88
+    helm.sh/chart: postgresql-13.4.4
+    statefulset.kubernetes.io/pod-name: gitlab-postgresql-0
+  managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:postgresql.gitlab/init-revision: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/version: {}
+            f:apps.kubernetes.io/pod-index: {}
+            f:controller-revision-hash: {}
+            f:helm.sh/chart: {}
+            f:statefulset.kubernetes.io/pod-name: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"49cbe7dc-3ca8-41d1-ba11-c192edfaf1ae"}: {}
+        f:spec:
+          f:affinity:
+            .: {}
+            f:podAntiAffinity:
+              .: {}
+              f:preferredDuringSchedulingIgnoredDuringExecution: {}
+          f:automountServiceAccountToken: {}
+          f:containers:
+            k:{"name":"metrics"}:
+              .: {}
+              f:env:
+                .: {}
+                k:{"name":"DATA_SOURCE_PASS"}:
+                  .: {}
+                  f:name: {}
+                  f:valueFrom:
+                    .: {}
+                    f:secretKeyRef: {}
+                k:{"name":"DATA_SOURCE_URI"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"DATA_SOURCE_USER"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:livenessProbe:
+                .: {}
+                f:failureThreshold: {}
+                f:httpGet:
+                  .: {}
+                  f:path: {}
+                  f:port: {}
+                  f:scheme: {}
+                f:initialDelaySeconds: {}
+                f:periodSeconds: {}
+                f:successThreshold: {}
+                f:timeoutSeconds: {}
+              f:name: {}
+              f:ports:
+                .: {}
+                k:{"containerPort":9187,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:name: {}
+                  f:protocol: {}
+              f:readinessProbe:
+                .: {}
+                f:failureThreshold: {}
+                f:httpGet:
+                  .: {}
+                  f:path: {}
+                  f:port: {}
+                  f:scheme: {}
+                f:initialDelaySeconds: {}
+                f:periodSeconds: {}
+                f:successThreshold: {}
+                f:timeoutSeconds: {}
+              f:resources: {}
+              f:securityContext:
+                .: {}
+                f:allowPrivilegeEscalation: {}
+                f:capabilities:
+                  .: {}
+                  f:drop: {}
+                f:privileged: {}
+                f:readOnlyRootFilesystem: {}
+                f:runAsNonRoot: {}
+                f:runAsUser: {}
+                f:seccompProfile:
+                  .: {}
+                  f:type: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+            k:{"name":"postgresql"}:
+              .: {}
+              f:env:
+                .: {}
+                k:{"name":"BITNAMI_DEBUG"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"PGDATA"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"POSTGRES_DATABASE"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"POSTGRES_PASSWORD"}:
+                  .: {}
+                  f:name: {}
+                  f:valueFrom:
+                    .: {}
+                    f:secretKeyRef: {}
+                k:{"name":"POSTGRESQL_CLIENT_MIN_MESSAGES"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"POSTGRESQL_ENABLE_LDAP"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"POSTGRESQL_ENABLE_TLS"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"POSTGRESQL_LOG_CONNECTIONS"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"POSTGRESQL_LOG_DISCONNECTIONS"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"POSTGRESQL_LOG_HOSTNAME"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"POSTGRESQL_PGAUDIT_LOG_CATALOG"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"POSTGRESQL_PORT_NUMBER"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"POSTGRESQL_SHARED_PRELOAD_LIBRARIES"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"POSTGRESQL_VOLUME_DIR"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:livenessProbe:
+                .: {}
+                f:exec:
+                  .: {}
+                  f:command: {}
+                f:failureThreshold: {}
+                f:initialDelaySeconds: {}
+                f:periodSeconds: {}
+                f:successThreshold: {}
+                f:timeoutSeconds: {}
+              f:name: {}
+              f:ports:
+                .: {}
+                k:{"containerPort":5432,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:name: {}
+                  f:protocol: {}
+              f:readinessProbe:
+                .: {}
+                f:exec:
+                  .: {}
+                  f:command: {}
+                f:failureThreshold: {}
+                f:initialDelaySeconds: {}
+                f:periodSeconds: {}
+                f:successThreshold: {}
+                f:timeoutSeconds: {}
+              f:resources:
+                .: {}
+                f:limits:
+                  .: {}
+                  f:cpu: {}
+                  f:memory: {}
+                f:requests:
+                  .: {}
+                  f:cpu: {}
+                  f:memory: {}
+              f:securityContext:
+                .: {}
+                f:allowPrivilegeEscalation: {}
+                f:capabilities:
+                  .: {}
+                  f:drop: {}
+                f:privileged: {}
+                f:readOnlyRootFilesystem: {}
+                f:runAsNonRoot: {}
+                f:runAsUser: {}
+                f:seccompProfile:
+                  .: {}
+                  f:type: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/bitnami/postgresql"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                k:{"mountPath":"/dev/shm"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                k:{"mountPath":"/docker-entrypoint-initdb.d/"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                k:{"mountPath":"/docker-entrypoint-preinitdb.d/init_revision.sh"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:subPath: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:hostname: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext:
+            .: {}
+            f:fsGroup: {}
+            f:fsGroupChangePolicy: {}
+          f:serviceAccount: {}
+          f:serviceAccountName: {}
+          f:subdomain: {}
+          f:terminationGracePeriodSeconds: {}
+          f:volumes:
+            .: {}
+            k:{"name":"custom-init-scripts"}:
+              .: {}
+              f:configMap:
+                .: {}
+                f:defaultMode: {}
+                f:name: {}
+              f:name: {}
+            k:{"name":"data"}:
+              .: {}
+              f:name: {}
+              f:persistentVolumeClaim:
+                .: {}
+                f:claimName: {}
+            k:{"name":"dshm"}:
+              .: {}
+              f:emptyDir:
+                .: {}
+                f:medium: {}
+              f:name: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: '2025-06-14T01:21:15Z'
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:cni.projectcalico.org/containerID: {}
+            f:cni.projectcalico.org/podIP: {}
+            f:cni.projectcalico.org/podIPs: {}
+      manager: calico
+      operation: Update
+      subresource: status
+      time: '2025-06-14T01:21:26Z'
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"PodReadyToStartContainers"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:hostIPs: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"10.42.4.184"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: '2025-06-14T01:21:36Z'
+  name: gitlab-postgresql-0
+  namespace: gitlab-o3s
+  ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: StatefulSet
+      name: gitlab-postgresql
+      uid: 49cbe7dc-3ca8-41d1-ba11-c192edfaf1ae
+  resourceVersion: '2017094'
+  uid: cf3a9c82-c85e-497e-af40-68a9600cb5e1
+spec:
+  affinity:
+    podAntiAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+        - podAffinityTerm:
+            labelSelector:
+              matchLabels:
+                app.kubernetes.io/component: primary
+                app.kubernetes.io/instance: gitlab
+                app.kubernetes.io/name: postgresql
+            topologyKey: kubernetes.io/hostname
+          weight: 1
+  automountServiceAccountToken: false
+  containers:
+    - env:
+        - name: BITNAMI_DEBUG
+          value: 'false'
+        - name: POSTGRESQL_PORT_NUMBER
+          value: '5432'
+        - name: POSTGRESQL_VOLUME_DIR
+          value: /bitnami/postgresql
+        - name: PGDATA
+          value: /bitnami/postgresql/data
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: postgres-password
+              name: gitlab-postgresql
+        - name: POSTGRES_DATABASE
+          value: gitlabhq_production
+        - name: POSTGRESQL_ENABLE_LDAP
+          value: 'no'
+        - name: POSTGRESQL_ENABLE_TLS
+          value: 'no'
+        - name: POSTGRESQL_LOG_HOSTNAME
+          value: 'false'
+        - name: POSTGRESQL_LOG_CONNECTIONS
+          value: 'false'
+        - name: POSTGRESQL_LOG_DISCONNECTIONS
+          value: 'false'
+        - name: POSTGRESQL_PGAUDIT_LOG_CATALOG
+          value: 'off'
+        - name: POSTGRESQL_CLIENT_MIN_MESSAGES
+          value: error
+        - name: POSTGRESQL_SHARED_PRELOAD_LIBRARIES
+          value: pgaudit
+      image: docker.io/bitnami/postgresql:16.6.0
+      imagePullPolicy: IfNotPresent
+      livenessProbe:
+        exec:
+          command:
+            - /bin/sh
+            - '-c'
+            - >-
+              exec pg_isready -U "postgres" -d "dbname=gitlabhq_production" -h
+              127.0.0.1 -p 5432
+        failureThreshold: 6
+        initialDelaySeconds: 30
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 5
+      name: postgresql
+      ports:
+        - containerPort: 5432
+          name: tcp-postgresql
+          protocol: TCP
+      readinessProbe:
+        exec:
+          command:
+            - /bin/sh
+            - '-c'
+            - '-e'
+            - >
+              exec pg_isready -U "postgres" -d "dbname=gitlabhq_production" -h
+              127.0.0.1 -p 5432
+
+              [ -f /opt/bitnami/postgresql/tmp/.initialized ] || [ -f
+              /bitnami/postgresql/.initialized ]
+        failureThreshold: 6
+        initialDelaySeconds: 5
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 5
+      resources:
+        limits:
+          cpu: 500m
+          memory: 800Mi
+        requests:
+          cpu: 200m
+          memory: 400Mi
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop:
+            - ALL
+        privileged: false
+        readOnlyRootFilesystem: false
+        runAsNonRoot: true
+        runAsUser: 1001
+        seccompProfile:
+          type: RuntimeDefault
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+        - mountPath: /docker-entrypoint-initdb.d/
+          name: custom-init-scripts
+        - mountPath: /dev/shm
+          name: dshm
+        - mountPath: /bitnami/postgresql
+          name: data
+        - mountPath: /docker-entrypoint-preinitdb.d/init_revision.sh
+          name: custom-init-scripts
+          subPath: init_revision.sh
+    - env:
+        - name: DATA_SOURCE_URI
+          value: 127.0.0.1:5432/gitlabhq_production?sslmode=disable
+        - name: DATA_SOURCE_PASS
+          valueFrom:
+            secretKeyRef:
+              key: postgres-password
+              name: gitlab-postgresql
+        - name: DATA_SOURCE_USER
+          value: postgres
+      image: docker.io/bitnami/postgres-exporter:0.15.0-debian-11-r7
+      imagePullPolicy: IfNotPresent
+      livenessProbe:
+        failureThreshold: 6
+        httpGet:
+          path: /
+          port: http-metrics
+          scheme: HTTP
+        initialDelaySeconds: 5
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 5
+      name: metrics
+      ports:
+        - containerPort: 9187
+          name: http-metrics
+          protocol: TCP
+      readinessProbe:
+        failureThreshold: 6
+        httpGet:
+          path: /
+          port: http-metrics
+          scheme: HTTP
+        initialDelaySeconds: 5
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 5
+      resources: {}
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop:
+            - ALL
+        privileged: false
+        readOnlyRootFilesystem: false
+        runAsNonRoot: true
+        runAsUser: 1001
+        seccompProfile:
+          type: RuntimeDefault
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  hostname: gitlab-postgresql-0
+  nodeName: gitlab-pointer-pool1-cczkf-vbgtv
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext:
+    fsGroup: 1001
+    fsGroupChangePolicy: Always
+  serviceAccount: gitlab-postgresql
+  serviceAccountName: gitlab-postgresql
+  subdomain: gitlab-postgresql-hl
+  terminationGracePeriodSeconds: 30
+  tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+  volumes:
+    - name: data
+      persistentVolumeClaim:
+        claimName: data-gitlab-postgresql-0
+    - configMap:
+        defaultMode: 420
+        name: gitlab-postgresql-init-db
+      name: custom-init-scripts
+    - emptyDir:
+        medium: Memory
+      name: dshm
+status:
+  conditions:
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-14T01:21:27Z'
+      status: 'True'
+      type: PodReadyToStartContainers
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-14T01:21:15Z'
+      status: 'True'
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-14T01:21:36Z'
+      status: 'True'
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-14T01:21:36Z'
+      status: 'True'
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-14T01:21:15Z'
+      status: 'True'
+      type: PodScheduled
+  containerStatuses:
+    - containerID: >-
+        containerd://7fee221af41aaae7acffff66edf3b2d69a58376f9e53722f8825af71e01b4eeb
+      image: docker.io/bitnami/postgres-exporter:0.15.0-debian-11-r7
+      imageID: >-
+        docker.io/bitnami/postgres-exporter@sha256:749d3cbbcd470d8289c4b4b555565a0662479054741c8c3b48d9c6a75590a9b0
+      lastState: {}
+      name: metrics
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: '2025-06-14T01:21:26Z'
+    - containerID: >-
+        containerd://008ff12aa75eeeec901d950eedfe5b5b1a4cd9a1fdfe107c98626cb76ad87074
+      image: docker.io/bitnami/postgresql:16.6.0
+      imageID: >-
+        docker.io/bitnami/postgresql@sha256:233f361c5819c180b600d110d7da953bea6f1a00764752643ffb7b78ba85c628
+      lastState: {}
+      name: postgresql
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: '2025-06-14T01:21:26Z'
+      volumeMounts:
+        - mountPath: /docker-entrypoint-initdb.d/
+          name: custom-init-scripts
+        - mountPath: /dev/shm
+          name: dshm
+        - mountPath: /bitnami/postgresql
+          name: data
+        - mountPath: /docker-entrypoint-preinitdb.d/init_revision.sh
+          name: custom-init-scripts
+  hostIP: 172.31.36.39
+  hostIPs:
+    - ip: 172.31.36.39
+  phase: Running
+  podIP: 10.42.4.184
+  podIPs:
+    - ip: 10.42.4.184
+  qosClass: Burstable
+  startTime: '2025-06-14T01:21:15Z'

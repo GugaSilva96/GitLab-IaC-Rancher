@@ -1,0 +1,393 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    cattle.io/timestamp: '2025-06-12T03:39:48Z'
+    checksum/config: fed1c7f13398fa9f4fd71a41ae047e3b9c0706fcbaceb02b7ed98c3c02d1c91b
+    cni.projectcalico.org/containerID: b344e15bed32db0f532f8c44366eb84fbc3a1d25c5cbf1f8f2ab62a1c4144e37
+    cni.projectcalico.org/podIP: 10.42.4.177/32
+    cni.projectcalico.org/podIPs: 10.42.4.177/32
+  creationTimestamp: '2025-06-12T07:22:43Z'
+  generateName: rke2-coredns-rke2-coredns-6ff947bf8b-
+  labels:
+    app.kubernetes.io/instance: rke2-coredns
+    app.kubernetes.io/name: rke2-coredns
+    k8s-app: kube-dns
+    pod-template-hash: 6ff947bf8b
+  managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:cattle.io/timestamp: {}
+            f:checksum/config: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/name: {}
+            f:k8s-app: {}
+            f:pod-template-hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"e1cf39c5-afab-4236-b636-c62535b9c78b"}: {}
+        f:spec:
+          f:affinity:
+            .: {}
+            f:podAntiAffinity:
+              .: {}
+              f:requiredDuringSchedulingIgnoredDuringExecution: {}
+          f:containers:
+            k:{"name":"coredns"}:
+              .: {}
+              f:args: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:livenessProbe:
+                .: {}
+                f:failureThreshold: {}
+                f:httpGet:
+                  .: {}
+                  f:path: {}
+                  f:port: {}
+                  f:scheme: {}
+                f:initialDelaySeconds: {}
+                f:periodSeconds: {}
+                f:successThreshold: {}
+                f:timeoutSeconds: {}
+              f:name: {}
+              f:ports:
+                .: {}
+                k:{"containerPort":53,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:name: {}
+                  f:protocol: {}
+                k:{"containerPort":53,"protocol":"UDP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:name: {}
+                  f:protocol: {}
+                k:{"containerPort":9153,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:name: {}
+                  f:protocol: {}
+              f:readinessProbe:
+                .: {}
+                f:failureThreshold: {}
+                f:httpGet:
+                  .: {}
+                  f:path: {}
+                  f:port: {}
+                  f:scheme: {}
+                f:initialDelaySeconds: {}
+                f:periodSeconds: {}
+                f:successThreshold: {}
+                f:timeoutSeconds: {}
+              f:resources:
+                .: {}
+                f:limits:
+                  .: {}
+                  f:cpu: {}
+                  f:memory: {}
+                f:requests:
+                  .: {}
+                  f:cpu: {}
+                  f:memory: {}
+              f:securityContext:
+                .: {}
+                f:allowPrivilegeEscalation: {}
+                f:capabilities:
+                  .: {}
+                  f:add: {}
+                  f:drop: {}
+                f:readOnlyRootFilesystem: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/etc/coredns"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:nodeSelector: {}
+          f:priorityClassName: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext: {}
+          f:serviceAccount: {}
+          f:serviceAccountName: {}
+          f:terminationGracePeriodSeconds: {}
+          f:tolerations: {}
+          f:volumes:
+            .: {}
+            k:{"name":"config-volume"}:
+              .: {}
+              f:configMap:
+                .: {}
+                f:defaultMode: {}
+                f:items: {}
+                f:name: {}
+              f:name: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: '2025-06-12T07:22:43Z'
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:cni.projectcalico.org/containerID: {}
+            f:cni.projectcalico.org/podIP: {}
+            f:cni.projectcalico.org/podIPs: {}
+      manager: calico
+      operation: Update
+      subresource: status
+      time: '2025-06-12T15:36:25Z'
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"PodReadyToStartContainers"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:hostIPs: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"10.42.4.177"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: '2025-06-12T15:36:57Z'
+  name: rke2-coredns-rke2-coredns-6ff947bf8b-zwsll
+  namespace: kube-system
+  ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: rke2-coredns-rke2-coredns-6ff947bf8b
+      uid: e1cf39c5-afab-4236-b636-c62535b9c78b
+  resourceVersion: '1196881'
+  uid: 63716b32-e7f3-45dd-afb1-ba81802d9236
+spec:
+  affinity:
+    podAntiAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
+            matchExpressions:
+              - key: k8s-app
+                operator: In
+                values:
+                  - kube-dns
+          topologyKey: kubernetes.io/hostname
+  containers:
+    - args:
+        - '-conf'
+        - /etc/coredns/Corefile
+      image: registry.rancher.com/rancher/hardened-coredns:v1.12.1-build20250507
+      imagePullPolicy: IfNotPresent
+      livenessProbe:
+        failureThreshold: 5
+        httpGet:
+          path: /health
+          port: 8080
+          scheme: HTTP
+        initialDelaySeconds: 60
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 5
+      name: coredns
+      ports:
+        - containerPort: 53
+          name: udp-53
+          protocol: UDP
+        - containerPort: 53
+          name: tcp-53
+          protocol: TCP
+        - containerPort: 9153
+          name: tcp-9153
+          protocol: TCP
+      readinessProbe:
+        failureThreshold: 1
+        httpGet:
+          path: /ready
+          port: 8181
+          scheme: HTTP
+        initialDelaySeconds: 30
+        periodSeconds: 5
+        successThreshold: 1
+        timeoutSeconds: 5
+      resources:
+        limits:
+          cpu: 100m
+          memory: 128Mi
+        requests:
+          cpu: 100m
+          memory: 128Mi
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          add:
+            - NET_BIND_SERVICE
+          drop:
+            - ALL
+        readOnlyRootFilesystem: true
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+        - mountPath: /etc/coredns
+          name: config-volume
+        - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+          name: kube-api-access-wdvdm
+          readOnly: true
+  dnsPolicy: Default
+  enableServiceLinks: true
+  nodeName: gitlab-pointer-pool1-cczkf-vbgtv
+  nodeSelector:
+    kubernetes.io/os: linux
+  preemptionPolicy: PreemptLowerPriority
+  priority: 2000000000
+  priorityClassName: system-cluster-critical
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: coredns
+  serviceAccountName: coredns
+  terminationGracePeriodSeconds: 30
+  tolerations:
+    - key: CriticalAddonsOnly
+      operator: Exists
+    - effect: NoSchedule
+      key: node-role.kubernetes.io/control-plane
+      operator: Exists
+    - effect: NoExecute
+      key: node-role.kubernetes.io/etcd
+      operator: Exists
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+  volumes:
+    - configMap:
+        defaultMode: 420
+        items:
+          - key: Corefile
+            path: Corefile
+        name: rke2-coredns-rke2-coredns
+      name: config-volume
+    - name: kube-api-access-wdvdm
+      projected:
+        defaultMode: 420
+        sources:
+          - serviceAccountToken:
+              expirationSeconds: 3607
+              path: token
+          - configMap:
+              items:
+                - key: ca.crt
+                  path: ca.crt
+              name: kube-root-ca.crt
+          - downwardAPI:
+              items:
+                - fieldRef:
+                    apiVersion: v1
+                    fieldPath: metadata.namespace
+                  path: namespace
+status:
+  conditions:
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-12T15:36:27Z'
+      status: 'True'
+      type: PodReadyToStartContainers
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-12T07:22:43Z'
+      status: 'True'
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-12T15:36:57Z'
+      status: 'True'
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-12T15:36:57Z'
+      status: 'True'
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-12T07:22:43Z'
+      status: 'True'
+      type: PodScheduled
+  containerStatuses:
+    - containerID: >-
+        containerd://124c519720b0dbee7ceecbc90a83d3ff8279e3785aad903b9f73c9de4660e100
+      image: registry.rancher.com/rancher/hardened-coredns:v1.12.1-build20250507
+      imageID: >-
+        registry.rancher.com/rancher/hardened-coredns@sha256:e40bd08a8f3c98e0a9f0eea9a429a867b7edbbbfea4da304d6a129c3d7917aae
+      lastState:
+        terminated:
+          containerID: >-
+            containerd://b4600012a14f8143658a3ae21c281d4eaaf1f726493cc8952d1fde9ca4c271c3
+          exitCode: 255
+          finishedAt: '2025-06-12T15:35:58Z'
+          reason: Unknown
+          startedAt: '2025-06-12T07:23:25Z'
+      name: coredns
+      ready: true
+      restartCount: 1
+      started: true
+      state:
+        running:
+          startedAt: '2025-06-12T15:36:26Z'
+      volumeMounts:
+        - mountPath: /etc/coredns
+          name: config-volume
+        - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+          name: kube-api-access-wdvdm
+          readOnly: true
+          recursiveReadOnly: Disabled
+  hostIP: 172.31.36.39
+  hostIPs:
+    - ip: 172.31.36.39
+  phase: Running
+  podIP: 10.42.4.177
+  podIPs:
+    - ip: 10.42.4.177
+  qosClass: Guaranteed
+  startTime: '2025-06-12T07:22:43Z'

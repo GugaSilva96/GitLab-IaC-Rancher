@@ -1,0 +1,569 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  annotations:
+    meta.helm.sh/release-name: gitlab
+    meta.helm.sh/release-namespace: gitlab-o3s
+  creationTimestamp: '2025-06-13T15:46:18Z'
+  generation: 1
+  labels:
+    app: gitaly
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: gitlab
+    app.kubernetes.io/version: v18.0.2
+    chart: gitaly-9.0.2
+    heritage: Helm
+    release: gitlab
+  managedFields:
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/version: {}
+            f:chart: {}
+            f:heritage: {}
+            f:release: {}
+        f:spec:
+          f:persistentVolumeClaimRetentionPolicy:
+            .: {}
+            f:whenDeleted: {}
+            f:whenScaled: {}
+          f:podManagementPolicy: {}
+          f:replicas: {}
+          f:revisionHistoryLimit: {}
+          f:selector: {}
+          f:serviceName: {}
+          f:template:
+            f:metadata:
+              f:annotations:
+                .: {}
+                f:checksum/config: {}
+                f:gitlab.com/prometheus_path: {}
+                f:gitlab.com/prometheus_port: {}
+                f:gitlab.com/prometheus_scrape: {}
+                f:prometheus.io/path: {}
+                f:prometheus.io/port: {}
+                f:prometheus.io/scrape: {}
+              f:labels:
+                .: {}
+                f:app: {}
+                f:app.kubernetes.io/name: {}
+                f:app.kubernetes.io/version: {}
+                f:chart: {}
+                f:heritage: {}
+                f:release: {}
+            f:spec:
+              f:affinity:
+                .: {}
+                f:podAntiAffinity:
+                  .: {}
+                  f:preferredDuringSchedulingIgnoredDuringExecution: {}
+              f:automountServiceAccountToken: {}
+              f:containers:
+                k:{"name":"gitaly"}:
+                  .: {}
+                  f:env:
+                    .: {}
+                    k:{"name":"CONFIG_DIRECTORY"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"CONFIG_TEMPLATE_DIRECTORY"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"GITALY_CONFIG_FILE"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"SSL_CERT_DIR"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"TZ"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:livenessProbe:
+                    .: {}
+                    f:failureThreshold: {}
+                    f:grpc:
+                      .: {}
+                      f:port: {}
+                      f:service: {}
+                    f:periodSeconds: {}
+                    f:successThreshold: {}
+                    f:timeoutSeconds: {}
+                  f:name: {}
+                  f:ports:
+                    .: {}
+                    k:{"containerPort":8075,"protocol":"TCP"}:
+                      .: {}
+                      f:containerPort: {}
+                      f:name: {}
+                      f:protocol: {}
+                    k:{"containerPort":9236,"protocol":"TCP"}:
+                      .: {}
+                      f:containerPort: {}
+                      f:name: {}
+                      f:protocol: {}
+                  f:readinessProbe:
+                    .: {}
+                    f:failureThreshold: {}
+                    f:grpc:
+                      .: {}
+                      f:port: {}
+                      f:service: {}
+                    f:periodSeconds: {}
+                    f:successThreshold: {}
+                    f:timeoutSeconds: {}
+                  f:resources:
+                    .: {}
+                    f:requests:
+                      .: {}
+                      f:cpu: {}
+                      f:memory: {}
+                  f:securityContext:
+                    .: {}
+                    f:allowPrivilegeEscalation: {}
+                    f:capabilities:
+                      .: {}
+                      f:drop: {}
+                    f:runAsNonRoot: {}
+                    f:runAsUser: {}
+                  f:startupProbe:
+                    .: {}
+                    f:failureThreshold: {}
+                    f:grpc:
+                      .: {}
+                      f:port: {}
+                      f:service: {}
+                    f:initialDelaySeconds: {}
+                    f:periodSeconds: {}
+                    f:successThreshold: {}
+                    f:timeoutSeconds: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+                  f:volumeMounts:
+                    .: {}
+                    k:{"mountPath":"/etc/gitaly/templates"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                    k:{"mountPath":"/etc/gitlab-secrets"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:readOnly: {}
+                    k:{"mountPath":"/etc/pki/ca-trust/extracted/pem"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:readOnly: {}
+                    k:{"mountPath":"/etc/ssl/certs/"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:readOnly: {}
+                    k:{"mountPath":"/home/git/repositories"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+              f:dnsPolicy: {}
+              f:initContainers:
+                .: {}
+                k:{"name":"certificates"}:
+                  .: {}
+                  f:env:
+                    .: {}
+                    k:{"name":"TZ"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:name: {}
+                  f:resources:
+                    .: {}
+                    f:requests:
+                      .: {}
+                      f:cpu: {}
+                  f:securityContext:
+                    .: {}
+                    f:allowPrivilegeEscalation: {}
+                    f:capabilities:
+                      .: {}
+                      f:drop: {}
+                    f:runAsNonRoot: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+                  f:volumeMounts:
+                    .: {}
+                    k:{"mountPath":"/etc/pki/ca-trust/extracted/pem"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                    k:{"mountPath":"/etc/ssl/certs"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                k:{"name":"configure"}:
+                  .: {}
+                  f:command: {}
+                  f:env:
+                    .: {}
+                    k:{"name":"TZ"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:name: {}
+                  f:resources:
+                    .: {}
+                    f:requests:
+                      .: {}
+                      f:cpu: {}
+                  f:securityContext:
+                    .: {}
+                    f:allowPrivilegeEscalation: {}
+                    f:capabilities:
+                      .: {}
+                      f:drop: {}
+                    f:runAsNonRoot: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+                  f:volumeMounts:
+                    .: {}
+                    k:{"mountPath":"/config"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:readOnly: {}
+                    k:{"mountPath":"/init-config"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:readOnly: {}
+                    k:{"mountPath":"/init-secrets"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+              f:restartPolicy: {}
+              f:schedulerName: {}
+              f:securityContext:
+                .: {}
+                f:fsGroup: {}
+                f:runAsUser: {}
+              f:terminationGracePeriodSeconds: {}
+              f:volumes:
+                .: {}
+                k:{"name":"etc-pki-ca-trust-extracted-pem"}:
+                  .: {}
+                  f:emptyDir:
+                    .: {}
+                    f:medium: {}
+                  f:name: {}
+                k:{"name":"etc-ssl-certs"}:
+                  .: {}
+                  f:emptyDir:
+                    .: {}
+                    f:medium: {}
+                  f:name: {}
+                k:{"name":"gitaly-config"}:
+                  .: {}
+                  f:configMap:
+                    .: {}
+                    f:defaultMode: {}
+                    f:name: {}
+                  f:name: {}
+                k:{"name":"gitaly-secrets"}:
+                  .: {}
+                  f:emptyDir:
+                    .: {}
+                    f:medium: {}
+                  f:name: {}
+                k:{"name":"init-gitaly-secrets"}:
+                  .: {}
+                  f:name: {}
+                  f:projected:
+                    .: {}
+                    f:defaultMode: {}
+                    f:sources: {}
+          f:updateStrategy:
+            f:rollingUpdate:
+              .: {}
+              f:partition: {}
+            f:type: {}
+          f:volumeClaimTemplates: {}
+      manager: helm
+      operation: Update
+      time: '2025-06-13T15:46:18Z'
+    - apiVersion: apps/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:availableReplicas: {}
+          f:collisionCount: {}
+          f:currentReplicas: {}
+          f:currentRevision: {}
+          f:observedGeneration: {}
+          f:readyReplicas: {}
+          f:replicas: {}
+          f:updateRevision: {}
+          f:updatedReplicas: {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: status
+      time: '2025-06-13T15:46:34Z'
+  name: gitlab-gitaly
+  namespace: gitlab-o3s
+  resourceVersion: '1791214'
+  uid: 1e3dd558-6bd1-4426-8c93-2f6c5ace1c19
+spec:
+  persistentVolumeClaimRetentionPolicy:
+    whenDeleted: Retain
+    whenScaled: Retain
+  podManagementPolicy: Parallel
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: gitaly
+      release: gitlab
+  serviceName: gitlab-gitaly
+  template:
+    metadata:
+      annotations:
+        checksum/config: ca1411c2c6d5129b64de686bea4b4ed81bb674737fe0636d3dd6f17af783e4d1
+        gitlab.com/prometheus_path: /metrics
+        gitlab.com/prometheus_port: '9236'
+        gitlab.com/prometheus_scrape: 'true'
+        prometheus.io/path: /metrics
+        prometheus.io/port: '9236'
+        prometheus.io/scrape: 'true'
+      creationTimestamp: null
+      labels:
+        app: gitaly
+        app.kubernetes.io/name: gitlab
+        app.kubernetes.io/version: v18.0.2
+        chart: gitaly-9.0.2
+        heritage: Helm
+        release: gitlab
+    spec:
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - podAffinityTerm:
+                labelSelector:
+                  matchLabels:
+                    app: gitaly
+                    release: gitlab
+                topologyKey: kubernetes.io/hostname
+              weight: 1
+      automountServiceAccountToken: false
+      containers:
+        - env:
+            - name: CONFIG_TEMPLATE_DIRECTORY
+              value: /etc/gitaly/templates
+            - name: CONFIG_DIRECTORY
+              value: /etc/gitaly
+            - name: GITALY_CONFIG_FILE
+              value: /etc/gitaly/config.toml
+            - name: SSL_CERT_DIR
+              value: /etc/ssl/certs
+            - name: TZ
+              value: America/Sao_Paulo
+          image: registry.gitlab.com/gitlab-org/build/cng/gitaly:v18.0.2
+          imagePullPolicy: IfNotPresent
+          livenessProbe:
+            failureThreshold: 3
+            grpc:
+              port: 8075
+              service: ''
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 3
+          name: gitaly
+          ports:
+            - containerPort: 8075
+              name: grpc-gitaly
+              protocol: TCP
+            - containerPort: 9236
+              name: http-metrics
+              protocol: TCP
+          readinessProbe:
+            failureThreshold: 3
+            grpc:
+              port: 8075
+              service: ''
+            periodSeconds: 5
+            successThreshold: 1
+            timeoutSeconds: 3
+          resources:
+            requests:
+              cpu: 100m
+              memory: 200Mi
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+            runAsNonRoot: true
+            runAsUser: 1000
+          startupProbe:
+            failureThreshold: 60
+            grpc:
+              port: 8075
+              service: ''
+            initialDelaySeconds: 1
+            periodSeconds: 1
+            successThreshold: 1
+            timeoutSeconds: 1
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+            - mountPath: /etc/ssl/certs/
+              name: etc-ssl-certs
+              readOnly: true
+            - mountPath: /etc/pki/ca-trust/extracted/pem
+              name: etc-pki-ca-trust-extracted-pem
+              readOnly: true
+            - mountPath: /etc/gitaly/templates
+              name: gitaly-config
+            - mountPath: /etc/gitlab-secrets
+              name: gitaly-secrets
+              readOnly: true
+            - mountPath: /home/git/repositories
+              name: repo-data
+      dnsPolicy: ClusterFirst
+      initContainers:
+        - env:
+            - name: TZ
+              value: America/Sao_Paulo
+          image: registry.gitlab.com/gitlab-org/build/cng/certificates:v18.0.2
+          imagePullPolicy: IfNotPresent
+          name: certificates
+          resources:
+            requests:
+              cpu: 50m
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+            runAsNonRoot: true
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+            - mountPath: /etc/ssl/certs
+              name: etc-ssl-certs
+            - mountPath: /etc/pki/ca-trust/extracted/pem
+              name: etc-pki-ca-trust-extracted-pem
+        - command:
+            - sh
+            - /config/configure
+          env:
+            - name: TZ
+              value: America/Sao_Paulo
+          image: registry.gitlab.com/gitlab-org/build/cng/gitlab-base:v18.0.2
+          imagePullPolicy: IfNotPresent
+          name: configure
+          resources:
+            requests:
+              cpu: 50m
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+            runAsNonRoot: true
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+            - mountPath: /config
+              name: gitaly-config
+              readOnly: true
+            - mountPath: /init-config
+              name: init-gitaly-secrets
+              readOnly: true
+            - mountPath: /init-secrets
+              name: gitaly-secrets
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext:
+        fsGroup: 1000
+        runAsUser: 1000
+      terminationGracePeriodSeconds: 30
+      volumes:
+        - configMap:
+            defaultMode: 420
+            name: gitlab-gitaly
+          name: gitaly-config
+        - emptyDir:
+            medium: Memory
+          name: gitaly-secrets
+        - name: init-gitaly-secrets
+          projected:
+            defaultMode: 288
+            sources:
+              - secret:
+                  items:
+                    - key: token
+                      path: gitaly_token
+                  name: gitlab-gitaly-secret
+              - secret:
+                  items:
+                    - key: secret
+                      path: .gitlab_shell_secret
+                  name: gitlab-gitlab-shell-secret
+        - emptyDir:
+            medium: Memory
+          name: etc-ssl-certs
+        - emptyDir:
+            medium: Memory
+          name: etc-pki-ca-trust-extracted-pem
+  updateStrategy:
+    rollingUpdate:
+      partition: 0
+    type: RollingUpdate
+  volumeClaimTemplates:
+    - apiVersion: v1
+      kind: PersistentVolumeClaim
+      metadata:
+        creationTimestamp: null
+        labels:
+          app: gitaly
+          release: gitlab
+        name: repo-data
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 50Gi
+        storageClassName: longhorn
+        volumeMode: Filesystem
+      status:
+        phase: Pending
+status:
+  availableReplicas: 1
+  collisionCount: 0
+  currentReplicas: 1
+  currentRevision: gitlab-gitaly-6bb5d9d456
+  observedGeneration: 1
+  readyReplicas: 1
+  replicas: 1
+  updateRevision: gitlab-gitaly-6bb5d9d456
+  updatedReplicas: 1

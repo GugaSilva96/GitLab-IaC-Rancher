@@ -1,0 +1,455 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    cni.projectcalico.org/containerID: a5ae125703a82c89f91fd06be799a6a5b90d1358f31879eaa86153c61eb1e51e
+    cni.projectcalico.org/podIP: 10.42.152.169/32
+    cni.projectcalico.org/podIPs: 10.42.152.169/32
+  creationTimestamp: '2025-06-12T07:31:30Z'
+  generateName: rke2-ingress-nginx-controller-
+  labels:
+    app.kubernetes.io/component: controller
+    app.kubernetes.io/instance: rke2-ingress-nginx
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: rke2-ingress-nginx
+    app.kubernetes.io/part-of: rke2-ingress-nginx
+    app.kubernetes.io/version: 1.12.1
+    controller-revision-hash: 89497c66
+    helm.sh/chart: rke2-ingress-nginx-4.12.103
+    pod-template-generation: '1'
+  managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/part-of: {}
+            f:app.kubernetes.io/version: {}
+            f:controller-revision-hash: {}
+            f:helm.sh/chart: {}
+            f:pod-template-generation: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"507dcf75-afbf-4166-8a10-2069c6504e29"}: {}
+        f:spec:
+          f:affinity:
+            .: {}
+            f:nodeAffinity:
+              .: {}
+              f:requiredDuringSchedulingIgnoredDuringExecution: {}
+          f:containers:
+            k:{"name":"rke2-ingress-nginx-controller"}:
+              .: {}
+              f:args: {}
+              f:env:
+                .: {}
+                k:{"name":"LD_PRELOAD"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"POD_NAME"}:
+                  .: {}
+                  f:name: {}
+                  f:valueFrom:
+                    .: {}
+                    f:fieldRef: {}
+                k:{"name":"POD_NAMESPACE"}:
+                  .: {}
+                  f:name: {}
+                  f:valueFrom:
+                    .: {}
+                    f:fieldRef: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:lifecycle:
+                .: {}
+                f:preStop:
+                  .: {}
+                  f:exec:
+                    .: {}
+                    f:command: {}
+              f:livenessProbe:
+                .: {}
+                f:failureThreshold: {}
+                f:httpGet:
+                  .: {}
+                  f:path: {}
+                  f:port: {}
+                  f:scheme: {}
+                f:initialDelaySeconds: {}
+                f:periodSeconds: {}
+                f:successThreshold: {}
+                f:timeoutSeconds: {}
+              f:name: {}
+              f:ports:
+                .: {}
+                k:{"containerPort":80,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:hostPort: {}
+                  f:name: {}
+                  f:protocol: {}
+                k:{"containerPort":443,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:hostPort: {}
+                  f:name: {}
+                  f:protocol: {}
+                k:{"containerPort":8443,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:name: {}
+                  f:protocol: {}
+              f:readinessProbe:
+                .: {}
+                f:failureThreshold: {}
+                f:httpGet:
+                  .: {}
+                  f:path: {}
+                  f:port: {}
+                  f:scheme: {}
+                f:initialDelaySeconds: {}
+                f:periodSeconds: {}
+                f:successThreshold: {}
+                f:timeoutSeconds: {}
+              f:resources:
+                .: {}
+                f:requests:
+                  .: {}
+                  f:cpu: {}
+                  f:memory: {}
+              f:securityContext:
+                .: {}
+                f:allowPrivilegeEscalation: {}
+                f:capabilities:
+                  .: {}
+                  f:add: {}
+                  f:drop: {}
+                f:readOnlyRootFilesystem: {}
+                f:runAsGroup: {}
+                f:runAsNonRoot: {}
+                f:runAsUser: {}
+                f:seccompProfile:
+                  .: {}
+                  f:type: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/usr/local/certificates/"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:nodeSelector: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext: {}
+          f:serviceAccount: {}
+          f:serviceAccountName: {}
+          f:terminationGracePeriodSeconds: {}
+          f:tolerations: {}
+          f:volumes:
+            .: {}
+            k:{"name":"webhook-cert"}:
+              .: {}
+              f:name: {}
+              f:secret:
+                .: {}
+                f:defaultMode: {}
+                f:secretName: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: '2025-06-12T07:31:30Z'
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:cni.projectcalico.org/containerID: {}
+            f:cni.projectcalico.org/podIP: {}
+            f:cni.projectcalico.org/podIPs: {}
+      manager: calico
+      operation: Update
+      subresource: status
+      time: '2025-06-12T15:36:52Z'
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"PodReadyToStartContainers"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:hostIPs: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"10.42.152.169"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: '2025-06-12T15:37:10Z'
+  name: rke2-ingress-nginx-controller-sqrmx
+  namespace: kube-system
+  ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: DaemonSet
+      name: rke2-ingress-nginx-controller
+      uid: 507dcf75-afbf-4166-8a10-2069c6504e29
+  resourceVersion: '1197233'
+  uid: ea250712-27d0-4965-bd62-56f40b5d6b4a
+spec:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+          - matchFields:
+              - key: metadata.name
+                operator: In
+                values:
+                  - gitlab-pointer-pool1-cczkf-rc752
+  containers:
+    - args:
+        - /nginx-ingress-controller
+        - '--election-id=rke2-ingress-nginx-leader'
+        - '--controller-class=k8s.io/ingress-nginx'
+        - '--ingress-class=nginx'
+        - '--configmap=$(POD_NAMESPACE)/rke2-ingress-nginx-controller'
+        - '--validating-webhook=:8443'
+        - '--validating-webhook-certificate=/usr/local/certificates/cert'
+        - '--validating-webhook-key=/usr/local/certificates/key'
+        - '--watch-ingress-without-class=true'
+      env:
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.name
+        - name: POD_NAMESPACE
+          valueFrom:
+            fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.namespace
+        - name: LD_PRELOAD
+          value: /usr/local/lib/libmimalloc.so
+      image: registry.rancher.com/rancher/nginx-ingress-controller:v1.12.1-hardened6
+      imagePullPolicy: IfNotPresent
+      lifecycle:
+        preStop:
+          exec:
+            command:
+              - /wait-shutdown
+      livenessProbe:
+        failureThreshold: 5
+        httpGet:
+          path: /healthz
+          port: 10254
+          scheme: HTTP
+        initialDelaySeconds: 10
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 1
+      name: rke2-ingress-nginx-controller
+      ports:
+        - containerPort: 80
+          hostPort: 80
+          name: http
+          protocol: TCP
+        - containerPort: 443
+          hostPort: 443
+          name: https
+          protocol: TCP
+        - containerPort: 8443
+          name: webhook
+          protocol: TCP
+      readinessProbe:
+        failureThreshold: 3
+        httpGet:
+          path: /healthz
+          port: 10254
+          scheme: HTTP
+        initialDelaySeconds: 10
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 1
+      resources:
+        requests:
+          cpu: 100m
+          memory: 90Mi
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          add:
+            - NET_BIND_SERVICE
+          drop:
+            - ALL
+        readOnlyRootFilesystem: false
+        runAsGroup: 82
+        runAsNonRoot: true
+        runAsUser: 101
+        seccompProfile:
+          type: RuntimeDefault
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+        - mountPath: /usr/local/certificates/
+          name: webhook-cert
+          readOnly: true
+        - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+          name: kube-api-access-sfctp
+          readOnly: true
+  dnsPolicy: ClusterFirstWithHostNet
+  enableServiceLinks: true
+  nodeName: gitlab-pointer-pool1-cczkf-rc752
+  nodeSelector:
+    kubernetes.io/os: linux
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: rke2-ingress-nginx
+  serviceAccountName: rke2-ingress-nginx
+  terminationGracePeriodSeconds: 300
+  tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+    - effect: NoSchedule
+      key: node.kubernetes.io/disk-pressure
+      operator: Exists
+    - effect: NoSchedule
+      key: node.kubernetes.io/memory-pressure
+      operator: Exists
+    - effect: NoSchedule
+      key: node.kubernetes.io/pid-pressure
+      operator: Exists
+    - effect: NoSchedule
+      key: node.kubernetes.io/unschedulable
+      operator: Exists
+  volumes:
+    - name: webhook-cert
+      secret:
+        defaultMode: 420
+        secretName: rke2-ingress-nginx-admission
+    - name: kube-api-access-sfctp
+      projected:
+        defaultMode: 420
+        sources:
+          - serviceAccountToken:
+              expirationSeconds: 3607
+              path: token
+          - configMap:
+              items:
+                - key: ca.crt
+                  path: ca.crt
+              name: kube-root-ca.crt
+          - downwardAPI:
+              items:
+                - fieldRef:
+                    apiVersion: v1
+                    fieldPath: metadata.namespace
+                  path: namespace
+status:
+  conditions:
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-12T15:36:54Z'
+      status: 'True'
+      type: PodReadyToStartContainers
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-12T07:31:30Z'
+      status: 'True'
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-12T15:37:10Z'
+      status: 'True'
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-12T15:37:10Z'
+      status: 'True'
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: '2025-06-12T07:31:30Z'
+      status: 'True'
+      type: PodScheduled
+  containerStatuses:
+    - containerID: >-
+        containerd://15e230592c3158c335f1b955a82a556b831a10ec319a0698e0b88f6cb198cbed
+      image: registry.rancher.com/rancher/nginx-ingress-controller:v1.12.1-hardened6
+      imageID: >-
+        registry.rancher.com/rancher/nginx-ingress-controller@sha256:bf00dc166ee927b955867a3714976cd1f02ade86e661b6c35c4a82c4879e1214
+      lastState:
+        terminated:
+          containerID: >-
+            containerd://8edc34879cf8e80025635dc585491ea734647be3a2c737b4bf25ac061376711b
+          exitCode: 255
+          finishedAt: '2025-06-12T15:35:59Z'
+          reason: Unknown
+          startedAt: '2025-06-12T07:31:54Z'
+      name: rke2-ingress-nginx-controller
+      ready: true
+      restartCount: 1
+      started: true
+      state:
+        running:
+          startedAt: '2025-06-12T15:36:53Z'
+      volumeMounts:
+        - mountPath: /usr/local/certificates/
+          name: webhook-cert
+          readOnly: true
+          recursiveReadOnly: Disabled
+        - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+          name: kube-api-access-sfctp
+          readOnly: true
+          recursiveReadOnly: Disabled
+  hostIP: 172.31.36.13
+  hostIPs:
+    - ip: 172.31.36.13
+  phase: Running
+  podIP: 10.42.152.169
+  podIPs:
+    - ip: 10.42.152.169
+  qosClass: Burstable
+  startTime: '2025-06-12T07:31:30Z'

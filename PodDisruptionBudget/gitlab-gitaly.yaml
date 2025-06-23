@@ -1,0 +1,81 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  annotations:
+    meta.helm.sh/release-name: gitlab
+    meta.helm.sh/release-namespace: gitlab-o3s
+  creationTimestamp: '2025-06-13T15:46:15Z'
+  generation: 1
+  labels:
+    app: gitaly
+    app.kubernetes.io/managed-by: Helm
+    chart: gitaly-9.0.2
+    heritage: Helm
+    release: gitlab
+  managedFields:
+    - apiVersion: policy/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:chart: {}
+            f:heritage: {}
+            f:release: {}
+        f:spec:
+          f:maxUnavailable: {}
+          f:selector: {}
+      manager: helm
+      operation: Update
+      time: '2025-06-13T15:46:15Z'
+    - apiVersion: policy/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            .: {}
+            k:{"type":"DisruptionAllowed"}:
+              .: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:observedGeneration: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+          f:currentHealthy: {}
+          f:disruptionsAllowed: {}
+          f:expectedPods: {}
+          f:observedGeneration: {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: status
+      time: '2025-06-13T15:46:34Z'
+  name: gitlab-gitaly
+  namespace: gitlab-o3s
+  resourceVersion: '1791211'
+  uid: 559d6154-e784-42e8-9b21-840c32cb3486
+spec:
+  maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: gitaly
+      release: gitlab
+status:
+  conditions:
+    - lastTransitionTime: '2025-06-13T15:46:34Z'
+      message: ''
+      observedGeneration: 1
+      reason: SufficientPods
+      status: 'True'
+      type: DisruptionAllowed
+  currentHealthy: 1
+  desiredHealthy: 0
+  disruptionsAllowed: 1
+  expectedPods: 1
+  observedGeneration: 1
